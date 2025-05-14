@@ -18,6 +18,7 @@
 - **前端**：React + TypeScript
 - **后端**：
   - .NET Core
+  - Java 后端开发中
 - **数据库**：支持 MySQL、PostgreSQL 等主流关系型数据库
 - **其他依赖**：可根据实际需求扩展第三方服务
 
@@ -46,8 +47,8 @@ Kedo 遵循 **Apache 2.0 License** 协议，并附加了部分限制条款，请
 
 ### 3.1 克隆项目
 ```bash
-git clone https://gitee.com/kedoai/kedo.git
-cd kedo
+git clone https://github.com/kedowen/Kedo.git
+cd Kedo
 ```
 
 ### 3.2 运行项目
@@ -79,9 +80,10 @@ http://localhost:3000
 
 即可进入 Kedo 平台的前端界面。
 
+4. 初始账号密码
+默认账号：15188886666
+默认密码：123456
 ---
-
-
 
 #### 2. 本地部署
 1. 前端安装
@@ -92,24 +94,11 @@ npm install
 npm start
 ```
 2. 后端安装
-- .NET Core 后端
-```bash
-cd backend/dotnet
-dotnet restore
-dotnet run
-```
-
-4. 数据库配置
-编辑 `application.properties` 或 `appsettings.json` 文件，配置数据库连接信息。
-
-5. 运行测试
-启动前后端服务后，访问默认地址（如 http://localhost:3000）即可体验平台功能。
-
+- **.net**：[github代码仓库地址](https://github.com/kedowen/KedoExecutorNet)
+- **java**：(正在开发中，暂未开放)
 ---
 
-### 3.3 初始账号密码
-默认账号：15188886666
-默认密码：123456
+
 
 ## 4. 贡献指南
 
@@ -129,7 +118,7 @@ dotnet run
 
 如果您有任何问题或需要进一步的帮助，请通过以下方式联系我们：
 
-- **公司网站**：[www.kedowen.com](http://www.kedoai.com)
+- **公司网站**：[www.kedoai.com](https://www.kedoai.com)
 - **公司邮箱**：kedoai@kedowen.com
 - **GitHub Issues**：在本项目的 Issues 页面提交您的问题或建议。
 
@@ -140,7 +129,3 @@ dotnet run
 Kedo及其相关 Logo、品牌标识均为 **KedoWen Inc.** 所有。未经授权，禁止任何形式的复制、传播或商业使用。
 
 感谢您选择 Kedo！希望我们的平台能够为您的项目带来价值。
-
-
-
-
