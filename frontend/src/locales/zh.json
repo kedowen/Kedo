@@ -1,0 +1,984 @@
+{
+  "welcome": "欢迎使用",
+  "tools": {
+    "interactiveMode": {
+      "title": "交互模式",
+      "mouse": {
+        "title": "鼠标友好",
+        "description": "使用鼠标拖动画布，通过滚轮缩放"
+      },
+      "touchPad": {
+        "title": "触摸板友好",
+        "description": "使用两个手指在同一方向移动，通过捏合或分开两个手指缩放"
+      }
+    },
+    "automaticLayout": {
+      "title": "自动布局"
+    },
+    "switchLine": {
+      "title": "切换连线类型"
+    },
+    "zoom": {
+      "title": "缩放",
+      "in": "放大",
+      "out": "缩小",
+      "reset": "重置",
+      "to": "至"
+    },
+    "fitView": {
+      "title": "适应视图"
+    },
+    "minimap": {
+      "title": "缩略图"
+    },
+    "lock": {
+      "isLock": "锁定",
+      "isUnlock": "解锁"
+    },
+    "undo": {
+      "title": "撤销"
+    },
+    "redo": {
+      "title": "重做"
+    },
+    "globalVariable": {
+      "title": "全局变量",
+      "description": "全局变量配置",
+      "modal": {
+        "title": "全局变量配置",
+        "system": {
+          "title": "系统变量",
+          "columns": {
+            "name": "变量名",
+            "value": "变量值",
+            "description": "描述"
+          },
+          "empty": {
+            "title": "暂无数据",
+            "description": "当前没有定义任何系统变量"
+          }
+        },
+        "user": {
+          "title": "用户变量",
+          "columns": {
+            "name": "变量名",
+            "value": "变量值",
+            "description": "描述",
+            "action": "操作",
+            "empty": {
+              "title": "暂无数据",
+              "description": "当前没有定义任何用户变量"
+            }
+          },
+          "form": {
+            "name": {
+              "label": "变量名",
+              "placeholder": "请输入变量名",
+              "emptyError": "变量名不能为空",
+              "duplicateError": "变量名已存在"
+            },
+            "value": {
+              "label": "变量值",
+              "placeholder": "请输入变量值",
+              "emptyError": "变量值不能为空"
+            },
+            "description": {
+              "label": "描述",
+              "placeholder": "请输入描述"
+            },
+            "action": {
+              "edit": "更新",
+              "cancel": "取消",
+              "save": "保存"
+            }
+          },
+          "empty": {
+            "title": "暂无数据",
+            "description": "当前没有定义任何用户变量"
+          }
+        },
+        "tip": {
+          "addSuccess": "添加成功",
+          "addFail": "添加失败",
+          "deleteSuccess": "删除成功",
+          "deleteFail": "删除失败",
+          "editSuccess": "更新成功",
+          "editFail": "更新失败",
+          "duplicateError": "不可使用重复的变量名"
+        }
+      }
+    },
+    "addNode": {
+      "title": "添加节点"
+    },
+    "save": {
+      "title": "保存",
+      "description": "保存流程图",
+      "success": "保存成功",
+      "errors": {
+        "noUser": "无用户信息，无法保存！",
+        "validationFailed": "存在未通过验证的节点，请检查并修复错误后再保存"
+      }
+    },
+    "load": {
+      "title": "加载",
+      "description": "加载流程图"
+    },
+    "run": {
+      "title": "运行",
+      "runningTitle": "运行中",
+      "description": "运行流程图",
+      "clearTitle": "清除结果",
+      "sideSheet": {
+        "title": "试运行",
+        "chat": {
+          "system": {
+            "title": "系统",
+            "prompt": "欢迎使用工作流运行助手！请先配置参数，然后点击执行按钮开始运行。"
+          },
+          "user": {
+            "title": "用户",
+            "empty": "无输入参数"
+          },
+          "assistant": {
+            "title": "助手"
+          }
+        },
+        "footer": {
+          "execute": {
+            "title": "执行"
+          },
+          "stop": {
+            "title": "停止"
+          },
+          "config": {
+            "title": "参数配置",
+            "emptyError": "请填写必填字段",
+            "empty": "无输入参数"
+          }
+        },
+        "tip": {
+          "stop": "流程执行已被停止，只显示部分结果",
+          "executeError": {
+            "title": "部分执行完成",
+            "content": "已执行完成，存在问题节点数量"
+          },
+          "executeSuccess": {
+            "title": "全部执行完成",
+            "content": "已执行完成，无问题节点"
+          },
+          "userStop": "流程执行已被停止，只显示部分结果",
+          "closeError": "正在运行中，请停止或等待运行结束再操作",
+          "noUser":"当前无用户Id",
+          "noFlowId": "当前无流程Id"
+        }
+      }
+    }
+  },
+  "nodes": {
+    "start": {
+      "label": "开始",
+      "description": "工作流的起始节点，用于设置启动工作流所需的信息",
+      "form": {
+        "outputs": "输出参数",
+        "titleRequired": "标题必填"
+      }
+    },
+    "end": {
+      "label": "结束",
+      "description": "工作流结束节点，用于返回工作流运行结果",
+      "form": {
+        "outputs": "输出",
+        "titleRequired": "标题必填"
+      },
+      "resultDisplay": {
+        "executionResult": "执行结果",
+        "waitingForResult": "等待执行结果...",
+        "executionSuccess": "执行成功",
+        "executionFailure": "执行失败",
+        "responseTime": "响应时间",
+        "executionId": "执行ID",
+        "refresh": "刷新",
+        "refreshed": "已刷新结果",
+        "debugStatus": "调试状态",
+        "receivedResult": "已接收结果",
+        "noResult": "未接收结果",
+        "globalVarSet": "已设置全局变量",
+        "globalVarNotSet": "未设置全局变量",
+        "expand": "展开",
+        "collapse": "收起",
+        "unableToDisplayResult": "无法显示结果",
+        "unableToParseResult": "无法解析结果",
+        "field": "字段",
+        "value": "值"
+      }
+    },
+    "sql_executor": {
+      "label": "SQL 自定义",
+      "description": "基于用户自定义的 SQL 完成对数据库的增删改查操作",
+      "validation": {
+        "sqlQueryRequired": "SQL 语句不能为空",
+        "sqlExpressionRequired": "SQL 表达式不能为空",
+        "dataTableRequired": "请选择一个数据表"
+      },
+      "form": {
+        "inputParams": "输入参数",
+        "dataSource": "数据源",
+        "sql": "SQL",
+        "outputParams": "输出参数",
+        "noCustomParams": "暂无自定义参数，点击下方按钮添加",
+        "noDataSourceSelected": "请添加数据源，仅支持添加一个数据源",
+        "sqlTooltip": "可以使用{{变量名}}、{{变量名.子变量名}}、{{变量名[数组索引]}}的方式引用输入参数中的变量",
+        "fullscreenEdit": "全屏编辑",
+        "testExecute": "测试执行",
+        "sqlHeaderTitle": "SQL输出参数",
+        "sqlHeaderTooltip": "设置SQL节点的输出参数，支持嵌套对象结构",
+        "emptyOutputText": "暂无自定义输出参数，点击下方按钮添加",
+        "addOutputParam": "添加输出参数"
+      },
+      "dataSource": {
+        "addDataSource": "添加数据源",
+        "selectDataSource": "选择数据源",
+        "databaseType": "数据库类型",
+        "dataSourceName": "数据源名称",
+        "ipAddress": "IP地址",
+        "port": "端口",
+        "databaseName": "数据库名称",
+        "username": "用户名",
+        "password": "密码",
+        "remark": "备注",
+        "connectionAddress": "连接地址",
+        "cancel": "取消",
+        "confirm": "确定",
+        "refresh": "刷新",
+        "remove": "移除",
+        "required": "(必填)",
+        "status": "状态",
+        "normal": "正常",
+        "disabled": "禁用",
+        "dataSourceId": "数据源ID"
+      },
+      "sqlEditor": {
+        "title": "SQL编辑器",
+        "loading": "编辑器加载中...",
+        "testResult": "测试执行结果",
+        "executing": "执行中...",
+        "executionError": "执行错误",
+        "totalRecords": "共 {{count}} 条记录",
+        "executeSuccess": "执行成功",
+        "noResults": "查询无结果或执行成功但没有返回数据"
+      },
+      "inputs": {
+        "sqlQuery": "SQL语句",
+        "dataTable": "数据表"
+      },
+      "outputs": {
+        "outputList": "查询结果",
+        "rowNum": "影响行数"
+      }
+    },
+    "llm": {
+      "label": "大模型",
+      "description": "调用大语言模型，并使用变量和提示词生成回复",
+      "validation": {
+        "titleRequired": "节点标题不能为空",
+        "promptRequired": "用户提示词不能为空",
+        "modelTypeRequired": "模型类型不能为空",
+        "temperatureRequired": "温度不能为空"
+      },
+      "form": {
+        "temperature": "温度",
+        "input": "输入",
+        "inputParams": "输入参数",
+        "modelSettings": "模型设置",
+        "modelType": "模型类型",
+        "systemPrompt": "系统提示词",
+        "userPrompt": "用户提示词",
+        "enterParamName": "输入参数名称",
+        "enterParamValueOrReference": "输入参数值或点击右侧Fx按钮引用变量",
+        "systemPromptPlaceholder": "输入系统提示词，可以使用{{引用变量}}",
+        "userPromptPlaceholder": "输入用户提示词，可以使用{{引用变量}}",
+        "noCustomParams": "还没有自定义参数，点击下方按钮添加",
+        "addParam": "添加参数"
+      },
+      "inputs": {
+        "modelType": "大语言模型的类型",
+        "temperature": "模型输出的随机性，0-1之间",
+        "systemPrompt": "系统提示词，用于设置模型的行为和角色",
+        "prompt": "用户提示词，将作为模型的输入",
+        "customParams": "自定义参数，可作为模型的输入",
+        "key": "参数名称",
+        "value": "参数值"
+      },
+      "outputs": {
+        "result": "模型生成的回复文本",
+        "tokens": "消耗的token数量"
+      }
+    },
+    "email": {
+      "label": "邮箱",
+      "description": "发送邮件节点，可以指定收件人、主题，并使用其他节点的输出作为内容。",
+      "ports": {
+        "input": "触发发送",
+        "output": "发送完成"
+      },
+      "inputs": {
+        "email": {
+          "title": "收件人",
+          "description": "请输入收件人地址，多个邮箱请用逗号或分号分隔",
+          "type": "收件人值类型",
+          "content": "收件人内容"
+        },
+        "subject": {
+          "title": "主题",
+          "description": "邮件主题",
+          "type": "主题值类型",
+          "content": "主题内容"
+        },
+        "content": {
+          "title": "内容",
+          "description": "邮件内容，可以选择其他节点的输出",
+          "type": "邮件内容类型",
+          "content": "邮件内容"
+        }
+      },
+      "outputs": {
+        "result": "发送结果",
+        "success": "是否发送成功"
+      },
+      "form": {
+        "noRecipients": "无收件人",
+        "moreRecipients": "还有{{count}}个收件人",
+        "noSubject": "无主题",
+        "noContent": "无内容",
+        "subjectPlaceholder": "请输入主题",
+        "contentPlaceholder": "请输入邮件内容"
+      },
+      "validation": {
+        "titleRequired": "标题必填",
+        "emailRequired": "收件人不能为空",
+        "subjectRequired": "主题不能为空",
+        "contentRequired": "内容不能为空"
+      }
+    },
+    "wechat_work": {
+      "label": "企业微信",
+      "description": "发送企业微信消息，可以指定收件人、主题，并使用其他节点的输出作为内容。",
+      "ports": {
+        "input": "触发发送",
+        "output": "发送完成"
+      },
+      "inputs": {
+        "recipient": {
+          "title": "收信人",
+          "description": "请输入收信人地址，多个企微请用分号分隔",
+          "type": "收信人值类型",
+          "content": "具体收信人"
+        },
+        "subject": {
+          "title": "主题",
+          "description": "邮件主题",
+          "type": "主题值类型",
+          "content": "具体主题内容"
+        },
+        "content": {
+          "title": "内容",
+          "description": "企微消息内容，可以选择其他节点的输出",
+          "type": "企微消息内容类型",
+          "content": "具体企微消息内容"
+        }
+      },
+      "outputs": {
+        "result": "发送结果",
+        "success": "是否发送成功"
+      },
+      "form": {
+        "noRecipients": "无收信人",
+        "moreRecipients": "还有{{count}}个收信人",
+        "noSubject": "无主题",
+        "noContent": "无内容",
+        "subjectPlaceholder": "请输入消息主题",
+        "contentPlaceholder": "请输入消息内容"
+      },
+      "validation": {
+        "titleRequired": "标题必填",
+        "recipientRequired": "收信人不能为空",
+        "subjectRequired": "主题不能为空",
+        "contentRequired": "内容不能为空"
+      }
+    },
+    "http_request": {
+      "label": "HTTP请求",
+      "description": "用于发送API请求，从服务器返回数据",
+      "validation": {
+        "titleRequired": "节点标题不能为空",
+        "urlRequired": "URL不能为空"
+      },
+      "form": {
+        "method": "API请求方式",
+        "url": "请求地址",
+        "urlPlaceholder": "请输入接口的URL, 可以使用{{引用变量}}",
+        "headers": "请求头",
+        "params": "请求参数",
+        "enableAuth": "启用鉴权",
+        "authType": "鉴权类型",
+        "authToken": "Token",
+        "tokenPlaceholder": "请输入鉴权Token值",
+        "authCustom": {
+          "key": "Key",
+          "value": "Value",
+          "valuePlaceholder": "输入或引用参数值",
+          "valueRequired": "变量值不可为空",
+          "addTo": "Add To",
+          "custom": "自定义"
+        },
+        "bodyType": "请求体类型",
+        "bodyContent": {
+          "json": "JSON内容",
+          "jsonPlaceholder": "请输入JSON",
+          "params": "请求体参数",
+          "emptyParams": "暂无请求体参数，点击添加",
+          "rawText": "原始文本",
+          "rawTextPlaceholder": "请输入raw text, 可以使用{{引用变量}}",
+          "binary": "二进制文件",
+          "upload": "上传文件"
+        },
+        "advanced": {
+          "timeout": "超时时间 (毫秒)",
+          "retries": "重试次数"
+        },
+        "sections": {
+          "basic": "基本设置",
+          "headers": "请求头",
+          "params": "请求参数",
+          "auth": "鉴权",
+          "body": "请求体",
+          "advanced": "高级设置"
+        }
+      },
+      "outputs": {
+        "body": "响应体",
+        "statusCode": "状态码",
+        "headers": "响应头"
+      }
+    },
+    "code": {
+      "label": "代码",
+      "description": "执行自定义代码，处理输入变量并生成输出结果",
+      "validation": {
+        "titleRequired": "节点标题不能为空",
+        "codeContentRequired": "代码内容不能为空"
+      },
+      "form": {
+        "inputParams": "输入参数",
+        "codeConfig": "代码配置",
+        "outputParams": "输出参数",
+        "programmingLanguage": "编程语言",
+        "codeContent": "代码内容",
+        "editInLargeWindow": "在大窗口中编辑",
+        "exceptionHandling": "异常处理",
+        "ignoreErrors": "忽略执行错误（出错时继续执行流程）",
+        "noCustomParams": "暂无自定义参数，点击下方按钮添加",
+        "addParam": "添加参数",
+        "noOutputParams": "无输出参数"
+      },
+      "editor": {
+        "title": "代码编辑器",
+        "loading": "编辑器加载中...",
+        "retryCount": "尝试次数",
+        "loadFailed": "编辑器加载失败",
+        "retryLoading": "重试加载编辑器",
+        "unknownLanguage": "未知语言"
+      },
+      "execution": {
+        "execute": "执行",
+        "executeJS": "执行JS",
+        "executePY": "执行PY",
+        "executeCS": "执行C#",
+        "executeDOS": "执行DOS",
+        "executeVBS": "执行VBS",
+        "executePS": "执行PS",
+        "executionMessage": "即将执行{{language}}代码 (这是UI演示，实际执行需要后端支持)"
+      },
+      "params": {
+        "paramName": "参数名称",
+        "paramType": "参数类型",
+        "paramValue": "参数值",
+        "enterParamName": "输入参数名称",
+        "childParam": "子参数",
+        "outputParam": "输出参数",
+        "renameKey": "重命名键值",
+        "keyExists": "键名已存在，无法重命名",
+        "addSubParam": "添加子参数"
+      },
+      "inputs": {
+        "codeContent": "代码内容",
+        "language": "编程语言",
+        "ignoreErrors": "忽略执行错误",
+        "input": "自定义参数数组"
+      },
+      "defaults": {
+        "title": "代码_{{index}}",
+        "param": "参数1",
+        "defaultValue": "默认值",
+        "defaultCode": "// 在这里编写代码\nasync function main({ params }) {\n  // 可以通过'params'获取输入参数\n  const input = params.input;\n  \n  // 构建输出对象\n  return {\n    key0: \"输出值1\",\n    key1: [1, 2, 3],\n    key2: { name: \"测试\" }\n  };\n}"
+      },
+      "outputs": {
+        "key0": "字符串输出",
+        "key1": "数组输出",
+        "key2": "对象输出"
+      },
+      "simplifiedView": {
+        "inputLabel": "输入",
+        "outputLabel": "输出",
+        "codeExecute": "代码 · 执行",
+        "ignoreErrors": "忽略错误"
+      }
+    },
+    "image_generation": {
+      "label": "图像生成",
+      "description": "通过文字描述生成图像，支持上传参考图片和调整生成参数",
+      "validation": {
+        "titleRequired": "节点标题不能为空",
+        "promptRequired": "正向提示词不能为空",
+        "widthRequired": "宽度必须大于等于256",
+        "heightRequired": "高度必须大于等于256"
+      },
+      "form": {
+        "modelSettings": "模型设置",
+        "referenceImages": "参考图",
+        "promptSettings": "提示词设置",
+        "customParams": "自定义参数",
+        "style": "图像风格",
+        "modelType": "模型设置",
+        "aspectRatio": "宽高比例",
+        "width": "宽度",
+        "height": "高度",
+        "addReferenceImage": "添加参考图",
+        "similarity": "参考图相似度",
+        "prompt": "正向提示词",
+        "promptPlaceholder": "请输入详细的图像描述，例如：一只可爱的橙色猫咪在草地上玩耍",
+        "negativePrompt": "负向提示词",
+        "negativePromptPlaceholder": "请输入不希望出现在图像中的元素，例如：模糊, 变形, 低质量",
+        "addCustomParam": "添加自定义参数",
+        "customParamName": "自定义参数",
+        "noCustomParams": "暂无自定义参数"
+      },
+      "styleOptions": [
+        "现实主义风格",
+        "抽象艺术",
+        "卡通风格",
+        "科幻风格",
+        "复古风格",
+        "印象派",
+        "像素艺术"
+      ],
+      "aspectRatioOptions": [
+        "1:1 (1024*1024)",
+        "16:9 (1024*576)",
+        "3:2 (1024*682)",
+        "4:3 (1024*768)",
+        "3:4 (768*1024)",
+        "2:3 (682*1024)",
+        "9:16 (576*1024)"
+      ],
+      "inputs": {
+        "style": "图像风格类型",
+        "width": "生成图像的宽度",
+        "height": "生成图像的高度",
+        "aspectRatio": "宽高比例",
+        "modelType": {
+          "label": "模型类型文字",
+          "value": "模型类型值"
+        },
+        "referenceImages": {
+          "title": "参考图列表",
+          "type": "图片数据",
+          "content": "相似度",
+          "similarity": "与参考图像的相似度，0-1之间"
+        },
+        "prompt": "图像生成提示词",
+        "negativePrompt": "负向提示词，指定不希望出现的内容",
+        "customParams": {
+          "title": "自定义参数数组",
+          "name": "参数名称",
+          "type": "参数类型",
+          "value": "参数值"
+        }
+      },
+      "outputs": {
+        "data": "生成的图像数据",
+        "msg": "处理结果信息"
+      },
+      "simplifiedView": {
+        "input": "输入",
+        "output": "输出",
+        "type": "类型"
+      }
+    },
+    "knowledge_base": {
+      "label": "知识库检索",
+      "description": "从选定的知识库中检索相关信息",
+      "validation": {
+        "knowledgeBaseRequired": "请选择一个知识库"
+      },
+      "form": {
+        "inputParams": "输入参数",
+        "knowledgeBaseSettings": "知识库设置",
+        "outputParams": "输出参数",
+        "noCustomParams": "暂无自定义参数，点击下方按钮添加",
+        "addParam": "添加参数",
+        "noDataSourceSelected": "请添加数据源，仅支持添加一个数据源"
+      },
+      "knowledgeBaseSelector": {
+        "title": "选择知识库",
+        "search": "搜索知识库...",
+        "refresh": "刷新",
+        "cancel": "取消",
+        "confirm": "确定",
+        "emptyDescription": "暂无知识库",
+        "columns": {
+          "name": "知识库名称",
+          "type": "类型",
+          "description": "描述"
+        }
+      },
+      "inputs": {
+        "knowledgeBase": "知识库",
+        "customParams": "自定义参数"
+      },
+      "outputs": {
+        "outputList": "检索结果",
+        "rowNum": "结果数量"
+      },
+      "simplifiedView": {
+        "knowledgeBase": "知识库",
+        "unselected": "未选择知识库",
+        "input": "输入",
+        "output": "输出",
+        "noCustomInputParams": "无自定义输入参数",
+        "type": "类型"
+      }
+    },
+    "mcp": {
+      "label": "MCP节点",
+      "description": "用于执行MCP相关操作",
+      "validation": {
+        "mcpServerRequired": "请输入MCP服务器地址"
+      },
+      "form": {
+        "inputParams": "输入参数",
+        "mcpSettings": "MCP设置",
+        "outputParams": "输出参数",
+        "noCustomParams": "暂无自定义参数，点击下方按钮添加",
+        "serverNotSet": "请添加服务器，仅支持添加一个服务器",
+        "basicSettings": "基本设置",
+        "headersTooltip": "切换到键值对模式，引用变量",
+        "editHeaders": "编辑请求头",
+        "headerName": "请求头名称",
+        "headerValue": "请求头值",
+        "addHeader": "添加请求头",
+        "enterAuthKey": "输入鉴权Key",
+        "valueRequired": "变量值不可为空",
+        "enterOrReferenceValue": "输入或引用参数值",
+        "enterAuthToken": "请输入鉴权Token值",
+        "authTooltip": "设置MCP请求的鉴权信息",
+        "headersDescription": "MCP请求的头信息，用于身份验证和特殊指令",
+        "dataMigrationStart": "检测到旧版本的customParams数据，正在迁移到headers...",
+        "dataMigrationComplete": "数据迁移完成",
+        "dataMigrationFailed": "数据迁移失败"
+      },
+      "inputs": {
+        "mcpServer": "MCP服务器",
+        "operation": "操作类型",
+        "operationTypes": {
+          "sse": "服务器发送事件(SSE)",
+          "streamableHttp": "可流式传输的HTTP"
+        },
+        "enableAuth": "启用鉴权",
+        "authValue": "Bearer Token",
+        "customParams": "自定义参数",
+        "headers": "请求头",
+        "authType": "鉴权类型",
+        "authTypes": {
+          "bearerToken": "Bearer Token",
+          "custom": "自定义"
+        },
+        "authKey": "鉴权Key",
+        "tokenValue": "鉴权Value",
+        "authAddTo": "添加到"
+      },
+      "outputs": {
+        "outputList": "结果列表",
+        "rowNum": "结果数量"
+      },
+      "simplifiedView": {
+        "server": "服务器",
+        "serverNotSet": "未设置服务器",
+        "auth": "鉴权",
+        "authStatus": {
+          "disabled": "未启用",
+          "bearerSet": "已设置 Bearer",
+          "bearerNotSet": "未设置 Bearer",
+          "custom": "自定义鉴权"
+        },
+        "operationTypes": {
+          "sse": "SSE",
+          "streamableHttp": "HTTP流"
+        },
+        "input": "输入",
+        "output": "输出",
+        "noCustomInputParams": "无自定义输入参数",
+        "complexObject": "[复杂对象]"
+      }
+    },
+    "loop": {
+      "label": "循环",
+      "description": "用于设置循环次数，并重复执行一系列任务",
+      "validation": {
+        "titleRequired": "节点标题不能为空",
+        "loopTimesRequired": "循环次数不能为空",
+        "loopTimesGreaterThanZero": "循环次数必须大于0"
+      },
+      "form": {
+        "loopConfig": "循环设置",
+        "loopTimes": "循环次数"
+      },
+      "inputs": {
+        "loopTimes": "循环次数"
+      },
+      "outputs": {
+        "result": "循环结果"
+      }
+    },
+    "condition": {
+      "label": "条件",
+      "description": "连接多个下游分支。如果设置的条件满足，则只执行相应的分支",
+      "validation": {
+        "titleRequired": "节点标题不能为空",
+        "leftExpressionRequired": "左侧表达式条件必填",
+        "rightExpressionRequired": "右侧表达式条件必填"
+      },
+      "form": {
+        "branches": "条件分支",
+        "addBranch": "添加分支",
+        "deleteBranch": "删除当前分支",
+        "addCondition": "添加条件",
+        "relations": {
+          "if": "如果IF",
+          "elseIf": "否则如果ElseIf",
+          "else": "否则ELSE"
+        },
+        "logical": {
+          "and": "且",
+          "or": "或"
+        }
+      },
+      "inputs": {
+        "conditions": "条件分支",
+        "expressionType": "条件分支类型",
+        "branchKey": "条件分支唯一标识",
+        "relation": "与上一个条件表达式之间的关系",
+        "leftExpression": "表达式左侧条件",
+        "relationOperator": "关系",
+        "rightExpression": "表达式右侧条件",
+        "contentType": "表达式右侧条件类型"
+      }
+    }
+  },
+  "components": {
+    "sidebar": {
+      "title": "侧边栏",
+      "close": "关闭"
+    },
+    "nodePanel": {
+      "title": "节点面板",
+      "search": "搜索节点"
+    },
+    "addNode": {
+      "title": "添加节点",
+      "cancel": "取消"
+    },
+    "paramsArrayEditor": {
+      "emptyNameError": "参数名称不能为空",
+      "duplicateNameError": "参数名称不能重复"
+    },
+    "outputParamsEditor": {
+      "paramName": "参数名称",
+      "addSubParam": "添加子参数",
+      "tooltip": "设置节点的输出参数，支持嵌套对象结构",
+      "headerTitle": "输出参数",
+      "emptyText": "暂无输出参数，点击下方按钮添加",
+      "addButtonText": "添加输出参数",
+      "newProperty": "新增子属性",
+      "newOutput": "新增输出参数",
+      "params": {
+        "renameKey": "点击重命名参数",
+        "system": "系统",
+        "delete": "删除参数",
+        "addDescription": "添加描述..."
+      },
+      "warning": {
+        "builtInModifyBlocked": "尝试修改内置参数 {{paramKey}}，操作被阻止",
+        "builtInDeleteBlocked": "尝试删除内置参数 {{paramKey}}，操作被阻止",
+        "builtInAddChildBlocked": "尝试向内置参数 {{paramKey}} 添加子参数，操作被阻止",
+        "builtInRenameBlocked": "尝试重命名内置参数 {{paramKey}}，操作被阻止",
+        "keyExists": "属性名已存在: {{newKey}}",
+        "renameToBuiltIn": "尝试将参数重命名为内置参数名 {{newKey}}，操作被阻止",
+        "propNotFound": "找不到属性集合: {{path}}",
+        "syncError": "表单同步出错"
+      }
+    }
+  },
+  "formComponents": {
+    "formHeader": {
+      "rename": "重命名",
+      "description": "描述",
+      "delete": "删除",
+      "copy": "复制"
+    },
+    "formContent": {
+      "required": "必填"
+    },
+    "formOutputs": {
+      "title": "输出",
+      "add": "添加参数",
+      "name": "参数名称",
+      "type": "参数类型",
+      "description": "描述",
+      "required": "必填",
+      "default": "默认值"
+    },
+    "propertiesEdit": {
+      "addProperty": "添加属性",
+      "emptyText": "暂无输出参数，点击添加",
+      "inputVariableName": "输入变量名",
+      "collapse": "收缩",
+      "expand": "展开",
+      "referenceData": "引用数据",
+      "defaultValue": "默认值",
+      "selectReferenceParam": "选择引用参数",
+      "description": "描述",
+      "parameterHelpText": "帮助大家理解这参数的作用",
+      "selectType": "选择类型",
+      "pleaseInput": "请输入"
+    },
+    "typeTag": {
+      "string": "字符串",
+      "number": "数字",
+      "boolean": "布尔值",
+      "object": "对象",
+      "array": "数组",
+      "file": "文件"
+    }
+  },
+  "plugins": {
+    "variableSelector": {
+      "loopVariables": "循环变量",
+      "indexLoopVariable": "index (循环索引)",
+      "itemLoopVariable": "item (循环项)",
+      "selectVariable": "选择变量",
+      "noData": "无数据"
+    }
+  },
+  "common": {
+    "errors": {
+      "formSubmit": "表单提交失败",
+      "jsonParseFailed": "JSON解析失败",
+      "initParams": "初始化参数时发生错误",
+      "updateParamProps": "更新参数属性时发生错误",
+      "updateOutputParam": "更新输出参数时发生错误",
+      "deleteOutputParam": "删除输出参数时发生错误",
+      "addChildParam": "添加子参数时发生错误",
+      "addTopLevelOutputParam": "添加顶层输出参数时发生错误",
+      "selectKnowledgeBase": "选择知识库时出错",
+      "clearKnowledgeBase": "清除知识库时出错",
+      "prepareFormSubmit": "准备提交表单时发生错误"
+    }
+  },
+  "loginPage": {
+    "title": "登录",
+    "welcomeLogin": "欢迎登录",
+    "welcomeRegister": "欢迎注册",
+    "tabs":{
+      "passwordLogin": "密码登录",
+      "captchaLogin": "验证码登录"
+    },
+    "phone": {
+      "label": "手机号码",
+      "placeholder": "请输入手机号码",
+      "errorRequired": "手机号码不能为空",
+      "errorFormat": "手机号码格式不正确"
+    },
+    "captcha":{
+      "label": "验证码",
+      "placeholder": "请输入验证码",
+      "errorRequired": "验证码不能为空",
+      "getLabel": "获取验证码"
+    },
+    "password": {
+      "label": "密码",
+      "placeholder": "请输入密码",
+      "errorRequired": "密码不能为空"
+    },
+    "confirmPassword": {
+      "label": "确认密码",
+      "placeholder": "请再次输入密码",
+      "errorRequired": "确认密码不能为空",
+      "errorNotMatch": "两次输入的密码不一致"
+    },
+    "loginBtn": {
+      "title": "登录"
+    },
+    "registerBtn": {
+      "title": "注册"
+    },
+    "switchLabel": {
+      "login": {
+        "title": "没有账号？",
+        "link": "立即注册"
+      },
+      "register": {
+        "title": "已有账号？",
+        "link": "立即登录"
+      }
+    },
+    "tip":{
+      "registerSuccess": "注册成功",
+      "registerFailed": "注册失败",
+      "loginSuccess": "登录成功",
+      "loginFailed": "登录失败",
+      "getCaptchaSuccess": "验证码已发送",
+      "getCaptchaFailed": "获取验证码失败"
+    }
+  },
+  "boardPage":{
+    "title": "kedo流程控制台",
+    "allFlow":"全部流程",
+    "user": "用户",
+    "createFlow": "新建流程",
+    "emptyImageText":"暂无图片",
+    "emptyText": "暂无数据",
+    "editFlow": "编辑流程",
+    "logout": "退出登录",
+    "createModal":{
+      "title": "新建流程",
+      "flowName": {
+        "label": "流程名称",
+        "placeholder": "请输入流程名称",
+        "errorRequired": "流程名称不能为空"
+      },
+      "flowDescription": {
+        "label": "流程描述",
+        "placeholder": "请输入流程描述",
+        "errorRequired": "流程描述不能为空"
+      },
+      "okText": "确定",
+      "cancelText": "取消",
+      "tip": {
+        "createSuccess": "创建成功",
+        "createFailed": "创建失败"
+      }
+    }
+  }
+}

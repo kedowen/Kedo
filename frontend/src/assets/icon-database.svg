@@ -1,0 +1,28 @@
+<svg t="1743574173683" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="17390" width="200" height="200">
+  <!-- 数据库顶部椭圆 -->
+  <ellipse cx="512" cy="200" rx="320" ry="120" fill="#E9F2FF" stroke="#3F76FC" stroke-width="20" p-id="17391"></ellipse>
+  
+  <!-- 数据库中间椭圆 -->
+  <ellipse cx="512" cy="512" rx="320" ry="120" fill="#E9F2FF" stroke="#3F76FC" stroke-width="20" p-id="17392"></ellipse>
+  
+  <!-- 数据库底部椭圆 -->
+  <ellipse cx="512" cy="824" rx="320" ry="120" fill="#E9F2FF" stroke="#3F76FC" stroke-width="20" p-id="17393"></ellipse>
+  
+  <!-- 数据库左侧连接线 -->
+  <line x1="192" y1="200" x2="192" y2="824" stroke="#3F76FC" stroke-width="20" p-id="17394"></line>
+  
+  <!-- 数据库右侧连接线 -->
+  <line x1="832" y1="200" x2="832" y2="824" stroke="#3F76FC" stroke-width="20" p-id="17395"></line>
+  
+  <!-- 装饰线条 - 顶部数据行 -->
+  <line x1="280" y1="180" x2="600" y2="180" stroke="#3F76FC" stroke-width="10" p-id="17396"></line>
+  <line x1="280" y1="220" x2="520" y2="220" stroke="#3F76FC" stroke-width="10" p-id="17397"></line>
+  
+  <!-- 装饰线条 - 中间数据行 -->
+  <line x1="280" y1="492" x2="600" y2="492" stroke="#3F76FC" stroke-width="10" p-id="17398"></line>
+  <line x1="280" y1="532" x2="520" y2="532" stroke="#3F76FC" stroke-width="10" p-id="17399"></line>
+  
+  <!-- 装饰线条 - 底部数据行 -->
+  <line x1="280" y1="804" x2="600" y2="804" stroke="#3F76FC" stroke-width="10" p-id="17400"></line>
+  <line x1="280" y1="844" x2="520" y2="844" stroke="#3F76FC" stroke-width="10" p-id="17401"></line>
+</svg> 

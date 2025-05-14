@@ -1,0 +1,2548 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Kedo.Application</name>
+    </assembly>
+    <members>
+        <member name="M:Kedo.Application.BaseIDatatem.Service.DataItemService.OnionbitOSSConfig">
+            <summary>
+            OSS 配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.BaseIDatatem.Service.ISql.GetDataItem(System.String)">
+            <summary>
+            获取基础资料信息
+            </summary>
+            <param name="F_ItemCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.BaseIDatatem.Service.ISql.GetFormSchemeData(System.String)">
+            <summary>
+            获取自定义表单数据
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.DataSourceServices.QueryDataSourceType(System.String)">
+            <summary>
+            数据源类别 类别  SqlServer ,Msql,websocket
+            </summary>
+            <param name="mDataSourceType"> DataSourceType </param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.DataSourceServices.QueryDBDataSourceType(System.String)">
+            <summary>
+            数据源类别 类别  SqlServer ,Msql  只是数据库 
+            </summary>
+            <param name="mDataSourceType"> DataSourceType </param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.DataSourceServices.CreateDataSource(Kedo.Application.DataSource.Dtos.input.CreateDataSourceInput)">
+            <summary>
+            创建数据源
+            </summary>
+            <param name="createDataSourceInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.DataSourceServices.ModifyDataSource(Kedo.Application.DataSource.Dtos.input.ModifyDataSourceInput)">
+            <summary>
+            修改数据源信息
+            </summary>
+            <param name="modifyDataSourceInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.DataSourceServices.RemoveDataSource(Kedo.Application.DataSource.Dtos.input.RemoveDataSourceInput)">
+            <summary>
+            删除数据源信息
+            </summary>
+            <param name="removeDataSourceInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.DataSourceServices.QueryDataSourceInfoListByDataType(System.String)">
+            <summary>
+            根据数据源类型 查询数据源列表  列表显示 
+            </summary>
+            <param name="F_DataTypeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.DataSourceServices.DataSourceDetailInfoById(System.String)">
+            <summary>
+            根据数据源Id 查询数据源详细信息  在编辑 查询信息的时候会用到 查询详情
+            </summary>
+            <param name="F_Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.DataSourceServices.DataSourceInfoById(System.String)">
+            <summary>
+            根据数据源Id 查询数据源详细信息  
+            </summary>
+            <param name="F_Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.DataSourceServices.QueryDBDataBySQL(Kedo.Application.DataSource.Dtos.input.ExecuteSqlQueryInput)">
+            <summary>
+            通过SQL 查询数据 
+            </summary>
+            <param name="executeSqlQueryInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.DataSourceServices.ConnectionCheck(Kedo.Application.DataSource.Dtos.input.CheckDataSourceConnectionInput)">
+            <summary>
+            测试数据源连接
+            </summary>
+            <param name="connectionInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.DataSourceService.CreateDataSource(Kedo.Application.DataSource.Dtos.input.CreateDataSourceInput)">
+            <summary>
+            创建数据源
+            </summary>
+            <param name="createDataSourceInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.DataSourceService.ModifyDataSource(Kedo.Application.DataSource.Dtos.input.ModifyDataSourceInput)">
+            <summary>
+            修改数据源信息
+            </summary>
+            <param name="modifyDataSourceInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.DataSourceService.RemoveDataSource(Kedo.Application.DataSource.Dtos.input.RemoveDataSourceInput)">
+            <summary>
+            删除数据源信息
+            </summary>
+            <param name="removeDataSourceInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.DataSourceService.QueryDataSourceInfoListByDataType(System.String)">
+            <summary>
+            根据数据源类型 查询数据源列表
+            </summary>
+            <param name="F_DataTypeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.DataSourceService.DataSourceDetailInfoById(System.String)">
+            <summary>
+            根据数据源Id 查询数据源详细信息
+            </summary>
+            <param name="F_Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.DataSourceService.DataSourceInfoById(System.String)">
+            <summary>
+            根据数据源Id 查询数据源详细信息
+            </summary>
+            <param name="F_Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.DataSourceService.QueryDataSourceType(System.String)">
+            <summary>
+            数据源类别
+            </summary>
+            <param name="mDataSourceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.DataSourceService.QueryDBDataSourceType(System.String)">
+            <summary>
+            数据库类别
+            </summary>
+            <param name="mDataSourceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.DataSourceService.QueryDBDataBySQL(Kedo.Application.DataSource.Dtos.input.ExecuteSqlQueryInput)">
+            <summary>
+            通过SQL 查询数据 
+            </summary>
+            <param name="executeSqlQueryInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.DataSourceService.ConnectionCheck(Kedo.Application.DataSource.Dtos.input.CheckDataSourceConnectionInput)">
+            <summary>
+            测试数据源连接
+            </summary>
+            <param name="connectionInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.IDataSourceService.QueryDataSourceType(System.String)">
+            <summary>
+            数据源类别 类别
+            </summary>
+            <param name="mDataSourceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.IDataSourceService.QueryDBDataSourceType(System.String)">
+            <summary>
+            数据源类别 类别
+            </summary>
+            <param name="mDataSourceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.IDataSourceService.CreateDataSource(Kedo.Application.DataSource.Dtos.input.CreateDataSourceInput)">
+            <summary>
+            创建数据源
+            </summary>
+            <param name="createDataSourceInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.IDataSourceService.ModifyDataSource(Kedo.Application.DataSource.Dtos.input.ModifyDataSourceInput)">
+            <summary>
+            修改数据源信息
+            </summary>
+            <param name="modifyDataSourceInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.IDataSourceService.RemoveDataSource(Kedo.Application.DataSource.Dtos.input.RemoveDataSourceInput)">
+            <summary>
+            删除数据源信息
+            </summary>
+            <param name="removeDataSourceInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.IDataSourceService.QueryDataSourceInfoListByDataType(System.String)">
+            <summary>
+            根据数据源类型 查询数据源列表
+            </summary>
+            <param name="F_DataTypeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.IDataSourceService.DataSourceDetailInfoById(System.String)">
+            <summary>
+            根据数据源Id 查询数据源详细信息
+            </summary>
+            <param name="F_Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.IDataSourceService.DataSourceInfoById(System.String)">
+            <summary>
+            根据数据源Id 查询数据源详细信息
+            </summary>
+            <param name="F_Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.IDataSourceService.QueryDBDataBySQL(Kedo.Application.DataSource.Dtos.input.ExecuteSqlQueryInput)">
+            <summary>
+            通过数据库查询执行结果
+            </summary>
+            <param name="executeSqlQueryInput">数据源类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.IDataSourceService.ConnectionCheck(Kedo.Application.DataSource.Dtos.input.CheckDataSourceConnectionInput)">
+            <summary>
+            数据源连接测试
+            </summary>
+            <param name="connectionInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.ISql.QueryDataSourceType(System.String)">
+            <summary>
+            获取基础资料信息
+            </summary>
+            <param name="F_ItemCode">DataSourceType</param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.ISql.QueryDBDataSourceType(System.String)">
+            <summary>
+            获取基础资料信息  F_ItemType='1'  代表数据库 
+            </summary>
+            <param name="F_ItemCode">DataSourceType</param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.ISql.QueryDataSourceInfoListByDataType(System.String)">
+            <summary>
+            根据数据源类型 查询数据源列表
+            </summary>
+            <param name="F_DataTypeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.ISql.QueryDataSourceDetailInfo(System.String)">
+            <summary>
+            根据数据源Id 查询数据源详细信息
+            </summary>
+            <param name="F_Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.ISql.QueryDataSourceInfoById(System.String)">
+            <summary>
+            根据数据源Id 查询数据源详细信息
+            </summary>
+            <param name="F_Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.DataSource.Services.ISql.QueryDataSourceTypeById(System.String)">
+            <summary>
+            根据数据源Id 查询数据源详细信息
+            </summary>
+            <param name="F_Id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Kedo.Application.KdwFunctionCall.Dtos.input.FunctionCallProcessRequestInput">
+            <summary>
+            处理用户请求输入参数
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.input.FunctionCallProcessRequestInput.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.input.FunctionCallProcessRequestInput.Message">
+            <summary>
+            用户消息内容
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.input.FunctionCallProcessRequestInput.SessionId">
+            <summary>
+            会话ID，可选，新对话不需要提供
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.KdwFunctionCall.Dtos.output.ConversationMessageOutput">
+            <summary>
+            会话消息输出
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.output.ConversationMessageOutput.MessageId">
+            <summary>
+            消息ID
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.output.ConversationMessageOutput.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.output.ConversationMessageOutput.Role">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.output.ConversationMessageOutput.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.output.ConversationMessageOutput.FunctionName">
+            <summary>
+            功能函数名称
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.output.ConversationMessageOutput.FunctionArgs">
+            <summary>
+            功能函数参数
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.output.ConversationMessageOutput.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.KdwFunctionCall.Dtos.output.FunctionDefinitionOutput">
+            <summary>
+            功能函数定义输出
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.output.FunctionDefinitionOutput.FunctionId">
+            <summary>
+            功能函数ID
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.output.FunctionDefinitionOutput.FunctionName">
+            <summary>
+            功能函数名称
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.output.FunctionDefinitionOutput.Description">
+            <summary>
+            功能函数描述
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.output.FunctionDefinitionOutput.EndpointUrl">
+            <summary>
+            端点URL
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.output.FunctionDefinitionOutput.HttpMethod">
+            <summary>
+            HTTP方法
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.output.FunctionDefinitionOutput.ParametersSchema">
+            <summary>
+            参数架构
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.KdwFunctionCall.Dtos.output.ProcessRequestOutput">
+            <summary>
+            处理用户请求输出结果
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.output.ProcessRequestOutput.Message">
+            <summary>
+            处理结果消息
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.output.ProcessRequestOutput.FunctionCalled">
+            <summary>
+            是否调用了功能函数
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.output.ProcessRequestOutput.FunctionName">
+            <summary>
+            调用的功能函数名称
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.output.ProcessRequestOutput.FunctionResult">
+            <summary>
+            功能函数调用结果
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Dtos.output.ProcessRequestOutput.Success">
+            <summary>
+            是否处理成功
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.KdwFunctionCall.KdwFunctionCallServices">
+            <summary>
+            OpenAI Function Call智能服务接口
+            </summary>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.KdwFunctionCallServices.#ctor(Kedo.Application.KdwFunctionCall.Services.IKdwFunctionCallService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="functionCallService">Function Call服务</param>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.KdwFunctionCallServices.ProcessUserRequest(Kedo.Application.KdwFunctionCall.Dtos.input.FunctionCallProcessRequestInput)">
+            <summary>
+            处理用户请求，智能调用相关功能服务
+            </summary>
+            <param name="input">用户请求输入参数</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.KdwFunctionCallServices.GetRegisteredFunctions">
+            <summary>
+            获取所有已注册的功能函数列表
+            </summary>
+            <returns>功能函数列表</returns>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.KdwFunctionCallServices.GetFunctionByName(System.String)">
+            <summary>
+            根据名称获取指定功能函数
+            </summary>
+            <param name="functionName">功能函数名称</param>
+            <returns>功能函数定义</returns>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.KdwFunctionCallServices.GetUserConversationHistory(System.String)">
+            <summary>
+            获取用户的会话历史记录
+            </summary>
+            <param name="userId">用户ID</param>
+            <returns>用户会话历史</returns>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.KdwFunctionCallServices.ClearUserConversationHistory(System.String)">
+            <summary>
+            清除用户的会话历史
+            </summary>
+            <param name="userId">用户ID</param>
+            <returns>清除结果</returns>
+        </member>
+        <member name="T:Kedo.Application.KdwFunctionCall.Models.LLMSettings">
+            <summary>
+            OpenAI配置
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.LLMSettings.ApiKey">
+            <summary>
+            API密钥
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.LLMSettings.Model">
+            <summary>
+            模型名称
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.LLMSettings.Temperature">
+            <summary>
+            温度
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.LLMSettings.MaxTokens">
+            <summary>
+            最大令牌数
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.LLMSettings.ChatUrl">
+            <summary>
+            ChatUrl
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.KdwFunctionCall.Models.Message">
+            <summary>
+            OpenAI消息
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.Message.Role">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.Message.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.Message.FunctionCall">
+            <summary>
+            函数调用
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.KdwFunctionCall.Models.FunctionDefinition">
+            <summary>
+            函数定义
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.FunctionDefinition.Name">
+            <summary>
+            函数名称
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.FunctionDefinition.Description">
+            <summary>
+            函数描述
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.FunctionDefinition.Parameters">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.KdwFunctionCall.Models.FunctionCall">
+            <summary>
+            函数调用
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.FunctionCall.Name">
+            <summary>
+            函数名称
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.FunctionCall.Arguments">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.KdwFunctionCall.Models.ResponseChoice">
+            <summary>
+            OpenAI响应选择
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.ResponseChoice.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.ResponseChoice.FinishReason">
+            <summary>
+            结束原因
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.KdwFunctionCall.Models.ResponseMessage">
+            <summary>
+            响应消息
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.ResponseMessage.Role">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.ResponseMessage.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.ResponseMessage.FunctionCalls">
+            <summary>
+            函数调用
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.KdwFunctionCall.Models.OpenAIResponse">
+            <summary>
+            OpenAI响应
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.OpenAIResponse.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.OpenAIResponse.Choices">
+            <summary>
+            选择列表
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.KdwFunctionCall.Models.OpenAIRequest">
+            <summary>
+            OpenAI请求
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.OpenAIRequest.Model">
+            <summary>
+            模型
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.OpenAIRequest.Messages">
+            <summary>
+            消息列表
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.OpenAIRequest.FunctionCall">
+            <summary>
+            函数调用模式
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.OpenAIRequest.Temperature">
+            <summary>
+            温度
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.KdwFunctionCall.Models.OpenAIRequest.MaxTokens">
+            <summary>
+            最大令牌数
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.KdwFunctionCall.Services.IKdwFunctionCallService">
+            <summary>
+            OpenAI Function Calling服务接口
+            </summary>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.Services.IKdwFunctionCallService.ProcessUserRequestAsync(Kedo.Application.KdwFunctionCall.Dtos.input.FunctionCallProcessRequestInput)">
+            <summary>
+            处理用户请求，智能调用相关功能服务
+            </summary>
+            <param name="input">用户请求输入参数</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.Services.IKdwFunctionCallService.GetRegisteredFunctions">
+            <summary>
+            获取所有已注册的功能函数列表
+            </summary>
+            <returns>功能函数列表</returns>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.Services.IKdwFunctionCallService.GetFunctionByName(System.String)">
+            <summary>
+            根据名称获取指定功能函数
+            </summary>
+            <param name="functionName">功能函数名称</param>
+            <returns>功能函数定义</returns>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.Services.IKdwFunctionCallService.GetUserConversationHistory(System.String)">
+            <summary>
+            获取用户的会话历史记录
+            </summary>
+            <param name="userId">用户ID</param>
+            <returns>用户会话历史</returns>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.Services.IKdwFunctionCallService.ClearUserConversationHistoryAsync(System.String)">
+            <summary>
+            清除用户的会话历史
+            </summary>
+            <param name="userId">用户ID</param>
+            <returns>清除结果</returns>
+        </member>
+        <member name="T:Kedo.Application.KdwFunctionCall.Services.ISql">
+            <summary>
+            Function Call SQL操作接口
+            </summary>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.Services.ISql.GetAllRegisteredFunctions">
+            <summary>
+            获取所有注册的功能函数
+            </summary>
+            <returns>功能函数列表</returns>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.Services.ISql.GetFunctionByName(System.String)">
+            <summary>
+            根据名称获取功能函数
+            </summary>
+            <param name="functionName">功能函数名称</param>
+            <returns>功能函数</returns>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.Services.ISql.SaveConversationMessage(System.String,System.String,System.String,System.String,System.String,System.String,System.DateTime)">
+            <summary>
+            保存会话消息
+            </summary>
+            <param name="messageId">消息ID</param>
+            <param name="userId">用户ID</param>
+            <param name="role">角色</param>
+            <param name="content">内容</param>
+            <param name="functionName">功能函数名称</param>
+            <param name="functionArgs">功能函数参数</param>
+            <param name="createTime">创建时间</param>
+            <returns>操作是否成功</returns>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.Services.ISql.GetUserConversationHistory(System.String)">
+            <summary>
+            获取用户会话历史
+            </summary>
+            <param name="userId">用户ID</param>
+            <returns>会话历史记录</returns>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.Services.ISql.ClearUserConversationHistory(System.String)">
+            <summary>
+            清除用户会话历史
+            </summary>
+            <param name="userId">用户ID</param>
+            <returns>操作是否成功</returns>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.Services.ISql.LogFunctionCall(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.String,System.DateTime)">
+            <summary>
+            记录函数调用日志
+            </summary>
+            <param name="logId">日志ID</param>
+            <param name="userId">用户ID</param>
+            <param name="functionName">功能函数名称</param>
+            <param name="requestData">请求数据</param>
+            <param name="responseData">响应数据</param>
+            <param name="isSuccess">是否成功</param>
+            <param name="errorMessage">错误信息</param>
+            <param name="createTime">创建时间</param>
+            <returns>操作是否成功</returns>
+        </member>
+        <member name="T:Kedo.Application.KdwFunctionCall.Services.KdwFunctionCallService">
+            <summary>
+            LLM Function Call服务实现
+            </summary>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.Services.KdwFunctionCallService.#ctor(Microsoft.Extensions.Logging.ILogger{Kedo.Application.KdwFunctionCall.Services.KdwFunctionCallService},Microsoft.AspNetCore.Http.IHttpContextAccessor,Kedo.Application.KdwFunctionCall.Services.ISql,System.Net.Http.IHttpClientFactory,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.Services.KdwFunctionCallService.ProcessUserRequestAsync(Kedo.Application.KdwFunctionCall.Dtos.input.FunctionCallProcessRequestInput)">
+            <summary>
+            处理用户请求，智能调用相关功能服务
+            </summary>
+            <param name="input">用户请求输入参数</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.Services.KdwFunctionCallService.GetRegisteredFunctions">
+            <summary>
+            获取所有已注册的功能函数列表
+            </summary>
+            <returns>功能函数列表</returns>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.Services.KdwFunctionCallService.GetFunctionByName(System.String)">
+            <summary>
+            根据名称获取指定功能函数
+            </summary>
+            <param name="functionName">功能函数名称</param>
+            <returns>功能函数定义</returns>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.Services.KdwFunctionCallService.GetUserConversationHistory(System.String)">
+            <summary>
+            获取用户的会话历史记录
+            </summary>
+            <param name="userId">用户ID</param>
+            <returns>用户会话历史</returns>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.Services.KdwFunctionCallService.ClearUserConversationHistoryAsync(System.String)">
+            <summary>
+            清除用户的会话历史
+            </summary>
+            <param name="userId">用户ID</param>
+            <returns>清除结果</returns>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.Services.KdwFunctionCallService.CallOpenAIApiAsync(Kedo.Application.KdwFunctionCall.Models.OpenAIRequest)">
+            <summary>
+            调用OpenAI API
+            </summary>
+            <param name="request">OpenAI请求</param>
+            <returns>OpenAI响应</returns>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.Services.KdwFunctionCallService.ProcessOpenAIResponseAsync(Kedo.Application.KdwFunctionCall.Models.OpenAIResponse,System.String,System.String,System.Collections.Generic.List{Kedo.Application.KdwFunctionCall.Dtos.output.FunctionDefinitionOutput})">
+            <summary>
+            处理OpenAI响应，执行函数调用
+            </summary>
+            <param name="response">OpenAI响应</param>
+            <param name="userId">用户ID</param>
+            <param name="originalMessage">用户原始消息</param>
+            <param name="availableFunctions">可用的函数定义列表</param>
+            <returns>处理结果</returns>
+        </member>
+        <member name="M:Kedo.Application.KdwFunctionCall.Services.KdwFunctionCallService.CallServiceApiAsync(Kedo.Application.KdwFunctionCall.Dtos.output.FunctionDefinitionOutput,System.String)">
+            <summary>
+            调用服务API
+            </summary>
+            <param name="functionConfig">功能函数配置</param>
+            <param name="arguments">函数参数</param>
+            <returns>API调用结果</returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.IOnionFlowDataService.SubmitOnionFlowData(Kedo.Application.OnionFlowData.Dtos.input.OnionFlowDataInput)">
+            <summary>
+            提交OnionFlow表单设计模板
+            </summary>
+            <param name="onionFlowDataInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.IOnionFlowDataService.EditOnionFlowData(Kedo.Application.OnionFlowData.Dtos.input.OnionFlowDataInputForEdit)">
+            <summary>
+            编辑 OnionFlow Json  
+            </summary>
+            <param name="onionFlowDataInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.IOnionFlowDataService.SubmitOnionFlowDataForCopy(Kedo.Application.OnionFlowData.Dtos.input.OnionFlowDataInputForCopy)">
+            <summary>
+            复制 OnionFlow Json  
+            </summary>
+            <param name="onionFlowDataInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.IOnionFlowDataService.PublishOnionFlowData(Kedo.Application.OnionFlowData.Dtos.input.OnionFlowDataInputForPublishment)">
+            <summary>
+            发布 OnionFlow Json  
+            </summary>
+            <param name="onionFlowDataInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.IOnionFlowDataService.RemoveOnionFlowData(Kedo.Application.OnionFlowData.Dtos.input.OnionFlowDataInputForRemove)">
+            <summary>
+            删除表单
+            </summary>
+            <param name="mOnionFlowDataInputForRemove">表单唯一编号 F_Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.IOnionFlowDataService.OnionFlowRecycleBin(System.String,System.String)">
+            <summary>
+            OnionFlow回收站
+            </summary>
+            <param name="userId"></param>
+            <param name="QueryField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.IOnionFlowDataService.QueryOnionFlowSchemeDataList(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取用户创建 OnionFlowData列表 [分页查询]
+            </summary>
+            <param name="userId"></param>
+            <param name="QueryField"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.IOnionFlowDataService.QueryMyOnionFlowSchemeDataListByTitle(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            查询用户创建 数据表单列表----模糊查询
+            </summary>
+            <param name="userId"></param>
+            <param name="mCaption"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.IOnionFlowDataService.QueryHotOnionFlowSchemeDataList">
+            <summary>
+            查询热门OnionFlow列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.IOnionFlowDataService.QueryOnionFlowIndustryCategory(System.String)">
+            <summary>
+            OnionFlow 类别查询  智慧政务  智慧校园 智慧工厂  传入参数:IndustryCategory
+            </summary>
+            <param name="mOnionFlowIndustryCategory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.IOnionFlowDataService.QueryOnionFlowSchemeDataByKey(System.String)">
+            <summary>
+             获取OnionFlow Json 数据 Mongodb
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.IOnionFlowDataService.QueryOnionFlowSchemeDataByIdAndUserId(System.String,System.String)">
+            <summary>
+            V2  获取OnionFlow Json 数据 Mongodb
+            </summary>
+            <param name="onionFlowId"></param>
+            <param name="F_UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.IOnionFlowDataService.QueryOnionFlowSchemeDataListFromMarketByCategory(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            通过类别 从市场中查询 OnionFlow   
+            </summary>
+            <param name="mCategory"></param>
+            <param name="QueryField"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.IOnionFlowDataService.QueryOnionFlowSchemeDataListFromMarketByTitle(System.String,System.Int32,System.Int32)">
+             <summary>
+            通过标题 OnionFlow 市场中查询
+             </summary>
+             <param name="mTitle"></param>
+             <param name="pageIndex"></param>
+             <param name="pageSize"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.IOnionFlowDataService.QueryUserViewOnionFlowHistoryDataListByTitle(System.String,System.String,System.Int32,System.Int32)">
+             <summary>
+            查询用户查看历史记录--通过标题检索
+             </summary>
+             <param name="userId"></param>
+             <param name="QueryField"></param>
+             <param name="pageIndex"></param>
+             <param name="pageSize"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.IOnionFlowDataService.QueryOnionFlowHisVersion(System.String)">
+            <summary>
+            查询OnionFlow历史版本
+            </summary>
+            <param name="OnionFlowId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.IOnionFlowDataService.SetOnionFlowMajorVersion(Kedo.Application.OnionFlowData.Dtos.input.OnionFlowMajorVersionInput)">
+            <summary>
+            设置主版本
+            </summary>
+            <param name="onionFlowMajorVersionInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.IOnionFlowDataService.QueryGraphicAgentDataById(System.String)">
+            <summary>
+            查询图形智能体数据根据ID
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.IOnionFlowDataService.QueryOnionFlowDataById(System.String)">
+            <summary>
+            获取流程数据ById
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.QueryOnionFlowSchemeDataList(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取用户创建 OnionFlowData列表 [分页查询]
+            </summary>
+            <param name="F_CreateUserId"></param>
+            <param name="QueryField"></param>
+            <param name="rowIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.QueryOnionFlowSchemeDataListWithTitle(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取用户创建 OnionFlowData列表 [分页查询] - 带标题查询
+            </summary>
+            <param name="F_CreateUserId"></param>
+            <param name="QueryField"></param>
+            <param name="rowIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.QueryOnionFlowSchemeDataListTotalCount(System.String)">
+            <summary>
+            获取用户创建 OnionFlowData总数
+            </summary>
+            <param name="F_CreateUserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.QueryOnionFlowSchemeDataListWithTitleTotalCount(System.String,System.String)">
+            <summary>
+            获取用户创建 OnionFlowData总数 - 带标题查询
+            </summary>
+            <param name="F_CreateUserId"></param>
+            <param name="QueryField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.OnionFlowRecycleBin(System.String)">
+            <summary>
+            OnionFlow回收站
+            </summary>
+            <param name="F_CreateUserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.OnionFlowRecycleBinWithTitle(System.String,System.String)">
+            <summary>
+            OnionFlow回收站 - 带标题查询
+            </summary>
+            <param name="F_CreateUserId"></param>
+            <param name="QueryField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.QueryHotOnionFlowSchemeDataList">
+            <summary>
+            查询热门OnionFlow列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.QueryOnionFlowIndustryCategory">
+            <summary>
+            OnionFlow 类别查询
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.QueryOnionFlowIndustryCategoryWithFilter(System.String)">
+            <summary>
+            OnionFlow 类别查询 - 带条件
+            </summary>
+            <param name="mOnionFlowIndustryCategory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.QueryOnionFlowSchemeDataByKey(System.String)">
+            <summary>
+            获取OnionFlow Json 数据 Mongodb
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.QueryOnionFlowSchemeDataById(System.String)">
+            <summary>
+            V2 获取OnionFlow Json 数据 Mongodb
+            </summary>
+            <param name="onionFlowId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.QueryOnionFlowSchemeDataListFromMarketByCategory(System.String,System.Int32,System.Int32)">
+            <summary>
+            通过类别从市场中查询OnionFlow - 分页
+            </summary>
+            <param name="mCategory"></param>
+            <param name="rowIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.QueryOnionFlowSchemeDataListFromMarketByCategoryWithTitle(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            通过类别从市场中查询OnionFlow - 带标题查询
+            </summary>
+            <param name="mCategory"></param>
+            <param name="QueryField"></param>
+            <param name="rowIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.QueryOnionFlowSchemeDataListFromMarketByCategoryTotalCount(System.String)">
+            <summary>
+            通过类别从市场中查询OnionFlow - 总数
+            </summary>
+            <param name="mCategory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.QueryOnionFlowSchemeDataListFromMarketByCategoryWithTitleTotalCount(System.String,System.String)">
+            <summary>
+            通过类别从市场中查询OnionFlow - 带标题查询 - 总数
+            </summary>
+            <param name="mCategory"></param>
+            <param name="QueryField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.QueryOnionFlowSchemeDataListFromMarketByTitle(System.String,System.Int32,System.Int32)">
+            <summary>
+            通过标题从市场中查询OnionFlow - 分页
+            </summary>
+            <param name="mTitle"></param>
+            <param name="rowIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.QueryOnionFlowSchemeDataListFromMarketByTitleTotalCount(System.String)">
+            <summary>
+            通过标题从市场中查询OnionFlow - 总数
+            </summary>
+            <param name="mTitle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.QueryUserViewOnionFlowHistoryDataListByTitle(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            查询用户查看历史记录 - 带标题查询 - 分页
+            </summary>
+            <param name="userId"></param>
+            <param name="QueryField"></param>
+            <param name="rowIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.QueryUserViewOnionFlowHistoryDataListByTitleTotalCount(System.String,System.String)">
+            <summary>
+            查询用户查看历史记录 - 带标题查询 - 总数
+            </summary>
+            <param name="userId"></param>
+            <param name="QueryField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.QueryOnionFlowHisVersion(System.String)">
+            <summary>
+            查询OnionFlow历史版本
+            </summary>
+            <param name="OnionFlowId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.QueryGraphicAgentDataById(System.String)">
+            <summary>
+            查询图形智能体数据根据ID
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.ISql.QueryOnionFlowDataById(System.String)">
+            <summary>
+            通过ID查询OnionFlowData
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.OnionFlowDataService.SubmitOnionFlowData(Kedo.Application.OnionFlowData.Dtos.input.OnionFlowDataInput)">
+            <summary>
+            提交OnionFlow表单设计模板
+            </summary>
+            <param name="onionFlowDataInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.OnionFlowDataService.EditOnionFlowData(Kedo.Application.OnionFlowData.Dtos.input.OnionFlowDataInputForEdit)">
+            <summary>
+            编辑 OnionFlow Json  
+            </summary>
+            <param name="onionFlowDataInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.OnionFlowDataService.SubmitOnionFlowDataForCopy(Kedo.Application.OnionFlowData.Dtos.input.OnionFlowDataInputForCopy)">
+            <summary>
+            复制 OnionFlow Json  
+            </summary>
+            <param name="onionFlowDataInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.OnionFlowDataService.PublishOnionFlowData(Kedo.Application.OnionFlowData.Dtos.input.OnionFlowDataInputForPublishment)">
+            <summary>
+            发布 OnionFlow Json  
+            </summary>
+            <param name="onionFlowDataInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.OnionFlowDataService.RemoveOnionFlowData(Kedo.Application.OnionFlowData.Dtos.input.OnionFlowDataInputForRemove)">
+            <summary>
+            删除表单
+            </summary>
+            <param name="mOnionFlowDataInputForRemove">表单唯一编号 F_Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.OnionFlowDataService.OnionFlowRecycleBin(System.String,System.String)">
+            <summary>
+            OnionFlow回收站
+            </summary>
+            <param name="userId"></param>
+            <param name="QueryField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.OnionFlowDataService.QueryOnionFlowSchemeDataList(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取用户创建 OnionFlowData列表 [分页查询]
+            </summary>
+            <param name="userId"></param>
+            <param name="QueryField"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.OnionFlowDataService.QueryMyOnionFlowSchemeDataListByTitle(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            查询用户创建 数据表单列表----模糊查询
+            </summary>
+            <param name="userId"></param>
+            <param name="mCaption"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.OnionFlowDataService.QueryHotOnionFlowSchemeDataList">
+            <summary>
+            查询热门OnionFlow列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.OnionFlowDataService.QueryOnionFlowIndustryCategory(System.String)">
+            <summary>
+            OnionFlow 类别查询  智慧政务  智慧校园 智慧工厂  传入参数:IndustryCategory
+            </summary>
+            <param name="mOnionFlowIndustryCategory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.OnionFlowDataService.QueryOnionFlowSchemeDataByKey(System.String)">
+            <summary>
+             获取OnionFlow Json 数据 Mongodb
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.OnionFlowDataService.QueryOnionFlowSchemeDataByIdAndUserId(System.String,System.String)">
+            <summary>
+            V2  获取OnionFlow Json 数据 Mongodb
+            </summary>
+            <param name="onionFlowId"></param>
+            <param name="F_UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.OnionFlowDataService.QueryOnionFlowSchemeDataListFromMarketByCategory(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            通过类别 从市场中查询 OnionFlow   
+            </summary>
+            <param name="mCategory"></param>
+            <param name="QueryField"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.OnionFlowDataService.QueryOnionFlowSchemeDataListFromMarketByTitle(System.String,System.Int32,System.Int32)">
+             <summary>
+            通过标题 OnionFlow 市场中查询
+             </summary>
+             <param name="mTitle"></param>
+             <param name="pageIndex"></param>
+             <param name="pageSize"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.OnionFlowDataService.QueryUserViewOnionFlowHistoryDataListByTitle(System.String,System.String,System.Int32,System.Int32)">
+             <summary>
+            查询用户查看历史记录--通过标题检索
+             </summary>
+             <param name="userId"></param>
+             <param name="QueryField"></param>
+             <param name="pageIndex"></param>
+             <param name="pageSize"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.OnionFlowDataService.QueryOnionFlowHisVersion(System.String)">
+            <summary>
+            查询OnionFlow历史版本
+            </summary>
+            <param name="OnionFlowId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.OnionFlowDataService.SetOnionFlowMajorVersion(Kedo.Application.OnionFlowData.Dtos.input.OnionFlowMajorVersionInput)">
+            <summary>
+            设置主版本
+            </summary>
+            <param name="onionFlowMajorVersionInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.OnionFlowDataService.QueryGraphicAgentDataById(System.String)">
+            <summary>
+            查询图形智能体数据根据ID
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowData.Service.OnionFlowDataService.QueryOnionFlowDataById(System.String)">
+            <summary>
+            辅助方法：通过ID查询OnionFlowData
+            </summary>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowDataServices.SubmitOnionFlowData(Kedo.Application.OnionFlowData.Dtos.input.OnionFlowDataInput)">
+            <summary>
+            提交OnionFlow 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowDataServices.EditOnionFlowData(Kedo.Application.OnionFlowData.Dtos.input.OnionFlowDataInputForEdit)">
+            <summary>
+            编辑 OnionFlow Json  
+            </summary>
+            <param name="onionFlowDataInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowDataServices.CopyOnionFlowData(Kedo.Application.OnionFlowData.Dtos.input.OnionFlowDataInputForCopy)">
+            <summary>
+            复制 OnionFlow Json  
+            </summary>
+            <param name="onionFlowDataInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowDataServices.PublishOnionFlowData(Kedo.Application.OnionFlowData.Dtos.input.OnionFlowDataInputForPublishment)">
+            <summary>
+            发布 OnionFlow Json  
+            </summary>
+            <param name="onionFlowDataInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowDataServices.RemoveOnionFlowData(Kedo.Application.OnionFlowData.Dtos.input.OnionFlowDataInputForRemove)">
+            <summary>
+            删除表单
+            </summary>
+            <param name="mOnionFlowDataInputForRemove">表单唯一编号 F_Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowDataServices.OnionFlowRecycleBin(System.String,System.String)">
+            <summary>
+            OnionFlow回收站
+            </summary>
+            <param name="userId"></param>
+            <param name="QueryField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowDataServices.QueryOnionFlowDataById(System.String)">
+            <summary>
+            获取流程数据
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowDataServices.QueryOnionFlowSchemeDataList(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取用户创建 OnionFlowData列表 [分页查询]
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <param name="userId"></param>
+            <param name="QueryField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowDataServices.QueryMyOnionFlowSchemeDataListByTitle(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            查询用户创建 数据表单列表----模糊查询
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <param name="userId"></param>
+            <param name="mCaption"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowDataServices.QueryHotOnionFlowSchemeDataList">
+            <summary>
+            查询热门OnionFlow列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowDataServices.QueryOnionFlowIndustryCategory(System.String)">
+            <summary>
+            OnionFlow 类别查询  智慧政务  智慧校园 智慧工厂  传入参数:IndustryCategory
+            </summary>
+            <param name="mOnionFlowIndustryCategory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowDataServices.QueryOnionFlowSchemeDataByKey(System.String,System.String)">
+            <summary>
+             获取OnionFlow Json 数据 Mongodb
+            </summary>
+            <param name="onionFlowId">OnionFlow 文件 ID</param>
+            <param name="F_UserId">用户ID </param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowDataServices.QueryOnionFlowSchemeDataListFromMarketByCategory(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            通过类别 从市场中查询 OnionFlow   
+            </summary>
+            <param name="mCategory"></param>
+            <param name="QueryField"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowDataServices.QueryOnionFlowSchemeDataListFromMarketByTitle(System.String,System.Int32,System.Int32)">
+             <summary>
+            通过标题 OnionFlow 市场中查询
+             </summary>
+             <param name="mTitle"></param>
+             <param name="pageIndex"></param>
+             <param name="pageSize"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowDataServices.QueryUserViewOnionFlowHistoryDataList(System.String,System.String,System.Int32,System.Int32)">
+             <summary>
+            查询用户查看历史记录--通过标题检索
+             </summary>
+             <param name="userId"></param>
+             <param name="QueryField"></param>
+             <param name="pageIndex"></param>
+             <param name="pageSize"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowDataServices.QueryOnionFlowHisVersion(System.String)">
+            <summary>
+            查询OnionFlow历史版本
+            </summary>
+            <param name="OnionFlowId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowDataServices.QueryOnionFlowHisVerDataByKey(System.String)">
+            <summary>
+            查看OnionFlow历史版本  预览
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowDataServices.SetOnionFlowMajorVersion(Kedo.Application.OnionFlowData.Dtos.input.OnionFlowMajorVersionInput)">
+            <summary>
+            设置主版本
+            </summary>
+            <param name="onionFlowMajorVersionInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowExecutor.OnionFlowExecutorServices.OnionAgentFlowExecuteProcess(Kedo.Application.OnionFlowExecutor.Dtos.input.ProcessRequestInput)">
+            <summary>
+            智能体流程执行
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowExecutor.OnionFlowExecutorServices.GetAgentFlowExecuteProcessResult(System.String)">
+            <summary>
+            获取智能体执行过程中的结果
+            </summary>
+            <param name="agentFlowId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowExecutor.Services.ISql.QueryAgentGraphicData(System.String)">
+             <summary>
+            查询流程ID
+             </summary>
+             <param name="Id"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowExecutor.Services.ISql.QueryDataSourceInfoById(System.String)">
+            <summary>
+            根据数据源Id 查询数据源详细信息
+            </summary>
+            <param name="F_Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowExecutor.Services.ISql.QueryDataSourceTypeById(System.String)">
+            <summary>
+            根据数据源Id 查询数据源详细信息
+            </summary>
+            <param name="F_Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowExecutor.Services.OnionFlowExecutorService.OnionAgentFlowExecuteProcess(Kedo.Application.OnionFlowExecutor.Dtos.input.ProcessRequestInput)">
+            <summary>
+            执行流程入口
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowExecutor.Services.OnionFlowExecutorService.GetProcessResult(System.String)">
+            <summary>
+            流程结果查询
+            </summary>
+            <param name="agentFlowId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.OnionFlowExecutor.Services.OnionFlowExecutorService.ExecuteFlowAsync(Kedo.Application.OnionFlowExecutor.Dtos.input.ProcessRequestInput,System.String)">
+            <summary>
+            执行流程图 - 严格顺序执行版本
+            </summary>
+            <param name="flowData">流程图JSON数据</param>
+            <param name="processRequestInput">初始查询或输入</param>
+            <returns>异步任务</returns>
+        </member>
+        <member name="M:Kedo.Application.Oss.OssAppService.GetPostObjectParams(System.String)">
+            <summary>
+            获取OSS签名   类别 : BorderImg   BackgroundImg   DataAnalysisImg   UserHeadImg  AgentImg 
+            </summary>
+            <param name="imgAppType">图片作用域 背景图片  边框图片</param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.Oss.OssAppService.UploadDocuments(System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile},System.String,System.String)">
+            <summary>
+            上传文件到本地服务器
+            </summary>
+            <param name="formFiles"></param>
+            <param name="conversationId"></param>
+            <param name="tagId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.Oss.OssAppService.UploadImg(Microsoft.AspNetCore.Http.IFormFile,System.String)">
+            <summary>
+            上传图片
+            </summary>
+            <param name="formFile"></param>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.Oss.Services.IOssService.UploadDocuments(System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile},System.String,System.String)">
+            <summary>
+            上传文件  OnionServer 
+            </summary>
+            <param name="formFiles"></param>
+            <param name="conversationId"></param>
+            <param name="tagId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.Oss.Services.IOssService.UploadImg(Microsoft.AspNetCore.Http.IFormFile,System.String)">
+            <summary>
+            上传图片
+            </summary>
+            <param name="formFile"></param>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.Oss.Services.OssService.UploadDocuments(System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile},System.String,System.String)">
+            <summary>
+            上传文件并保存到关联数据库中
+            </summary>
+            <param name="formFiles"></param>
+            <param name="flowAgentId"></param>
+            <param name="tagId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.Oss.Services.OssService.UploadImg(Microsoft.AspNetCore.Http.IFormFile,System.String)">
+            <summary>
+            上传图片
+            </summary>
+            <param name="formFile"></param>
+            <param name="userId"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="T:Kedo.Application.User.Dtos.input.UserRegistInput">
+            <summary>
+            用户注册
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.UserRegistInput.F_UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.UserRegistInput.F_Mobile">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.UserRegistInput.F_CompanyName">
+            <summary>
+            公司名称
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.UserRegistInput.F_Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.UserRegistInput.F_IndustryCategory">
+            <summary>
+            行业
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.UserRegistInput.F_Job">
+            <summary>
+            工作岗位
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.UserRegistInput.F_VerificationCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.UserRegistInput.F_Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.UserRegistInput.F_Secretkey">
+            <summary>
+            加密key
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.User.Dtos.input.UserLoginByAccountInput">
+            <summary>
+            用户账号密码登录
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.UserLoginByAccountInput.F_Account">
+            <summary>
+            账号
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.UserLoginByAccountInput.F_Password">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.User.Dtos.input.UserLoginByPhoneNumInput">
+            <summary>
+            用户手机号登录
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.UserLoginByPhoneNumInput.F_Mobile">
+            <summary>
+            账号
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.UserLoginByPhoneNumInput.F_VerificationCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.User.Dtos.input.UserLoginByWechatInput">
+            <summary>
+            用户微信登录
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.UserLoginByWechatInput.F_OpenId">
+            <summary>
+            账号
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.UserWechatBindingInput.F_OpenId">
+            <summary>
+            OpenId账号
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.User.Dtos.input.GetBackPwdUserInput">
+            <summary>
+            找回密码
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.GetBackPwdUserInput.F_Mobile">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.GetBackPwdUserInput.F_Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.GetBackPwdUserInput.F_VerificationCode">
+            <summary>
+            /验证码
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.User.Dtos.input.ModifyUserPwdInput">
+            <summary>
+            修改用户
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.ModifyUserPwdInput.F_Account">
+            <summary>
+            用户账号
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.ModifyUserPwdInput.F_Mobile">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.ModifyUserPwdInput.F_Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.ModifyUserPwdInput.F_Password_New">
+            <summary>
+            新密码
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.ModifyUserPwdInput.F_VerificationCode">
+            <summary>
+            /验证码
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.User.Dtos.input.ModifyUserPwdByOriginalPwdInput">
+            <summary>
+            通过原始密码 修改用户密码
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.ModifyUserPwdByOriginalPwdInput.F_Account">
+            <summary>
+            用户账号
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.ModifyUserPwdByOriginalPwdInput.F_Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.ModifyUserPwdByOriginalPwdInput.F_Password_New">
+            <summary>
+            新密码
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.User.Dtos.input.AddUserPwdInput">
+            <summary>
+            通过原始密码 修改用户密码
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.AddUserPwdInput.F_Account">
+            <summary>
+            用户账号
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.AddUserPwdInput.F_Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.ModifyUserNameInput.F_Id">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.ModifyUserNameInput.F_UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.SetUserAvatarInput.F_Id">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.SetUserAvatarInput.F_HeadIcon">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.UserAvatarDataInput.F_OpenId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.UserAvatarDataInput.F_HeadIconData">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.ModifyUserPhoneNumInput.F_Id">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.ModifyUserPhoneNumInput.F_PhoneNum">
+            <summary>
+            用户电话
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.User.Dtos.input.UnsubscribeUserAccountInput">
+            <summary>
+            注销账户
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.UnsubscribeUserAccountInput.F_Id">
+            <summary>
+            UserId
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.UnsubscribeUserAccountInput.F_Account">
+            <summary>
+            用户账号
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.input.UnsubscribeUserAccountInput.F_VerificationCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="T:Kedo.Application.User.Dtos.output.UserInfoOutput">
+            <summary>
+            用户信息
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserInfoOutput.F_UserId">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserInfoOutput.F_Account">
+            <summary>
+            用户账号
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserInfoOutput.F_UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserInfoOutput.F_Nickname">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserInfoOutput.F_Mobile">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserInfoOutput.F_CompanyName">
+            <summary>
+            公司名称
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserInfoOutput.F_Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserInfoOutput.F_OpenId">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserInfoOutput.F_IndustryCategory">
+            <summary>
+            行业
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserInfoOutput.F_Job">
+            <summary>
+            工作岗位
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserInfoOutput.F_HeadIcon">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserInfoOutput.F_HeadImgurl">
+            <summary>
+            微信头像地址
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserInfoOutput.F_Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserInfoOutput.F_TenantId">
+            <summary>
+            租户编号
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserInfoOutput.F_IsPwdSetted">
+            <summary>
+            是否设置了密码
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserSimpleInfoOutput.F_UserId">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserSimpleInfoOutput.F_Account">
+            <summary>
+            用户账号
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserSimpleInfoOutput.F_UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserSimpleInfoOutput.F_Mobile">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserSimpleInfoOutput.F_CompanyName">
+            <summary>
+            公司名称
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserSimpleInfoOutput.F_Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:Kedo.Application.User.Dtos.output.UserSimpleInfoOutput.F_IsPwdSetted">
+            <summary>
+            是否设置了密码
+            </summary>
+        </member>
+        <member name="M:Kedo.Application.User.Services.ISql.QueryUserInfo(System.String)">
+            <summary>
+            获取用户信息
+            </summary>
+            <param name="account"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.ISql.QueryUserSimpleInfo(System.String)">
+            <summary>
+            获取用户信息
+            </summary>
+            <param name="account"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.ISql.QueryUserInfoByOpenId(System.String)">
+            <summary>
+            获取用户信息
+            </summary>
+            <param name="openId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.ISql.QueryUserInfoByUserId(System.String)">
+            <summary>
+            获取用户信息
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.ISql.QueryUserPassword(System.String)">
+            <summary>不能
+            账号查询用户密码和加密Key
+            </summary>
+            <param name="account"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.ISql.QueryEnterpriseUserId(System.String,System.String)">
+            <summary>
+            获取创建此AppId 和 SecretKey 的企业用户 ID  
+            </summary>
+            <param name="appId"></param>
+            <param name="secret"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.ISql.QuerySmsCodeMins(System.String,System.String,System.String)">
+            <summary>
+            查询验证码
+            </summary>
+            <param name="mNum"></param>
+            <param name="timeBegin"></param>
+            <param name="timeEnd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.ISql.QueryPhoneNo(System.String)">
+            <summary>
+            查询电话号码
+            </summary>
+            <param name="F_Account"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.UserRegist(Kedo.Application.User.Dtos.input.UserRegistInput)">
+            <summary>
+            用户注册
+            </summary>
+            <param name="userRegistInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.GetVerificationCode(System.String)">
+            <summary>
+            获取验证码
+            </summary>
+            <param name="phoneNum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.GetEmailVerificationCode(System.String)">
+            <summary>
+            获取邮箱验证码
+            </summary>
+            <param name="emailNum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.UserLoginByAccount(Kedo.Application.User.Dtos.input.UserLoginByAccountInput)">
+            <summary>
+            用户登录--账号 密码
+            </summary>
+            <param name="userLoginByAccountInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.UserLoginByMobile(Kedo.Application.User.Dtos.input.UserLoginByPhoneNumInput)">
+            <summary>
+            用户登录--手机号码
+            </summary>
+            <param name="userLoginByPhoneNumInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.UserLoginByWechat(Kedo.Application.User.Dtos.input.UserLoginByWechatInput)">
+            <summary>
+            用户通过微信登录
+            </summary>
+            <param name="userLoginByWechatInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.UserWechatBinding(Kedo.Application.User.Dtos.input.UserWechatBindingInput)">
+            <summary>
+            用户微信绑定
+            </summary>
+            <param name="userWechatBindingInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.UserEmailBinding(Kedo.Application.User.Dtos.input.UserEmailBindingInput)">
+            <summary>
+            用户邮箱绑定
+            </summary>
+            <param name="userEmailBindingInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.UserPhoneNumBinding(Kedo.Application.User.Dtos.input.UserPhoneNumBindingInput)">
+            <summary>
+            用户手机号码绑定
+            </summary>
+            <param name="userPhoneNumBindingInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.UserWechatUnbinding(Kedo.Application.User.Dtos.input.UserWechatUnbindingInput)">
+            <summary>
+            微信账号解绑
+            </summary>
+            <param name="userWechatUnbindingInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.UserLoginByToken(System.String)">
+            <summary>
+            单点登录验证token
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.UserLoginBySSOToken(Kedo.Application.User.Dtos.input.SSOLoginTokenInput)">
+            <summary>
+            用户登录验证
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.EnterpriseUserLoginByAppIdAndSecret(Kedo.Application.User.Dtos.input.EnterpriseUserLoginInput)">
+            <summary>
+            企业用户登录  
+            </summary>
+            <param name="enterpriseUserLoginInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.UserLoginByUserId(System.String)">
+            <summary>
+            通过UserId 获取用户信息
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.UserLoginByOpenId(System.String)">
+            <summary>
+            OpenId
+            </summary>
+            <param name="openId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.CheckPhoneNoIsUsed(System.String)">
+            <summary>
+            验证用户手机号码是否已经被占用
+            </summary>
+            <param name="phoneNum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.QueryUserSimpleInfo(System.String)">
+            <summary>
+            通过账号获取用户简单信息
+            </summary>
+            <param name="account"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.GetBackPassword(Kedo.Application.User.Dtos.input.GetBackPwdUserInput)">
+            <summary>
+            找回密码
+            </summary>
+            <param name="getBackPwdUserInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.ModifyUserName(Kedo.Application.User.Dtos.input.ModifyUserNameInput)">
+            <summary>
+            修改用户名
+            </summary>
+            <param name="modifyUserNameInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.ModifyUserPhoneNum(Kedo.Application.User.Dtos.input.ModifyUserPhoneNumInput)">
+            <summary>
+            修改用户电话
+            </summary>
+            <param name="modifyUserPhoneNumInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.ModifyUserPwd(Kedo.Application.User.Dtos.input.ModifyUserPwdInput)">
+            <summary>
+            修改密码
+            </summary>
+            <param name="modifyUserPwdInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.ModifyUserPwdByOriginalPwd(Kedo.Application.User.Dtos.input.ModifyUserPwdByOriginalPwdInput)">
+            <summary>
+            
+            </summary>
+            <param name="modifyUserPwdByOriginalPwdInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.AddUserPwd(Kedo.Application.User.Dtos.input.AddUserPwdInput)">
+            <summary>
+            添加密码（微信登录后）
+            </summary>
+            <param name="addUserPwdInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.UnsubscribeUserAccount(Kedo.Application.User.Dtos.input.UnsubscribeUserAccountInput)">
+            <summary>
+            注销账户 
+            </summary>
+            <param name="unsubscribeUserAccountInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.SetUserAvatar(Kedo.Application.User.Dtos.input.SetUserAvatarInput)">
+            <summary>
+            设置用户头像
+            </summary>
+            <param name="setUserAvatarInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.QueryUserAvatarByKey(System.String)">
+            <summary>
+            通过Key  查询头像数据
+            </summary>
+            <param name="dataKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.QueryUserMqttChannel(System.String)">
+            <summary>
+            用户Mqtt 通道信息
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.IUserService.LoginChatPPT(System.String)">
+            <summary>
+            获取用户登录ChatPPT token 
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.UserRegist(Kedo.Application.User.Dtos.input.UserRegistInput)">
+            <summary>
+            用户注册
+            </summary>
+            <param name="userRegistInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.GetVerificationCode(System.String)">
+            <summary>
+            获取验证啊
+            </summary>
+            <param name="phoneNum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.GetEmailVerificationCode(System.String)">
+            <summary>
+            获取验证啊
+            </summary>
+            <param name="EmailNum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.CheckSmsCode(System.String,System.String)">
+            <summary>
+            验证短信验证码
+            </summary>
+            <param name="phoneNum"></param>
+            <param name="UserCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.CheckPhoneNoIsUsed(System.String)">
+            <summary>
+            验证用户手机号码是否存在
+            </summary>
+            <param name="phoneNum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.UserLoginByAccount(Kedo.Application.User.Dtos.input.UserLoginByAccountInput)">
+            <summary>
+            用户登录--账号 密码
+            </summary>
+            <param name="userLoginByAccountInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.EnterpriseUserLoginByAppIdAndSecret(Kedo.Application.User.Dtos.input.EnterpriseUserLoginInput)">
+            <summary>
+            企业登录 获取token
+            </summary>
+            <param name="enterpriseUserLoginInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.UserLoginByMobile(Kedo.Application.User.Dtos.input.UserLoginByPhoneNumInput)">
+            <summary>
+            用户登录--手机号码
+            </summary>
+            <param name="userLoginByPhoneNumInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.UserLoginByUserId(System.String)">
+            <summary>
+            用户登录
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.UserLoginByOpenId(System.String)">
+            <summary>
+            通过OpenId 获取用户信息
+            </summary>
+            <param name="openId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.UserEmailBinding(Kedo.Application.User.Dtos.input.UserEmailBindingInput)">
+            <summary>
+            用户邮箱绑定
+            </summary>
+            <param name="userEmailBindingInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.UserPhoneNumBinding(Kedo.Application.User.Dtos.input.UserPhoneNumBindingInput)">
+            <summary>
+            用户手机号码绑定
+            </summary>
+            <param name="userPhoneNumBindingInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.UserLoginByWechat(Kedo.Application.User.Dtos.input.UserLoginByWechatInput)">
+            <summary>
+            用户登录--通过微信
+            </summary>
+            <param name="userLoginByWechatInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.AddUserPwd(Kedo.Application.User.Dtos.input.AddUserPwdInput)">
+            <summary>
+            添加用户密码
+            </summary>
+            <param name="addUserPwdInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.UserWechatBinding(Kedo.Application.User.Dtos.input.UserWechatBindingInput)">
+            <summary>
+            
+            </summary>
+            <param name="userWechatBindingInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.UserWechatUnbinding(Kedo.Application.User.Dtos.input.UserWechatUnbindingInput)">
+            <summary>
+            微信解绑
+            </summary>
+            <param name="userWechatUnbindingInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.UserLoginByToken(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.SetSSOUserInfo(Kedo.Application.User.Dtos.output.UserInfoOutput@)">
+            <summary>
+            
+            </summary>
+            <param name="userInfoOutput"></param>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.QueryUserSimpleInfo(System.String)">
+            <summary>
+            获取用户简略信息
+            </summary>
+            <param name="account"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.GetBackPassword(Kedo.Application.User.Dtos.input.GetBackPwdUserInput)">
+            <summary>
+            修改找回 用户密码
+            </summary>
+            <param name="getBackPwdUserInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.ModifyUserPwdByOriginalPwd(Kedo.Application.User.Dtos.input.ModifyUserPwdByOriginalPwdInput)">
+            <summary>
+            通过原始密码修改密码
+            </summary>
+            <param name="modifyUserPwdInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.ModifyUserName(Kedo.Application.User.Dtos.input.ModifyUserNameInput)">
+            <summary>
+            修改用户名称
+            </summary>
+            <param name="modifyUserNameInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.ModifyUserPhoneNum(Kedo.Application.User.Dtos.input.ModifyUserPhoneNumInput)">
+            <summary>
+            修改用户手机号码
+            </summary>
+            <param name="modifyUserPhoneNumInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.UnsubscribeUserAccount(Kedo.Application.User.Dtos.input.UnsubscribeUserAccountInput)">
+            <summary>
+            注销账户
+            </summary>
+            <param name="unsubscribeUserAccountInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.SetUserAvatar(Kedo.Application.User.Dtos.input.SetUserAvatarInput)">
+            <summary>
+            设置用户头像
+            </summary>
+            <param name="setUserAvatarInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.QueryUserAvatarByKey(System.String)">
+            <summary>
+            获取Mongodb中的头像数据
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.SetUserAvatarData2(Kedo.Application.User.Dtos.input.UserAvatarDataInput)">
+            <summary>
+            设置头像
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Services.UserService.QueryUserMqttChannel(System.String)">
+            <summary>
+            获取用户MQTT Channel 
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Kedo.Application.User.Services.UserService.DESEncryptSSO(System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:Kedo.Application.User.Services.UserService.DESDecryptSSO(System.String)" -->
+        <member name="M:Kedo.Application.User.Services.UserService.GetMd5Hash(System.String)">
+            <summary>
+            MD 32位小写加密
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.UserRegist(Kedo.Application.User.Dtos.input.UserRegistInput)">
+            <summary>
+            注册用户
+            </summary>
+            <param name="userRegistInput">用户注册</param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.CheckPhoneNoIsUsed(System.String)">
+            <summary>
+            检测手机号码是否存在
+            </summary>
+            <param name="phoneNum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.GetVerificationCode(System.String)">
+            <summary>
+            获取手机验证码
+            </summary>
+            <param name="phoneNum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.GetEmailVerificationCode(System.String)">
+            <summary>
+            获取邮箱验证码
+            </summary>
+            <param name="EmailNum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.UserLoginByAccount(Kedo.Application.User.Dtos.input.UserLoginByAccountInput)">
+            <summary>
+            用户登录--账号 密码
+            </summary>
+            <param name="userLoginByAccountInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.UserLoginByMobile(Kedo.Application.User.Dtos.input.UserLoginByPhoneNumInput)">
+            <summary>
+            用户登录--手机号码
+            </summary>
+            <param name="userLoginByPhoneNumInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.UserWechatBinding(Kedo.Application.User.Dtos.input.UserWechatBindingInput)">
+            <summary>
+            用户微信绑定
+            </summary>
+            <param name="userWechatBindingInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.UserEmailBinding(Kedo.Application.User.Dtos.input.UserEmailBindingInput)">
+            <summary>
+            用户邮箱绑定
+            </summary>
+            <param name="userEmailBindingInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.UserWechatUnbinding(Kedo.Application.User.Dtos.input.UserWechatUnbindingInput)">
+            <summary>
+            用户微信解除绑定
+            </summary>
+            <param name="userWechatUnbindingInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.UserLoginByWechat(Kedo.Application.User.Dtos.input.UserLoginByWechatInput)">
+            <summary>
+            用户登录--微信登录
+            </summary>
+            <param name="userLoginByWechatInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.AddUserPwd(Kedo.Application.User.Dtos.input.AddUserPwdInput)">
+            <summary>
+            添加用户密码
+            </summary>
+            <param name="addUserPwdInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.UserPhoneNumBinding(Kedo.Application.User.Dtos.input.UserPhoneNumBindingInput)">
+            <summary>
+            用户首次微信登录绑定手机号码
+            </summary>
+            <param name="userPhoneNumBindingInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.UserLoginByToken(System.String)">
+            <summary>
+            通过Token 获取用户信息  SSO 登录 
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.EnterpriseUserLogin(Kedo.Application.User.Dtos.input.EnterpriseUserLoginInput)">
+            <summary>
+            企业登录 AppId 和 Secret
+            </summary>
+            <param name="enterpriseUserLoginInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.UserLoginBySSOToken(Kedo.Application.User.Dtos.input.SSOLoginTokenInput)">
+             <summary>
+            JWT SSO 验证token
+             </summary>
+             <param name="token"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.QueryUserInfoByUserId(System.String)">
+            <summary>
+            获取用户信息
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.UserLoginByOpenId(System.String)">
+            <summary>
+            通过OpenId 获取用户信息
+            </summary>
+            <param name="UserLoginByOpenId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.QueryUserSimpleInfo(System.String)">
+            <summary>
+            获取用户简略信息  邀请用户加入团队时 用
+            </summary>
+            <param name="account"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.GetBackPassword(Kedo.Application.User.Dtos.input.GetBackPwdUserInput)">
+            <summary>
+            找回密码
+            </summary>
+            <param name="getBackPwdUserInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.ModifyUserName(Kedo.Application.User.Dtos.input.ModifyUserNameInput)">
+            <summary>
+            修改用户名称
+            </summary>
+            <param name="modifyUserNameInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.SetUserAvatar(Kedo.Application.User.Dtos.input.SetUserAvatarInput)">
+            <summary>
+            修改头像
+            </summary>
+            <param name="setUserAvatarInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.SetUserAvatarData2(Microsoft.AspNetCore.Http.IFormFile,System.String)">
+            <summary>
+            设置用户图像
+            </summary>
+            <param name="formFile"></param>
+            <param name="OpenId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.ModifyUserPhoneNum(Kedo.Application.User.Dtos.input.ModifyUserPhoneNumInput)">
+            <summary>
+            修改用户手机号码
+            </summary>
+            <param name="modifyUserPhoneNumInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.ModifyUserPwd(Kedo.Application.User.Dtos.input.ModifyUserPwdInput)">
+            <summary>
+            修改用户密码
+            </summary>
+            <param name="modifyUserPwdInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.ModifyUserPwdByOriginalPwd(Kedo.Application.User.Dtos.input.ModifyUserPwdByOriginalPwdInput)">
+            <summary>
+            通过原始密码 修改用户密码
+            </summary>
+            <param name="modifyUserPwdInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.UnsubscribeUserAccount(Kedo.Application.User.Dtos.input.UnsubscribeUserAccountInput)">
+            <summary>
+            注销账户
+            </summary>
+            <param name="unsubscribeUserAccountInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.QueryUserAvatarDataByKey(System.String)">
+            <summary>
+            查询头像数据
+            </summary>
+            <param name="dataKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.QueryUserMqttChannel(System.String)">
+            <summary>
+            获取用户MQTT 通道
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.UserServices.LoginChatPPT(System.String)">
+            <summary>
+            获取用户信息
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Utils.ChatpptToken.getTimetamp">
+            <summary>
+            获取时间戳
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Utils.ChatpptToken.Sign(System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            签名
+            </summary>
+            <param name="channel"></param>
+            <param name="user_id"></param>
+            <param name="mobile"></param>
+            <param name="area_code"></param>
+            <param name="nickname"></param>
+            <param name="timestamp"></param>
+            <param name="signkey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Application.User.Utils.ChatpptToken.GetMd5Hash(System.String)">
+            <summary>
+            MD 32位小写加密
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

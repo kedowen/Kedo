@@ -1,2 +1,142 @@
-# kedo
-The KedoAI Process Intelligent Agent Development Platform is a cutting-edge platform designed to simplify the development of intelligent agents powered by large language models. It offers developers an intuitive interface and robust backend capabilities to streamline the creation and deployment of AI-driven workflows.
+![Kedo智能流程体系统图片](images/img04.png)
+# Kedo- 流程智能体开发平台 开源项目
+
+欢迎来到 **Kedo** 的开源项目！KedoFlow 是一个基于大模型的流程智能体开发平台，旨在帮助开发者快速构建和部署智能化的业务流程。本项目支持前端使用 React 进行开发，后端支持 .NET Core 和 Java 技术栈，适用于多种应用场景。
+
+以下是关于该项目的详细信息、开源协议、使用指南以及相关注意事项。
+
+
+## 1. 项目概述
+
+### 1.1 核心功能
+- **基于大模型的能力**：集成先进的大语言模型（LLM）DeepSeek,ChatGPT,千问，Claude等提供强大的自然语言处理能力，对扩展新模型也友好支持。
+- **流程智能体开发**：支持开发者自定义流程逻辑，实现自动化任务处理。
+- **多开发语言后端支持**：支持 .NET Core 和 Java 后端技术栈，满足不同团队的技术需求。
+- **现代化前端框架**：采用 React 构建用户界面，提供流畅的用户体验。
+- **多语种支持**：支持 汉语，英语满足不同语系团队的需求，。
+### 1.2 技术栈
+- **前端**：React + TypeScript
+- **后端**：
+  - .NET Core
+- **数据库**：支持 MySQL、PostgreSQL 等主流关系型数据库
+- **其他依赖**：可根据实际需求扩展第三方服务
+
+---
+
+## 2. 开源协议
+
+Kedo 遵循 **Apache 2.0 License** 协议，并附加了部分限制条款，请仔细阅读以下内容：
+
+### 2.1 Apache 2.0 License 主要条款
+- 您可以自由地使用、修改、分发本项目的代码。
+- 如果您对代码进行了修改，必须明确标注修改的部分。
+- 您需要在分发的副本中包含原始许可证和版权声明。
+
+### 2.2 补充协议
+除了 Apache 2.0 License 的条款外，我们还添加了以下补充协议：
+1. **商业化授权**：如果您计划将 KedoFlow 用于商业用途（如出售、租赁或作为服务提供），必须事先获得我们的书面授权。请联系公司邮箱：**kedoai@kedowen.com**。
+2. **Logo 使用限制**：未经许可，不得修改或移除 KedoFlow 的 Logo 或相关品牌标识。
+3. **责任声明**：本项目按“原样”提供，不附带任何明示或暗示的担保。请确保在使用前充分测试代码。
+
+更多详情请参考 [LICENSE 文件](LICENSE)。
+
+---
+
+## 3. 安装与使用指南
+
+### 3.1 克隆项目
+```bash
+git clone https://gitee.com/kedoai/kedo.git
+cd kedo
+```
+
+### 3.2 运行项目
+#### 1. Docker 一键部署（推荐）
+为了简化本地部署流程，KedoFlow 提供了基于 Docker 的一键部署方案。您可以通过 `docker-compose` 快速启动完整的开发/测试环境，包括前端、后端和数据库服务。
+
+1. 安装依赖
+
+请确保您的系统已安装以下工具：
+
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
+ 2. 启动项目
+
+在项目根目录下运行以下命令：
+
+```bash
+# 构建并启动所有服务
+docker-compose   -f docker-compose.yml up -d
+```
+3. 访问平台
+
+打开浏览器，访问：
+
+```
+http://localhost:3000
+```
+
+即可进入 Kedo 平台的前端界面。
+
+---
+
+
+
+#### 2. 本地部署
+1. 前端安装
+进入前端目录并安装依赖：
+```bash
+cd frontend
+npm install
+npm start
+```
+2. 后端安装
+- .NET Core 后端
+```bash
+cd backend/dotnet
+dotnet restore
+dotnet run
+```
+
+4. 数据库配置
+编辑 `application.properties` 或 `appsettings.json` 文件，配置数据库连接信息。
+
+5. 运行测试
+启动前后端服务后，访问默认地址（如 http://localhost:3000）即可体验平台功能。
+
+---
+
+### 3.3 初始账号密码
+默认账号：15188886666
+默认密码：123456
+
+## 4. 贡献指南
+
+我们非常欢迎社区开发者为 Kedo提供贡献！以下是参与项目的建议步骤：
+
+1. **Fork 项目**：点击 GitHub 页面右上角的 "Fork" 按钮。
+2. **克隆代码**：将您的 Fork 仓库克隆到本地。
+3. **创建分支**：基于主分支创建一个新的分支以进行开发。
+4. **提交更改**：完成开发后，提交您的更改并推送到远程仓库。
+5. **发起 Pull Request**：向主仓库提交 Pull Request 并描述您的更改。
+
+请注意遵循项目的代码风格和规范。
+
+---
+
+## 5. 联系我们
+
+如果您有任何问题或需要进一步的帮助，请通过以下方式联系我们：
+
+- **公司网站**：[www.kedowen.com](http://www.kedoai.com)
+- **公司邮箱**：kedoai@kedowen.com
+- **GitHub Issues**：在本项目的 Issues 页面提交您的问题或建议。
+
+---
+
+## 6. 版权声明
+
+Kedo及其相关 Logo、品牌标识均为 **KedoWen Inc.** 所有。未经授权，禁止任何形式的复制、传播或商业使用。
+
+感谢您选择 Kedo！希望我们的平台能够为您的项目带来价值。

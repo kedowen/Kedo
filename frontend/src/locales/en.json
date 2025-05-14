@@ -1,0 +1,984 @@
+{
+  "welcome": "welcome to flow",
+  "tools": {
+    "interactiveMode": {
+      "title": "Interactive Mode",
+      "mouse": {
+        "title": "Mouse Friendly",
+        "description": "Use mouse to drag canvas, zoom with mouse wheel"
+      },
+      "touchPad": {
+        "title": "Touchpad Friendly",
+        "description": "Use two fingers to move in the same direction, zoom by pinching or spreading two fingers"
+      }
+    },
+    "automaticLayout": {
+      "title": "Automatic Layout"
+    },
+    "switchLine": {
+      "title": "Switch Line Type"
+    },
+    "zoom": {
+      "title": "Zoom",
+      "in": "Zoom In",
+      "out": "Zoom Out",
+      "reset": "Reset",
+      "to": "To"
+    },
+    "fitView": {
+      "title": "Fit View"
+    },
+    "minimap": {
+      "title": "Minimap"
+    },
+    "lock": {
+      "isLock": "Lock",
+      "isUnlock": "Unlock"
+    },
+    "undo": {
+      "title": "Undo"
+    },
+    "redo": {
+      "title": "Redo"
+    },
+    "globalVariable": {
+      "title": "Global Variables",
+      "description": "Global Variable Configuration",
+      "modal": {
+        "title": "Global Variable Configuration",
+        "system": {
+          "title": "System Variables",
+          "columns": {
+            "name": "Variable Name",
+            "value": "Variable Value",
+            "description": "Description"
+          },
+          "empty": {
+            "title": "No Data Available",
+            "description": "Currently, no system variables are defined."
+          }
+        },
+        "user": {
+          "title": "User Variables",
+          "columns": {
+            "name": "Variable Name",
+            "value": "Variable Value",
+            "description": "Description",
+            "action": "Actions",
+            "empty": {
+              "title": "No Data Available",
+              "description": "Currently, no user variables are defined."
+            }
+          },
+          "form": {
+            "name": {
+              "label": "Variable Name",
+              "placeholder": "Please enter a variable name",
+              "emptyError": "Variable name cannot be empty",
+              "duplicateError": "Variable name already exists"
+            },
+            "value": {
+              "label": "Variable Value",
+              "placeholder": "Please enter a variable value",
+              "emptyError": "Variable value cannot be empty"
+            },
+            "description": {
+              "label": "Description",
+              "placeholder": "Please enter a description"
+            },
+            "action": {
+              "edit": "Update",
+              "cancel": "Cancel",
+              "save": "Save"
+            }
+          },
+          "empty": {
+            "title": "No Data Available",
+            "description": "Currently, no user variables are defined."
+          }
+        },
+        "tip": {
+          "addSuccess": "Added successfully",
+          "addFail": "Failed to add",
+          "deleteSuccess": "Deleted successfully",
+          "deleteFail": "Failed to delete",
+          "editSuccess": "Updated successfully",
+          "editFail": "Failed to update",
+          "duplicateError": "Duplicate variable names are not allowed"
+        }
+      }
+    },
+    "addNode": {
+      "title": "Add Node"
+    },
+    "save": {
+      "title": "Save",
+      "description": "Save Flowchart",
+      "success": "Saved successfully",
+      "errors": {
+        "noUser": "No user information, cannot save!",
+        "validationFailed": "Some nodes failed validation. Please check and fix errors before saving."
+      }
+    },
+    "load": {
+      "title": "Load",
+      "description": "Load Flowchart"
+    },
+    "run": {
+      "title": "Run",
+      "runningTitle": "Running",
+      "description": "Run the workflow",
+      "clearTitle": "Clear Results",
+      "sideSheet": {
+        "title": "Test Run",
+        "chat": {
+          "system": {
+            "title": "System",
+            "prompt": "Welcome to the Workflow Runner Assistant! Please configure the parameters first, then click the Run button to start the execution."
+          },
+          "user": {
+            "title": "User",
+            "empty": "No input parameters"
+          },
+          "assistant": {
+            "title": "Assistant"
+          }
+        },
+        "footer": {
+          "execute": {
+            "title": "Execute"
+          },
+          "stop": {
+            "title": "Stop"
+          },
+          "config": {
+            "title": "Parameter Configuration",
+            "emptyError": "Please fill in the required fields",
+            "empty": "No input parameters"
+          }
+        },
+        "tip": {
+          "stop": "The process execution has been stopped, only partial results are displayed",
+          "executeError": {
+            "title": "Partially Executed",
+            "content": "Executed with issues found in some nodes"
+          },
+          "executeSuccess": {
+            "title": "Fully Executed",
+            "content": "Executed successfully without issues"
+          },
+          "userStop": "The process execution has been stopped by user, only partial results are displayed",
+          "closeError": "Execution is in progress, please stop or wait for completion before proceeding",
+          "noUser": "No current user Id",
+          "noFlowId": "No current flow Id"
+        }
+      }
+    }
+  },
+  "nodes": {
+    "start": {
+      "label": "Start",
+      "description": "The starting node of the workflow, used to set up information required to start the workflow",
+      "form": {
+        "outputs": "Output Parameters",
+        "titleRequired": "Title is required"
+      }
+    },
+    "end": {
+      "label": "End",
+      "description": "Workflow end node, used to return workflow execution results",
+      "form": {
+        "outputs": "Output",
+        "titleRequired": "Title is required"
+      },
+      "resultDisplay": {
+        "executionResult": "Execution Result",
+        "waitingForResult": "Waiting for execution result...",
+        "executionSuccess": "Execution Successful",
+        "executionFailure": "Execution Failed",
+        "responseTime": "Response Time",
+        "executionId": "Execution ID",
+        "refresh": "Refresh",
+        "refreshed": "Result refreshed",
+        "debugStatus": "Debug Status",
+        "receivedResult": "Result received",
+        "noResult": "No result",
+        "globalVarSet": "Global variable set",
+        "globalVarNotSet": "Global variable not set",
+        "expand": "Expand",
+        "collapse": "Collapse",
+        "unableToDisplayResult": "Unable to display result",
+        "unableToParseResult": "Unable to parse result",
+        "field": "Field",
+        "value": "Value"
+      }
+    },
+    "sql_executor": {
+      "label": "SQL Custom",
+      "description": "Execute custom SQL queries for database operations (insert, update, delete, select)",
+      "validation": {
+        "sqlQueryRequired": "SQL query cannot be empty",
+        "sqlExpressionRequired": "SQL expression cannot be empty",
+        "dataTableRequired": "Please select a data table"
+      },
+      "form": {
+        "inputParams": "Input Parameters",
+        "dataSource": "Data Source",
+        "sql": "SQL",
+        "outputParams": "Output Parameters",
+        "noCustomParams": "No custom parameters yet, click below to add",
+        "noDataSourceSelected": "Please add a data source, only one can be added",
+        "sqlTooltip": "You can use {{variableName}}, {{variableName.childProperty}}, or {{variableName[arrayIndex]}} to reference input parameters",
+        "fullscreenEdit": "Fullscreen Edit",
+        "testExecute": "Test Execute",
+        "sqlHeaderTitle": "SQL Output Parameters",
+        "sqlHeaderTooltip": "Configure SQL node output parameters, supports nested object structures",
+        "emptyOutputText": "No custom output parameters yet, click below to add",
+        "addOutputParam": "Add Output Parameter"
+      },
+      "dataSource": {
+        "addDataSource": "Add Data Source",
+        "selectDataSource": "Select Data Source",
+        "databaseType": "Database Type",
+        "dataSourceName": "Data Source Name",
+        "ipAddress": "IP Address",
+        "port": "Port",
+        "databaseName": "Database Name",
+        "username": "Username",
+        "password": "Password",
+        "remark": "Remarks",
+        "connectionAddress": "Connection Address",
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "refresh": "Refresh",
+        "remove": "Remove",
+        "required": "(Required)",
+        "status": "Status",
+        "normal": "Normal",
+        "disabled": "Disabled",
+        "dataSourceId": "Data Source ID"
+      },
+      "sqlEditor": {
+        "title": "SQL Editor",
+        "loading": "Editor loading...",
+        "testResult": "Test Execution Result",
+        "executing": "Executing...",
+        "executionError": "Execution Error",
+        "totalRecords": "Total {{count}} records",
+        "executeSuccess": "Execution Successful",
+        "noResults": "No results or execution successful with no returned data"
+      },
+      "inputs": {
+        "sqlQuery": "SQL Query",
+        "dataTable": "Data Table"
+      },
+      "outputs": {
+        "outputList": "Query Result",
+        "rowNum": "Affected Rows"
+      }
+    },
+    "llm": {
+      "label": "LLM",
+      "description": "Call a large language model and generate responses using variables and prompts",
+      "validation": {
+        "titleRequired": "Node title cannot be empty",
+        "promptRequired": "User prompt cannot be empty",
+        "modelTypeRequired": "Model type cannot be empty",
+        "temperatureRequired": "Temperature cannot be empty"
+      },
+      "form": {
+        "temperature": "Temperature",
+        "input": "Input",
+        "inputParams": "Input Parameters",
+        "modelSettings": "Model Settings",
+        "modelType": "Model Type",
+        "systemPrompt": "System Prompt",
+        "userPrompt": "User Prompt",
+        "enterParamName": "Enter parameter name",
+        "enterParamValueOrReference": "Enter parameter value or click Fx button to reference variables",
+        "systemPromptPlaceholder": "Enter system prompt, you can use {{reference variables}}",
+        "userPromptPlaceholder": "Enter user prompt, you can use {{reference variables}}",
+        "noCustomParams": "No custom parameters yet, click the button below to add",
+        "addParam": "Add Parameter"
+      },
+      "inputs": {
+        "modelType": "Type of large language model",
+        "temperature": "Randomness of model output, between 0-1",
+        "systemPrompt": "System prompt, used to set the behavior and role of the model",
+        "prompt": "User prompt, will be used as input to the model",
+        "customParams": "Custom parameters, can be used as input to the model",
+        "key": "Parameter name",
+        "value": "Parameter value"
+      },
+      "outputs": {
+        "result": "Response text generated by the model",
+        "tokens": "Number of tokens consumed"
+      }
+    },
+    "email": {
+      "label": "Email",
+      "description": "Send email node, can specify recipients, subject, and use output from other nodes as content.",
+      "ports": {
+        "input": "Trigger Send",
+        "output": "Send Complete"
+      },
+      "inputs": {
+        "email": {
+          "title": "Recipients",
+          "description": "Enter recipient addresses, separate multiple emails with commas or semicolons",
+          "type": "Recipient value type",
+          "content": "Recipient content"
+        },
+        "subject": {
+          "title": "Subject",
+          "description": "Email subject",
+          "type": "Subject value type",
+          "content": "Subject content"
+        },
+        "content": {
+          "title": "Content",
+          "description": "Email content, you can select output from other nodes",
+          "type": "Email content type",
+          "content": "Email content"
+        }
+      },
+      "outputs": {
+        "result": "Send result",
+        "success": "Whether sent successfully"
+      },
+      "form": {
+        "noRecipients": "No recipients",
+        "moreRecipients": "{{count}} more recipients",
+        "noSubject": "No subject",
+        "noContent": "No content",
+        "subjectPlaceholder": "Enter subject",
+        "contentPlaceholder": "Enter email content"
+      },
+      "validation": {
+        "titleRequired": "Title is required",
+        "emailRequired": "Recipient cannot be empty",
+        "subjectRequired": "Subject cannot be empty",
+        "contentRequired": "Content cannot be empty"
+      }
+    },
+    "wechat_work": {
+      "label": "WeChat Work",
+      "description": "Send WeChat Work messages, can specify recipients, subject, and use output from other nodes as content.",
+      "ports": {
+        "input": "Trigger Send",
+        "output": "Send Complete"
+      },
+      "inputs": {
+        "recipient": {
+          "title": "Recipients",
+          "description": "Enter recipient addresses, separate multiple WeChat Work users with semicolons",
+          "type": "Recipient value type",
+          "content": "Specific recipients"
+        },
+        "subject": {
+          "title": "Subject",
+          "description": "Message subject",
+          "type": "Subject value type",
+          "content": "Specific subject content"
+        },
+        "content": {
+          "title": "Content",
+          "description": "WeChat Work message content, you can select output from other nodes",
+          "type": "WeChat Work message content type",
+          "content": "Specific WeChat Work message content"
+        }
+      },
+      "outputs": {
+        "result": "Send result",
+        "success": "Whether sent successfully"
+      },
+      "form": {
+        "noRecipients": "No recipients",
+        "moreRecipients": "{{count}} more recipients",
+        "noSubject": "No subject",
+        "noContent": "No content",
+        "subjectPlaceholder": "Enter message subject",
+        "contentPlaceholder": "Enter message content"
+      },
+      "validation": {
+        "titleRequired": "Title is required",
+        "recipientRequired": "Recipient cannot be empty",
+        "subjectRequired": "Subject cannot be empty",
+        "contentRequired": "Content cannot be empty"
+      }
+    },
+    "http_request": {
+      "label": "HTTP Request",
+      "description": "Send API requests to retrieve data from servers",
+      "validation": {
+        "titleRequired": "Node title cannot be empty",
+        "urlRequired": "URL cannot be empty"
+      },
+      "form": {
+        "method": "API Method",
+        "url": "Request URL",
+        "urlPlaceholder": "Enter API URL, you can use {{reference variables}}",
+        "headers": "Headers",
+        "params": "Parameters",
+        "enableAuth": "Enable Authentication",
+        "authType": "Authentication Type",
+        "authToken": "Token",
+        "tokenPlaceholder": "Enter authentication token",
+        "authCustom": {
+          "key": "Key",
+          "value": "Value",
+          "valuePlaceholder": "Enter or reference parameter value",
+          "valueRequired": "Value cannot be empty",
+          "addTo": "Add To",
+          "custom": "Custom"
+        },
+        "bodyType": "Body Type",
+        "bodyContent": {
+          "json": "JSON Content",
+          "jsonPlaceholder": "Enter JSON",
+          "params": "Body Parameters",
+          "emptyParams": "No body parameters yet, click to add",
+          "rawText": "Raw Text",
+          "rawTextPlaceholder": "Enter raw text, you can use {{reference variables}}",
+          "binary": "Binary File",
+          "upload": "Upload File"
+        },
+        "advanced": {
+          "timeout": "Timeout (ms)",
+          "retries": "Max Retries"
+        },
+        "sections": {
+          "basic": "Basic Settings",
+          "headers": "Headers",
+          "params": "Parameters",
+          "auth": "Authentication",
+          "body": "Body",
+          "advanced": "Advanced Settings"
+        }
+      },
+      "outputs": {
+        "body": "Response Body",
+        "statusCode": "Status Code",
+        "headers": "Response Headers"
+      }
+    },
+    "code": {
+      "label": "Code",
+      "description": "Execute custom code to process input variables and generate output results",
+      "validation": {
+        "titleRequired": "Node title cannot be empty",
+        "codeContentRequired": "Code content cannot be empty"
+      },
+      "form": {
+        "inputParams": "Input Parameters",
+        "codeConfig": "Code Configuration",
+        "outputParams": "Output Parameters",
+        "programmingLanguage": "Programming Language",
+        "codeContent": "Code Content",
+        "editInLargeWindow": "Edit in Large Window",
+        "exceptionHandling": "Exception Handling",
+        "ignoreErrors": "Ignore execution errors (continue workflow even when errors occur)",
+        "noCustomParams": "No custom parameters yet, click the button below to add",
+        "addParam": "Add Parameter",
+        "noOutputParams": "No output parameters"
+      },
+      "editor": {
+        "title": "Code Editor",
+        "loading": "Editor loading...",
+        "retryCount": "Retry count",
+        "loadFailed": "Editor failed to load",
+        "retryLoading": "Retry loading editor",
+        "unknownLanguage": "Unknown language"
+      },
+      "execution": {
+        "execute": "Execute",
+        "executeJS": "Run JS",
+        "executePY": "Run PY",
+        "executeCS": "Run C#",
+        "executeDOS": "Run DOS",
+        "executeVBS": "Run VBS",
+        "executePS": "Run PS",
+        "executionMessage": "About to execute {{language}} code (This is a UI demo, actual execution requires backend support)"
+      },
+      "params": {
+        "paramName": "Parameter Name",
+        "paramType": "Parameter Type",
+        "paramValue": "Parameter Value",
+        "enterParamName": "Enter parameter name",
+        "childParam": "Child Parameter",
+        "outputParam": "Output Parameter",
+        "renameKey": "Rename Key",
+        "keyExists": "Key name already exists, cannot rename",
+        "addSubParam": "Add Sub-Parameter"
+      },
+      "inputs": {
+        "codeContent": "Code content",
+        "language": "Programming language",
+        "ignoreErrors": "Ignore execution errors",
+        "input": "Custom parameter array"
+      },
+      "defaults": {
+        "title": "Code_{{index}}",
+        "param": "Parameter1",
+        "defaultValue": "Default Value",
+        "defaultCode": "// Write your code here\nasync function main({ params }) {\n  // Get input parameters through 'params'\n  const input = params.input;\n  \n  // Build output object\n  return {\n    key0: \"Output value 1\",\n    key1: [1, 2, 3],\n    key2: { name: \"Test\" }\n  };\n}"
+      },
+      "outputs": {
+        "key0": "String output",
+        "key1": "Array output",
+        "key2": "Object output"
+      },
+      "simplifiedView": {
+        "inputLabel": "Input",
+        "outputLabel": "Output",
+        "codeExecute": "Code · Execute",
+        "ignoreErrors": "Ignore Errors"
+      }
+    },
+    "image_generation": {
+      "label": "Image Generation",
+      "description": "Generate images from text descriptions, with support for reference images and parameter adjustments",
+      "validation": {
+        "titleRequired": "Node title cannot be empty",
+        "promptRequired": "Prompt cannot be empty",
+        "widthRequired": "Width must be at least 256",
+        "heightRequired": "Height must be at least 256"
+      },
+      "form": {
+        "modelSettings": "Model Settings",
+        "referenceImages": "Reference Images",
+        "promptSettings": "Prompt Settings",
+        "customParams": "Custom Parameters",
+        "style": "Image Style",
+        "modelType": "Model Type",
+        "aspectRatio": "Aspect Ratio",
+        "width": "Width",
+        "height": "Height",
+        "addReferenceImage": "Add Reference Image",
+        "similarity": "Reference Image Similarity",
+        "prompt": "Prompt",
+        "promptPlaceholder": "Enter a detailed description of the image, e.g.: A cute orange cat playing in a grassy field",
+        "negativePrompt": "Negative Prompt",
+        "negativePromptPlaceholder": "Enter elements you don't want in the image, e.g.: blurry, distorted, low quality",
+        "addCustomParam": "Add Custom Parameter",
+        "customParamName": "Custom Parameter",
+        "noCustomParams": "No custom parameters yet"
+      },
+      "styleOptions": [
+        "Realistic",
+        "Abstract Art",
+        "Cartoon Style",
+        "Sci-Fi",
+        "Vintage",
+        "Impressionism",
+        "Pixel Art"
+      ],
+      "aspectRatioOptions": [
+        "1:1 (1024*1024)",
+        "16:9 (1024*576)",
+        "3:2 (1024*682)",
+        "4:3 (1024*768)",
+        "3:4 (768*1024)",
+        "2:3 (682*1024)",
+        "9:16 (576*1024)"
+      ],
+      "inputs": {
+        "style": "Image style type",
+        "width": "Generated image width",
+        "height": "Generated image height",
+        "aspectRatio": "Aspect ratio",
+        "modelType": {
+          "label": "Model type text",
+          "value": "Model type value"
+        },
+        "referenceImages": {
+          "title": "Reference image list",
+          "type": "Image data",
+          "content": "Similarity",
+          "similarity": "Similarity to reference image, between 0-1"
+        },
+        "prompt": "Image generation prompt",
+        "negativePrompt": "Negative prompt, specifying unwanted content",
+        "customParams": {
+          "title": "Custom parameter array",
+          "name": "Parameter name",
+          "type": "Parameter type",
+          "value": "Parameter value"
+        }
+      },
+      "outputs": {
+        "data": "Generated image data",
+        "msg": "Processing result message"
+      },
+      "simplifiedView": {
+        "input": "Input",
+        "output": "Output",
+        "type": "Type"
+      }
+    },
+    "knowledge_base": {
+      "label": "Knowledge Base",
+      "description": "Retrieve relevant information from a selected knowledge base",
+      "validation": {
+        "knowledgeBaseRequired": "Please select a knowledge base"
+      },
+      "form": {
+        "inputParams": "Input Parameters",
+        "knowledgeBaseSettings": "Knowledge Base Settings",
+        "outputParams": "Output Parameters",
+        "noCustomParams": "No custom parameters yet, click the button below to add",
+        "addParam": "Add Parameter",
+        "noDataSourceSelected": "Please add a data source, only one can be added"
+      },
+      "knowledgeBaseSelector": {
+        "title": "Select Knowledge Base",
+        "search": "Search knowledge base...",
+        "refresh": "Refresh",
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "emptyDescription": "No knowledge base available",
+        "columns": {
+          "name": "Knowledge Base Name",
+          "type": "Type",
+          "description": "Description"
+        }
+      },
+      "inputs": {
+        "knowledgeBase": "Knowledge Base",
+        "customParams": "Custom parameters"
+      },
+      "outputs": {
+        "outputList": "Query Results",
+        "rowNum": "Result Count"
+      },
+      "simplifiedView": {
+        "knowledgeBase": "Knowledge Base",
+        "unselected": "No knowledge base selected",
+        "input": "Input",
+        "output": "Output",
+        "noCustomInputParams": "No custom input parameters",
+        "type": "Type"
+      }
+    },
+    "mcp": {
+      "label": "MCP Node",
+      "description": "Used for MCP related operations",
+      "validation": {
+        "mcpServerRequired": "Please enter MCP server address"
+      },
+      "form": {
+        "inputParams": "Input Parameters",
+        "mcpSettings": "MCP Settings",
+        "outputParams": "Output Parameters",
+        "noCustomParams": "No custom parameters yet, click the button below to add",
+        "serverNotSet": "Please add a server, only one can be added",
+        "basicSettings": "Basic Settings",
+        "headersTooltip": "Switch to key-value mode, reference variables",
+        "editHeaders": "Edit Headers",
+        "headerName": "Header Name",
+        "headerValue": "Header Value",
+        "addHeader": "Add Header",
+        "enterAuthKey": "Enter Authentication Key",
+        "valueRequired": "Value cannot be empty",
+        "enterOrReferenceValue": "Enter or reference parameter value",
+        "enterAuthToken": "Enter authentication token",
+        "authTooltip": "Set authentication information for MCP requests",
+        "headersDescription": "MCP request headers, used for authentication and special instructions",
+        "dataMigrationStart": "Detected old version customParams data, migrating to headers...",
+        "dataMigrationComplete": "Data migration completed",
+        "dataMigrationFailed": "Data migration failed"
+      },
+      "inputs": {
+        "mcpServer": "MCP Server",
+        "operation": "Operation Type",
+        "operationTypes": {
+          "sse": "Server-Sent Events (SSE)",
+          "streamableHttp": "Streamable HTTP"
+        },
+        "enableAuth": "Enable Authentication",
+        "authValue": "Bearer Token",
+        "customParams": "Custom parameters",
+        "headers": "Headers",
+        "authType": "Authentication Type",
+        "authTypes": {
+          "bearerToken": "Bearer Token",
+          "custom": "Custom"
+        },
+        "authKey": "Authentication Key",
+        "tokenValue": "Authentication Value",
+        "authAddTo": "Add To"
+      },
+      "outputs": {
+        "outputList": "Result List",
+        "rowNum": "Result Count"
+      },
+      "simplifiedView": {
+        "server": "Server",
+        "serverNotSet": "Server not set",
+        "auth": "Auth",
+        "authStatus": {
+          "disabled": "Disabled",
+          "bearerSet": "Bearer Set",
+          "bearerNotSet": "Bearer Not Set",
+          "custom": "Custom Auth"
+        },
+        "operationTypes": {
+          "sse": "SSE",
+          "streamableHttp": "HTTP Stream"
+        },
+        "input": "Input",
+        "output": "Output",
+        "noCustomInputParams": "No custom input parameters",
+        "complexObject": "[Complex Object]"
+      }
+    },
+    "loop": {
+      "label": "Loop",
+      "description": "Used to set the number of iterations and repeat a series of tasks",
+      "validation": {
+        "titleRequired": "Node title cannot be empty",
+        "loopTimesRequired": "Loop times cannot be empty",
+        "loopTimesGreaterThanZero": "Loop times must be greater than 0"
+      },
+      "form": {
+        "loopConfig": "Loop Settings",
+        "loopTimes": "Loop Times"
+      },
+      "inputs": {
+        "loopTimes": "Number of iterations"
+      },
+      "outputs": {
+        "result": "Loop result"
+      }
+    },
+    "condition": {
+      "label": "Condition",
+      "description": "Connect multiple downstream branches. If the set condition is met, only execute the corresponding branch",
+      "validation": {
+        "titleRequired": "Node title cannot be empty",
+        "leftExpressionRequired": "Left expression condition is required",
+        "rightExpressionRequired": "Right expression condition is required"
+      },
+      "form": {
+        "branches": "Condition Branches",
+        "addBranch": "Add Branch",
+        "deleteBranch": "Delete Current Branch",
+        "addCondition": "Add Condition",
+        "relations": {
+          "if": "If",
+          "elseIf": "Else If",
+          "else": "Else"
+        },
+        "logical": {
+          "and": "AND",
+          "or": "OR"
+        }
+      },
+      "inputs": {
+        "conditions": "Condition branches",
+        "expressionType": "Condition branch type",
+        "branchKey": "Condition branch unique identifier",
+        "relation": "Relationship with previous expression",
+        "leftExpression": "Left side expression condition",
+        "relationOperator": "Relationship",
+        "rightExpression": "Right side expression condition",
+        "contentType": "Right side condition content type"
+      }
+    }
+  },
+  "components": {
+    "sidebar": {
+      "title": "Sidebar",
+      "close": "Close"
+    },
+    "nodePanel": {
+      "title": "Node Panel",
+      "search": "Search Nodes"
+    },
+    "addNode": {
+      "title": "Add Node",
+      "cancel": "Cancel"
+    },
+    "paramsArrayEditor": {
+      "emptyNameError": "Parameter name cannot be empty",
+      "duplicateNameError": "Parameter name cannot be duplicated"
+    },
+    "outputParamsEditor": {
+      "paramName": "Parameter Name",
+      "addSubParam": "Add Sub-Parameter",
+      "tooltip": "Set node output parameters, supporting nested object structures",
+      "headerTitle": "Output Parameters",
+      "emptyText": "No output parameters yet, click the button below to add",
+      "addButtonText": "Add Output Parameter",
+      "newProperty": "New Sub-Property",
+      "newOutput": "New Output Parameter",
+      "params": {
+        "renameKey": "Click to rename parameter",
+        "system": "System",
+        "delete": "Delete parameter",
+        "addDescription": "Add description..."
+      },
+      "warning": {
+        "builtInModifyBlocked": "Attempted to modify built-in parameter {{paramKey}}, operation blocked",
+        "builtInDeleteBlocked": "Attempted to delete built-in parameter {{paramKey}}, operation blocked",
+        "builtInAddChildBlocked": "Attempted to add child parameter to built-in parameter {{paramKey}}, operation blocked",
+        "builtInRenameBlocked": "Attempted to rename built-in parameter {{paramKey}}, operation blocked",
+        "keyExists": "Property name already exists: {{newKey}}",
+        "renameToBuiltIn": "Attempted to rename parameter to built-in parameter name {{newKey}}, operation blocked",
+        "propNotFound": "Property collection not found: {{path}}",
+        "syncError": "Form synchronization error"
+      }
+    }
+  },
+  "formComponents": {
+    "formHeader": {
+      "rename": "Rename",
+      "description": "Description",
+      "delete": "Delete",
+      "copy": "Copy"
+    },
+    "formContent": {
+      "required": "Required"
+    },
+    "formOutputs": {
+      "title": "Output",
+      "add": "Add Parameter",
+      "name": "Parameter Name",
+      "type": "Parameter Type",
+      "description": "Description",
+      "required": "Required",
+      "default": "Default Value"
+    },
+    "propertiesEdit": {
+      "addProperty": "Add Property",
+      "emptyText": "No output parameters yet, click to add",
+      "inputVariableName": "Enter variable name",
+      "collapse": "Collapse",
+      "expand": "Expand",
+      "referenceData": "Reference Data",
+      "defaultValue": "Default Value",
+      "selectReferenceParam": "Select reference parameter",
+      "description": "Description",
+      "parameterHelpText": "Help others understand this parameter",
+      "selectType": "Select type",
+      "pleaseInput": "Please input"
+    },
+    "typeTag": {
+      "string": "String",
+      "number": "Number",
+      "boolean": "Boolean",
+      "object": "Object",
+      "array": "Array",
+      "file": "File"
+    }
+  },
+  "plugins": {
+    "variableSelector": {
+      "loopVariables": "Loop Variables",
+      "indexLoopVariable": "index (Loop Index)",
+      "itemLoopVariable": "item (Loop Item)",
+      "selectVariable": "Select Variable",
+      "noData": "No Data"
+    }
+  },
+  "common": {
+    "errors": {
+      "formSubmit": "Form submission failed",
+      "jsonParseFailed": "JSON parsing failed",
+      "initParams": "Error initializing parameters",
+      "updateParamProps": "Error updating parameter properties",
+      "updateOutputParam": "Error updating output parameter",
+      "deleteOutputParam": "Error deleting output parameter",
+      "addChildParam": "Error adding child parameter",
+      "addTopLevelOutputParam": "Error adding top-level output parameter",
+      "selectKnowledgeBase": "Error selecting knowledge base",
+      "clearKnowledgeBase": "Error clearing knowledge base",
+      "prepareFormSubmit": "Error preparing form submission"
+    }
+  },
+  "loginPage": {
+    "title": "Login",
+    "welcomeLogin": "Welcome to login",
+    "welcomeRegister": "Welcome to register",
+    "tabs": {
+      "passwordLogin": "Password Login",
+      "captchaLogin": "Verification Code Login"
+    },
+    "phone": {
+      "label": "Phone Number",
+      "placeholder": "Please enter phone number",
+      "errorRequired": "Phone number cannot be empty",
+      "errorFormat": "Phone number format is incorrect"
+    },
+    "captcha": {
+      "label": "Verification Code",
+      "placeholder": "Please enter verification code",
+      "errorRequired": "Verification code cannot be empty",
+      "getLabel": "Get Verification Code"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Please enter password",
+      "errorRequired": "Password cannot be empty"
+    },
+    "confirmPassword": {
+      "label": "Confirm Password",
+      "placeholder": "Please enter password again",
+      "errorRequired": "Confirm password cannot be empty",
+      "errorNotMatch": "The two passwords entered do not match"
+    },
+    "loginBtn": {
+      "title": "Login"
+    },
+    "registerBtn": {
+      "title": "Register"
+    },
+    "switchLabel": {
+      "login": {
+        "title": "Don't have an account?",
+        "link": "Register now"
+      },
+      "register": {
+        "title": "Already have an account?",
+        "link": "Login now"
+      }
+    },
+    "tip": {
+      "registerSuccess": "Registration successful",
+      "registerFailed": "Registration failed",
+      "loginSuccess": "Login successful",
+      "loginFailed": "Login failed",
+      "getCaptchaSuccess": "Verification code sent",
+      "getCaptchaFailed": "Failed to get verification code"
+    }
+  },
+  "boardPage": {
+    "title": "Kedo Flow Control Panel",
+    "allFlow": "All Flows",
+    "user": "User",
+    "createFlow": "Create Flow",
+    "emptyImageText": "No Image Available",
+    "emptyText": "No Data Available",
+    "editFlow": "Edit Flow",
+    "logout": "Logout",
+    "createModal": {
+      "title": "Create Flow",
+      "flowName": {
+        "label": "Flow Name",
+        "placeholder": "Please enter flow name",
+        "errorRequired": "Flow name cannot be empty"
+      },
+      "flowDescription": {
+        "label": "Flow Description",
+        "placeholder": "Please enter flow description",
+        "errorRequired": "Flow description cannot be empty"
+      },
+      "okText": "Confirm",
+      "cancelText": "Cancel",
+      "tip": {
+        "createSuccess": "Created successfully",
+        "createFailed": "Creation failed"
+      }
+    }
+  }
+}

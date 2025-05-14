@@ -1,0 +1,50 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    container_name: kedoai-frontend
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5001:80"
+    container_name: kedoai-backend
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultDatabase=Server=mysql;database=kedoai;uid=root;pwd=kedoai;charset=utf8mb4;
+      - ConnectionStrings__RedisCache=redis:6379
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+    depends_on:
+      - mysql
+      - redis
+    restart: unless-stopped
+
+  redis:
+    image: redis:latest
+    container_name: redis-kedoai
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_kedoai:/data
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-kedoai
+    environment:
+      MYSQL_ROOT_PASSWORD: kedoai
+      MYSQL_DATABASE: kedoai
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_kedoai:/var/lib/mysql
+      - ./backend/kedoai_init.sql:/docker-entrypoint-initdb.d/kedoai_init.sql
+
+volumes:
+  redis_kedoai:
+  mysql_kedoai:

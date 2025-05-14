@@ -1,0 +1,28 @@
+﻿{
+  "SpecificationDocumentSettings": {
+    "DocumentTitle": "Kedo API | 规范化接口",
+    "GroupOpenApiInfos": [
+      {
+        "Group": "Default",
+        "Title": "Kedo API",
+        "Description": "",
+        "Version": "1.0.0",
+        "TermsOfService": "",
+        "Contact": {
+          "Name": "硅创社开源社区(Kedo)",
+          "Url": "",
+          "Email": ""
+        }
+      }
+    ]
+  },
+  "OssInfo": {
+    "AccessKeyId": "***",
+    "AccessKeySecret": "***",
+    "Host": "https://*****.oss-cn-shanghai.aliyuncs.com",//阿里云OSSHost
+    "Timeout": "1",
+    "maxSize": "80",
+    "BucketName": "onionbit",
+    "Endpoint": "oss-cn-shanghai.aliyuncs.com"
+  }
+}

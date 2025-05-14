@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Kedo.Core</name>
+    </assembly>
+    <members>
+        <member name="M:Kedo.Core.Method.CreateRandomCode.CreateCode">
+            <summary>
+            创建订阅随机码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Kedo.Util.DESEncrypt">
+            <summary>
+            描 述：加密、解密帮助类
+            </summary>
+        </member>
+        <member name="M:Kedo.Util.DESEncrypt.Encrypt(System.String)">
+            <summary>
+            加密
+            </summary>
+            <param name="Text">需要加密的内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Util.DESEncrypt.Encrypt(System.String,System.String)">
+            <summary> 
+            加密数据 
+            </summary> 
+            <param name="Text">需要加密的内容</param> 
+            <param name="sKey">秘钥</param> 
+            <returns></returns> 
+        </member>
+        <member name="M:Kedo.Util.DESEncrypt.Decrypt(System.String)">
+            <summary>
+            解密
+            </summary>
+            <param name="Text">需要解密的内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Util.DESEncrypt.Decrypt(System.String,System.String)">
+            <summary> 
+            解密数据 
+            </summary> 
+            <param name="Text">需要解密的内容</param> 
+            <param name="sKey">秘钥</param> 
+            <returns></returns> 
+        </member>
+        <member name="T:Kedo.Util.Md5Helper">
+            <summary>
+            版 本 Learun-ADMS V7.0.3     
+            Copyright (c) 2013-2018   
+            创建人：      -框架开发组
+            日 期：2017.03.04
+            描 述：数据访问(SqlServer) 上下文
+            </summary>
+        </member>
+        <member name="M:Kedo.Util.Md5Helper.Encrypt(System.String,System.Int32)">
+            <summary>
+            MD5加密
+            </summary>
+            <param name="str">加密字符</param>
+            <param name="code">加密位数16/32</param>
+            <returns></returns>
+        </member>
+        <member name="M:Kedo.Util.Md5Helper.Hash(System.String)">
+            <summary>
+            32位MD5加密（小写）
+            </summary>
+            <param name="input">输入字段</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
