@@ -1,142 +1,165 @@
 ![Kedo智能流程体系统图片](images/img04.png)
-# Kedo- 流程智能体开发平台 开源项目
+# Kedo - Process Intelligence Agent Development Platform (Open Source)
 
-欢迎来到 **Kedo** 的开源项目！KedoFlow 是一个基于大模型的流程智能体开发平台，旨在帮助开发者快速构建和部署智能化的业务流程。本项目支持前端使用 React 进行开发，后端支持 .NET Core 和 Java 技术栈，适用于多种应用场景。
+Welcome to the **Kedo** open-source project! **KedoFlow** is a process intelligence agent development platform built on large language models (LLMs), designed to help developers quickly build and deploy intelligent business workflows. This project supports React for frontend development, with backend support for both **.NET Core** and **Java**, making it suitable for a wide range of application scenarios.
 
-以下是关于该项目的详细信息、开源协议、使用指南以及相关注意事项。
+Below are detailed project information, open-source licenses, usage guides, and important notes.
 
+---
 
-## 1. 项目概述
+## 1. Project Overview
 
-### 1.1 核心功能
-- **基于大模型的能力**：集成先进的大语言模型（LLM）DeepSeek,ChatGPT,千问，Claude等提供强大的自然语言处理能力，对扩展新模型也友好支持。
-- **流程智能体开发**：支持开发者自定义流程逻辑，实现自动化任务处理。
-- **多开发语言后端支持**：支持 .NET Core 和 Java 后端技术栈，满足不同团队的技术需求。
-- **现代化前端框架**：采用 React 构建用户界面，提供流畅的用户体验。
-- **多语种支持**：支持 汉语，英语满足不同语系团队的需求，。
-### 1.2 技术栈
-- **前端**：React + TypeScript
-- **后端**：
+### 1.1 Key Features
+- **LLM-Powered Capabilities**: Integrated with advanced large language models such as DeepSeek, ChatGPT, Qwen, Claude, etc., providing strong natural language processing capabilities. Easy to extend with new models.
+- **Customizable Workflow Agents**: Enables developers to define logic and automate tasks.
+- **Multi-Language Backend Support**: Supports both .NET Core and Java backends to meet diverse team requirements.
+- **Modern Frontend Framework**: Built with React for a smooth and responsive user experience.
+- **Multilingual Support**: Available in Chinese and English to serve international teams.
+
+### 1.2 Technology Stack
+- **Frontend**: React + TypeScript
+- **Backend**:
   - .NET Core
-- **数据库**：支持 MySQL、PostgreSQL 等主流关系型数据库
-- **其他依赖**：可根据实际需求扩展第三方服务
+  - Java (Spring Boot)
+- **Database**: Supports MySQL, PostgreSQL, and other major relational databases
+- **Other Dependencies**: Can be extended with third-party services as needed
 
 ---
 
-## 2. 开源协议
+## 2. Open Source License
 
-Kedo 遵循 **Apache 2.0 License** 协议，并附加了部分限制条款，请仔细阅读以下内容：
+Kedo follows the **Apache 2.0 License** with additional restrictions. Please read the following carefully:
 
-### 2.1 Apache 2.0 License 主要条款
-- 您可以自由地使用、修改、分发本项目的代码。
-- 如果您对代码进行了修改，必须明确标注修改的部分。
-- 您需要在分发的副本中包含原始许可证和版权声明。
+### 2.1 Apache 2.0 License Highlights
+- You may freely use, modify, and distribute the code.
+- If you modify the code, you must clearly indicate the changes made.
+- You must include the original license and copyright notice when distributing copies.
 
-### 2.2 补充协议
-除了 Apache 2.0 License 的条款外，我们还添加了以下补充协议：
-1. **商业化授权**：如果您计划将 KedoFlow 用于商业用途（如出售、租赁或作为服务提供），必须事先获得我们的书面授权。请联系公司邮箱：**kedoai@kedowen.com**。
-2. **Logo 使用限制**：未经许可，不得修改或移除 KedoFlow 的 Logo 或相关品牌标识。
-3. **责任声明**：本项目按“原样”提供，不附带任何明示或暗示的担保。请确保在使用前充分测试代码。
+### 2.2 Additional Terms
+In addition to the Apache 2.0 License, we have added the following terms:
+1. **Commercial Use Authorization**: If you plan to use KedoFlow for commercial purposes (e.g., resale, rental, or service provision), prior written authorization is required. Contact us at: **kedoai@kedowen.com**.
+2. **Logo Usage Restrictions**: Modification or removal of the KedoFlow logo or branding is not permitted without explicit permission.
+3. **Disclaimer of Warranty**: The software is provided "as-is" without any warranties, express or implied. Please ensure thorough testing before use.
 
-更多详情请参考 [LICENSE 文件](LICENSE)。
+For more details, please refer to the [LICENSE file](LICENSE).
 
 ---
 
-## 3. 安装与使用指南
+## 3. Installation & Usage Guide
 
-### 3.1 克隆项目
+### 3.1 Clone the Repository
 ```bash
 git clone https://gitee.com/kedoai/kedo.git
 cd kedo
 ```
 
-### 3.2 运行项目
-#### 1. Docker 一键部署（推荐）
-为了简化本地部署流程，KedoFlow 提供了基于 Docker 的一键部署方案。您可以通过 `docker-compose` 快速启动完整的开发/测试环境，包括前端、后端和数据库服务。
+### 3.2 Run the Project
 
-1. 安装依赖
+#### 1. Docker One-Click Deployment (Recommended)
 
-请确保您的系统已安装以下工具：
+To simplify local deployment, KedoFlow provides a one-click Docker-based deployment solution. You can use `docker-compose` to quickly start a complete development/testing environment including frontend, backend, and database services.
+
+##### 1. Install Dependencies
+
+Make sure your system has the following tools installed:
 
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
- 2. 启动项目
+##### 2. Start the Project
 
-在项目根目录下运行以下命令：
+Run the following command in the project root directory:
 
 ```bash
-# 构建并启动所有服务
-docker-compose   -f docker-compose.yml up -d
+# Build and start all services
+docker-compose -f docker-compose.yml up -d
 ```
-3. 访问平台
 
-打开浏览器，访问：
+> This will automatically build or pull the necessary images and start the following services:
+> - React frontend app (default port: 3000)
+> - .NET Core or Java backend service (default port: 5000 or 8080)
+> - MySQL database (default port: 3306)
+> - Optional: Redis, MinIO, and other third-party services (if configured)
+
+##### 3. Access the Platform
+
+Open your browser and navigate to:
 
 ```
 http://localhost:3000
 ```
 
-即可进入 Kedo 平台的前端界面。
+You should now see the KedoFlow platform interface.
 
----
+#### 2. Local Setup (Manual)
 
+##### 1. Frontend Setup
 
+Navigate to the frontend directory and install dependencies:
 
-#### 2. 本地部署
-1. 前端安装
-进入前端目录并安装依赖：
 ```bash
 cd frontend
 npm install
 npm start
 ```
-2. 后端安装
-- .NET Core 后端
+
+##### 2. Backend Setup
+
+**.NET Core Backend**
 ```bash
 cd backend/dotnet
 dotnet restore
 dotnet run
 ```
 
-4. 数据库配置
-编辑 `application.properties` 或 `appsettings.json` 文件，配置数据库连接信息。
+**Java Backend**
+```bash
+cd backend/java
+./mvnw clean install
+java -jar target/kedo.jar
+```
 
-5. 运行测试
-启动前后端服务后，访问默认地址（如 http://localhost:3000）即可体验平台功能。
+##### 3. Database Configuration
 
----
+Edit the `application.properties` or `appsettings.json` file to configure the database connection.
 
-### 3.3 初始账号密码
-默认账号：15188886666
-默认密码：123456
+##### 4. Run Tests
 
-## 4. 贡献指南
-
-我们非常欢迎社区开发者为 Kedo提供贡献！以下是参与项目的建议步骤：
-
-1. **Fork 项目**：点击 GitHub 页面右上角的 "Fork" 按钮。
-2. **克隆代码**：将您的 Fork 仓库克隆到本地。
-3. **创建分支**：基于主分支创建一个新的分支以进行开发。
-4. **提交更改**：完成开发后，提交您的更改并推送到远程仓库。
-5. **发起 Pull Request**：向主仓库提交 Pull Request 并描述您的更改。
-
-请注意遵循项目的代码风格和规范。
+After starting both frontend and backend services, access the default URL (e.g., http://localhost:3000) to explore the platform.
 
 ---
 
-## 5. 联系我们
+### 3.3 Default Account and Password  
+Default username: **15188886666**  
+Default password: **123456**
 
-如果您有任何问题或需要进一步的帮助，请通过以下方式联系我们：
+## 4. Contribution Guidelines
 
-- **公司网站**：[www.kedowen.com](http://www.kedoai.com)
-- **公司邮箱**：kedoai@kedowen.com
-- **GitHub Issues**：在本项目的 Issues 页面提交您的问题或建议。
+We welcome contributions from the community! Here’s how you can get involved:
+
+1. **Fork the Project**: Click the "Fork" button on the top-right corner of the GitHub page.
+2. **Clone the Code**: Clone your forked repository to your local machine.
+3. **Create a Branch**: Create a new branch based on the main branch for your development.
+4. **Commit Changes**: Commit your changes and push them to your remote repository.
+5. **Submit a Pull Request**: Submit a PR to the main repository and describe your changes.
+
+Please follow the project's coding style and guidelines.
 
 ---
 
-## 6. 版权声明
+## 5. Contact Us
 
-Kedo及其相关 Logo、品牌标识均为 **KedoWen Inc.** 所有。未经授权，禁止任何形式的复制、传播或商业使用。
+If you have any questions or need further assistance, please contact us through the following channels:
 
-感谢您选择 Kedo！希望我们的平台能够为您的项目带来价值。
+- **Official Website**: [www.kedowen.com](http://www.kedoai.com)
+- **Email**: kedoai@kedowen.com
+- **GitHub Issues**: Submit issues or suggestions via the Issues tab on GitHub
+
+---
+
+## 6. Copyright Notice
+
+Kedo and its associated logos and brand identities are the property of **KedoWen Inc.**. Unauthorized copying, distribution, or commercial use is strictly prohibited.
+
+Thank you for choosing Kedo! We hope our platform adds value to your projects.
+
