@@ -13,7 +13,9 @@ export const sqlExecutorNode: FlowNodeRegistry = {
       return i18n.t('nodes.sql_executor.label');
     },
     icon: iconDatabase,
-    description: i18n.t('nodes.sql_executor.description'),
+    get description() {
+      return i18n.t('nodes.sql_executor.description')
+    }
   },
   meta: {
     size: {

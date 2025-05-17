@@ -55,8 +55,10 @@ export const SimplifiedHttpView = () => {
                 <div style={{ 
                   flex: 1,
                   overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  whiteSpace: 'nowrap',
+                  wordBreak: 'break-word',
+                  overflowWrap: 'break-word',
+                  whiteSpace: 'normal',
+                  maxWidth: '400px',
                   color: '#333',
                   fontSize: '13px'
                 }}>

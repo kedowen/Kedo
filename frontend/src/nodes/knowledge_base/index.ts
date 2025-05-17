@@ -13,7 +13,9 @@ export const KnowledgeBaseNodeRegistry: FlowNodeRegistry = {
       return i18next.t('nodes.knowledge_base.label');
     },
     icon: iconKnowledge,
-    description: i18next.t('nodes.knowledge_base.description'),
+    get description() {
+      return i18next.t('nodes.knowledge_base.description');
+    }
   },
   meta: {
     size: {

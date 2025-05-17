@@ -34,19 +34,17 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   (response: AxiosResponse) => {
     const { data } = response;
-
     // 这里可以根据后端的数据结构进行调整
     if (data.statusCode === 200 || data.statusCode === 0) {
       return data;
     } else {
-      Toast.error(data.errors || '请求失败');
-      return Promise.reject(new Error(data.message || '请求失败'));
+      Toast.error( String(data.errors));
+      return Promise.reject(new Error(data.errors));
     }
   },
   (error: AxiosError) => {
     // 处理 HTTP 状态码错误
     let errorMessage = '请求失败';
-
     if (error.response) {
       const status = error.response.status;
       switch (status) {

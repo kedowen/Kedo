@@ -127,21 +127,30 @@
     "run": {
       "title": "Run",
       "runningTitle": "Running",
-      "description": "Run the workflow",
+      "description": "Run Diagram",
       "clearTitle": "Clear Results",
       "sideSheet": {
         "title": "Test Run",
         "chat": {
           "system": {
             "title": "System",
-            "prompt": "Welcome to the Workflow Runner Assistant! Please configure the parameters first, then click the Run button to start the execution."
+            "prompt": "Welcome to the workflow assistant! Please configure the parameters first, then click the execute button to start running."
           },
           "user": {
             "title": "User",
             "empty": "No input parameters"
           },
           "assistant": {
-            "title": "Assistant"
+            "title": "Assistant",
+            "node": "Node",
+            "result": "Output Result",
+            "error": "Error Message",
+             "empty": "No output result",
+            "executeError": "Execution Error",
+            "getResultError": "Failed to retrieve result",
+            "finalMessageSuccess": "All nodes have been executed successfully",
+            "finalMessageStop": "The process has been stopped, only partial results are displayed",
+            "finalMessageError": "Execution completed, but some nodes encountered issues"
           }
         },
         "footer": {
@@ -153,25 +162,37 @@
           },
           "config": {
             "title": "Parameter Configuration",
-            "emptyError": "Please fill in the required fields",
+            "emptyError": "Please fill in required fields",
             "empty": "No input parameters"
           }
         },
         "tip": {
-          "stop": "The process execution has been stopped, only partial results are displayed",
+          "stop": "The process has been stopped, only partial results are displayed",
           "executeError": {
-            "title": "Partially Executed",
-            "content": "Executed with issues found in some nodes"
+            "title": "Partial Execution Completed",
+            "content": "Execution completed, number of problematic nodes"
           },
           "executeSuccess": {
-            "title": "Fully Executed",
-            "content": "Executed successfully without issues"
+            "title": "All Execution Completed",
+            "content": "Execution completed, no problematic nodes"
           },
-          "userStop": "The process execution has been stopped by user, only partial results are displayed",
-          "closeError": "Execution is in progress, please stop or wait for completion before proceeding",
-          "noUser": "No current user Id",
-          "noFlowId": "No current flow Id"
+          "executeSuccessFail": {
+            "title": "Execution Failed",
+            "content": "An error occurred during node execution"
+          },
+          "userStop": "The process has been stopped, only partial results are displayed",
+          "closeError": "Process is currently running, please stop or wait until completion before performing this action",
+          "noUser": "No user ID available",
+          "noFlowId": "No flow ID available"
         }
+      },
+      "result": {
+        "title": "Execution Result",
+        "input": "Input Result",
+        "empty": "No results returned",
+        "output": "Output Result",
+        "preview": "Preview",
+        "previewImage": "Preview Image"
       }
     }
   },
@@ -256,7 +277,20 @@
         "status": "Status",
         "normal": "Normal",
         "disabled": "Disabled",
-        "dataSourceId": "Data Source ID"
+        "dataSourceId": "Data Source ID",
+        "databaseTables": "Database Tables",
+        "tableStructure": "Table Structure",
+        "queryTab": "Query",
+        "structureTab": "Structure",
+        "enterQuery": "Enter query condition or SQL statement",
+        "queryPlaceholder": "Enter query condition, e.g.: id > 1 AND name LIKE '%product%'",
+        "execute": "Execute",
+        "generatedSQL": "Generated SQL",
+        "queryResults": "Query Results",
+        "querying": "Executing query...",
+        "noQueryResults": "No results",
+        "queryTip": "Enter query condition and click execute button",
+        "nlQueryTip": "Natural language queries supported, e.g.: \"Find all products with price greater than 100\", \"Show top 5 records ordered by creation date descending\""
       },
       "sqlEditor": {
         "title": "SQL Editor",
@@ -267,6 +301,18 @@
         "totalRecords": "Total {{count}} records",
         "executeSuccess": "Execution Successful",
         "noResults": "No results or execution successful with no returned data"
+      },
+      "sqlExecutor": {
+        "title": "SQL Execution Result",
+        "sql": "SQL Query",
+        "result": "Execution Result",
+        "error": "Execution Error",
+        "close": "Close",
+        "noData": "No Data",
+        "noSql": "No SQL query provided",
+        "noDatasourceOrSql": "No data source selected or SQL query provided",
+        "rowCount": "Total {{rowCount}} records",
+        "queryTime": "Query time {{time}} seconds"
       },
       "inputs": {
         "sqlQuery": "SQL Query",
@@ -351,7 +397,7 @@
         "moreRecipients": "{{count}} more recipients",
         "noSubject": "No subject",
         "noContent": "No content",
-        "subjectPlaceholder": "Enter subject",
+        "subjectPlaceholder": "Enter email subject",
         "contentPlaceholder": "Enter email content"
       },
       "validation": {
@@ -427,7 +473,7 @@
         "authCustom": {
           "key": "Key",
           "value": "Value",
-          "valuePlaceholder": "Enter or reference parameter value",
+          "valuePlaceholder": "Enter value or reference parameters",
           "valueRequired": "Value cannot be empty",
           "addTo": "Add To",
           "custom": "Custom"
@@ -670,7 +716,7 @@
         "inputParams": "Input Parameters",
         "mcpSettings": "MCP Settings",
         "outputParams": "Output Parameters",
-        "noCustomParams": "No custom parameters yet, click the button below to add",
+        "noCustomParams": "No custom parameters yet, click below to add",
         "serverNotSet": "Please add a server, only one can be added",
         "basicSettings": "Basic Settings",
         "headersTooltip": "Switch to key-value mode, reference variables",
@@ -683,7 +729,7 @@
         "enterOrReferenceValue": "Enter or reference parameter value",
         "enterAuthToken": "Enter authentication token",
         "authTooltip": "Set authentication information for MCP requests",
-        "headersDescription": "MCP request headers, used for authentication and special instructions",
+        "headersDescription": "MCP request headers, for authentication and special instructions",
         "dataMigrationStart": "Detected old version customParams data, migrating to headers...",
         "dataMigrationComplete": "Data migration completed",
         "dataMigrationFailed": "Data migration failed"
@@ -756,13 +802,13 @@
       "description": "Connect multiple downstream branches. If the set condition is met, only execute the corresponding branch",
       "validation": {
         "titleRequired": "Node title cannot be empty",
-        "leftExpressionRequired": "Left expression condition is required",
-        "rightExpressionRequired": "Right expression condition is required"
+        "leftExpressionRequired": "Left expression condition cannot be empty",
+        "rightExpressionRequired": "Right expression condition cannot be empty"
       },
       "form": {
         "branches": "Condition Branches",
         "addBranch": "Add Branch",
-        "deleteBranch": "Delete Current Branch",
+        "deleteBranch": "Delete Branch",
         "addCondition": "Add Condition",
         "relations": {
           "if": "If",
@@ -776,11 +822,11 @@
       },
       "inputs": {
         "conditions": "Condition branches",
-        "expressionType": "Condition branch type",
-        "branchKey": "Condition branch unique identifier",
+        "expressionType": "Condition expression type",
+        "branchKey": "Branch unique identifier",
         "relation": "Relationship with previous expression",
         "leftExpression": "Left side expression condition",
-        "relationOperator": "Relationship",
+        "relationOperator": "Relationship operator",
         "rightExpression": "Right side expression condition",
         "contentType": "Right side condition content type"
       }
@@ -869,7 +915,8 @@
       "boolean": "Boolean",
       "object": "Object",
       "array": "Array",
-      "file": "File"
+      "file": "File",
+      "integer": "Integer"
     }
   },
   "plugins": {
@@ -894,91 +941,6 @@
       "selectKnowledgeBase": "Error selecting knowledge base",
       "clearKnowledgeBase": "Error clearing knowledge base",
       "prepareFormSubmit": "Error preparing form submission"
-    }
-  },
-  "loginPage": {
-    "title": "Login",
-    "welcomeLogin": "Welcome to login",
-    "welcomeRegister": "Welcome to register",
-    "tabs": {
-      "passwordLogin": "Password Login",
-      "captchaLogin": "Verification Code Login"
-    },
-    "phone": {
-      "label": "Phone Number",
-      "placeholder": "Please enter phone number",
-      "errorRequired": "Phone number cannot be empty",
-      "errorFormat": "Phone number format is incorrect"
-    },
-    "captcha": {
-      "label": "Verification Code",
-      "placeholder": "Please enter verification code",
-      "errorRequired": "Verification code cannot be empty",
-      "getLabel": "Get Verification Code"
-    },
-    "password": {
-      "label": "Password",
-      "placeholder": "Please enter password",
-      "errorRequired": "Password cannot be empty"
-    },
-    "confirmPassword": {
-      "label": "Confirm Password",
-      "placeholder": "Please enter password again",
-      "errorRequired": "Confirm password cannot be empty",
-      "errorNotMatch": "The two passwords entered do not match"
-    },
-    "loginBtn": {
-      "title": "Login"
-    },
-    "registerBtn": {
-      "title": "Register"
-    },
-    "switchLabel": {
-      "login": {
-        "title": "Don't have an account?",
-        "link": "Register now"
-      },
-      "register": {
-        "title": "Already have an account?",
-        "link": "Login now"
-      }
-    },
-    "tip": {
-      "registerSuccess": "Registration successful",
-      "registerFailed": "Registration failed",
-      "loginSuccess": "Login successful",
-      "loginFailed": "Login failed",
-      "getCaptchaSuccess": "Verification code sent",
-      "getCaptchaFailed": "Failed to get verification code"
-    }
-  },
-  "boardPage": {
-    "title": "Kedo Flow Control Panel",
-    "allFlow": "All Flows",
-    "user": "User",
-    "createFlow": "Create Flow",
-    "emptyImageText": "No Image Available",
-    "emptyText": "No Data Available",
-    "editFlow": "Edit Flow",
-    "logout": "Logout",
-    "createModal": {
-      "title": "Create Flow",
-      "flowName": {
-        "label": "Flow Name",
-        "placeholder": "Please enter flow name",
-        "errorRequired": "Flow name cannot be empty"
-      },
-      "flowDescription": {
-        "label": "Flow Description",
-        "placeholder": "Please enter flow description",
-        "errorRequired": "Flow description cannot be empty"
-      },
-      "okText": "Confirm",
-      "cancelText": "Cancel",
-      "tip": {
-        "createSuccess": "Created successfully",
-        "createFailed": "Creation failed"
-      }
     }
   }
 }

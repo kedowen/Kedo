@@ -13,7 +13,9 @@ export const MCPNodeRegistry: FlowNodeRegistry = {
       return i18next.t('nodes.mcp.label');
     },
     icon: iconHttp, // 使用HTTP请求的图标作为替代
-    description: i18next.t('nodes.mcp.description'),
+    get description() {
+      return i18next.t('nodes.mcp.description');
+    }
   },
   meta: {
     size: {
@@ -45,7 +47,7 @@ export const MCPNodeRegistry: FlowNodeRegistry = {
               description: i18next.t('nodes.mcp.inputs.operation'),
               enum: ['sse', 'streamableHttp'],
               enumNames: [
-                i18next.t('nodes.mcp.inputs.operationTypes.sse'), 
+                i18next.t('nodes.mcp.inputs.operationTypes.sse'),
                 i18next.t('nodes.mcp.inputs.operationTypes.streamableHttp')
               ]
             },

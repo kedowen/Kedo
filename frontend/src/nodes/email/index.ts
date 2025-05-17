@@ -14,7 +14,9 @@ export const EmailNodeRegistry: FlowNodeRegistry = {
       return i18n.t('nodes.email.label');
     },
     icon: iconEmail,
-    description: i18n.t('nodes.email.description'),
+    get description() {
+      return i18n.t('nodes.email.description');
+    }
   },
   meta: {
     size: {

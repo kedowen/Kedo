@@ -141,7 +141,16 @@
             "empty": "无输入参数"
           },
           "assistant": {
-            "title": "助手"
+            "title": "助手",
+            "node":"节点",
+            "result":"输出结果",
+            "error": "错误信息",
+            "empty": "无输出结果",
+            "executeError":"执行错误",
+            "getResultError": "获取结果错误",
+            "finalMessageSuccess": "所有节点已成功执行",
+            "finalMessageStop": "流程执行已被停止，只显示部分结果",
+            "finalMessageError": "已执行完成，但有部分节点出现问题"
           }
         },
         "footer": {
@@ -167,11 +176,23 @@
             "title": "全部执行完成",
             "content": "已执行完成，无问题节点"
           },
+          "executeSuccessFail": {
+            "title": "执行失败",
+            "content": "节点执行过程中发生错误"
+          },
           "userStop": "流程执行已被停止，只显示部分结果",
           "closeError": "正在运行中，请停止或等待运行结束再操作",
           "noUser":"当前无用户Id",
           "noFlowId": "当前无流程Id"
         }
+      },
+      "result": {
+        "title": "执行结果",
+        "input":"输入结果",
+        "output":"输出结果",
+        "empty":"无返回结果",
+        "preview":"预览",
+        "previewImage": "预览图片"
       }
     }
   },
@@ -256,7 +277,20 @@
         "status": "状态",
         "normal": "正常",
         "disabled": "禁用",
-        "dataSourceId": "数据源ID"
+        "dataSourceId": "数据源ID",
+        "databaseTables": "数据库表",
+        "tableStructure": "表结构",
+        "queryTab": "查询",
+        "structureTab": "表结构",
+        "enterQuery": "输入查询条件或SQL语句",
+        "queryPlaceholder": "请输入查询条件，例如：id > 1 AND name LIKE '%产品%'",
+        "execute": "执行",
+        "generatedSQL": "生成的SQL",
+        "queryResults": "查询结果",
+        "querying": "执行查询中...",
+        "noQueryResults": "无查询结果",
+        "queryTip": "输入查询条件并点击执行按钮",
+      "nlQueryTip": "支持自然语言查询，例如：\"查询价格大于100的所有产品\"、\"按创建时间降序排列前5条记录\""
       },
       "sqlEditor": {
         "title": "SQL编辑器",
@@ -267,6 +301,18 @@
         "totalRecords": "共 {{count}} 条记录",
         "executeSuccess": "执行成功",
         "noResults": "查询无结果或执行成功但没有返回数据"
+      },
+      "sqlExecutor": {
+        "title": "SQL执行结果",
+        "sql": "SQL语句",
+        "result": "执行结果",
+        "error": "执行错误",
+        "close": "关闭",
+        "noData": "无数据",
+        "noSql": "未提供SQL语句",
+        "noDatasourceOrSql": "未选择数据源或未提供SQL语句",
+        "rowCount": "共 {{rowCount}} 条记录",
+        "queryTime": "查询耗时 {{time}} 秒"
       },
       "inputs": {
         "sqlQuery": "SQL语句",
@@ -869,7 +915,8 @@
       "boolean": "布尔值",
       "object": "对象",
       "array": "数组",
-      "file": "文件"
+      "file": "文件",
+      "integer": "整数"
     }
   },
   "plugins": {
@@ -894,91 +941,6 @@
       "selectKnowledgeBase": "选择知识库时出错",
       "clearKnowledgeBase": "清除知识库时出错",
       "prepareFormSubmit": "准备提交表单时发生错误"
-    }
-  },
-  "loginPage": {
-    "title": "登录",
-    "welcomeLogin": "欢迎登录",
-    "welcomeRegister": "欢迎注册",
-    "tabs":{
-      "passwordLogin": "密码登录",
-      "captchaLogin": "验证码登录"
-    },
-    "phone": {
-      "label": "手机号码",
-      "placeholder": "请输入手机号码",
-      "errorRequired": "手机号码不能为空",
-      "errorFormat": "手机号码格式不正确"
-    },
-    "captcha":{
-      "label": "验证码",
-      "placeholder": "请输入验证码",
-      "errorRequired": "验证码不能为空",
-      "getLabel": "获取验证码"
-    },
-    "password": {
-      "label": "密码",
-      "placeholder": "请输入密码",
-      "errorRequired": "密码不能为空"
-    },
-    "confirmPassword": {
-      "label": "确认密码",
-      "placeholder": "请再次输入密码",
-      "errorRequired": "确认密码不能为空",
-      "errorNotMatch": "两次输入的密码不一致"
-    },
-    "loginBtn": {
-      "title": "登录"
-    },
-    "registerBtn": {
-      "title": "注册"
-    },
-    "switchLabel": {
-      "login": {
-        "title": "没有账号？",
-        "link": "立即注册"
-      },
-      "register": {
-        "title": "已有账号？",
-        "link": "立即登录"
-      }
-    },
-    "tip":{
-      "registerSuccess": "注册成功",
-      "registerFailed": "注册失败",
-      "loginSuccess": "登录成功",
-      "loginFailed": "登录失败",
-      "getCaptchaSuccess": "验证码已发送",
-      "getCaptchaFailed": "获取验证码失败"
-    }
-  },
-  "boardPage":{
-    "title": "kedo流程控制台",
-    "allFlow":"全部流程",
-    "user": "用户",
-    "createFlow": "新建流程",
-    "emptyImageText":"暂无图片",
-    "emptyText": "暂无数据",
-    "editFlow": "编辑流程",
-    "logout": "退出登录",
-    "createModal":{
-      "title": "新建流程",
-      "flowName": {
-        "label": "流程名称",
-        "placeholder": "请输入流程名称",
-        "errorRequired": "流程名称不能为空"
-      },
-      "flowDescription": {
-        "label": "流程描述",
-        "placeholder": "请输入流程描述",
-        "errorRequired": "流程描述不能为空"
-      },
-      "okText": "确定",
-      "cancelText": "取消",
-      "tip": {
-        "createSuccess": "创建成功",
-        "createFailed": "创建失败"
-      }
     }
   }
 }

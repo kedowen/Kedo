@@ -13,7 +13,9 @@ export const CodeNodeRegistry: FlowNodeRegistry = {
       return i18n.t('nodes.code.label');
     },
     icon: iconCode,
-    description: i18n.t('nodes.code.description'),
+    get description() {
+      return i18n.t('nodes.code.description');
+    }
   },
   meta: {
     size: {
@@ -84,7 +86,7 @@ export const CodeNodeRegistry: FlowNodeRegistry = {
         outputs: {
           type: 'object',
           properties: {
-            key0: { 
+            key0: {
               type: 'string',
               description: i18n.t('nodes.code.outputs.key0')
             },

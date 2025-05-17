@@ -13,7 +13,9 @@ export const HttpRequestNodeRegistry: FlowNodeRegistry = {
       return i18n.t('nodes.http_request.label');
     },
     icon: iconHttp,
-    description: i18n.t('nodes.http_request.description'),
+    get description() {
+      return i18n.t('nodes.http_request.description');
+    }
   },
   meta: {
     defaultPorts: [{ type: 'input' }, { type: 'output' }],

@@ -19,7 +19,9 @@ export const LoopNodeRegistry: FlowNodeRegistry = {
       return i18n.t('nodes.loop.label');
     },
     icon: iconLoop,
-    description: i18n.t('nodes.loop.description'),
+    get description() {
+      return i18n.t('nodes.loop.description');
+    }
   },
   meta: {
     isContainer: true,

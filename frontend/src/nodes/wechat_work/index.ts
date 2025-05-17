@@ -14,7 +14,9 @@ export const WechatWorkNodeRegistry: FlowNodeRegistry = {
       return i18n.t('nodes.wechat_work.label');
     },
     icon: iconWechatWork,
-    description: i18n.t('nodes.wechat_work.description'),
+    get description() {
+      return i18n.t('nodes.wechat_work.description')
+    }
   },
   meta: {
     size: {

@@ -158,6 +158,7 @@ export const ResultDisplay = ({
   const { Text, Title } = Typography;
   const [visible, setVisible] = useState(false);
   const [markdownContent, setMarkdownContent] = useState("");
+  const { t } = useTranslation();
   const [expandedKeys, setExpandedKeys] = useState<string[]>([
     "inputs",
     "outputs",
@@ -166,11 +167,13 @@ export const ResultDisplay = ({
 
   // 直接获取节点表单数据
   const form = getNodeForm(node);
-  const nodeTitle = form?.values?.title || "节点";
+  const nodeTitle = form?.values?.title;
   const parseResult = JSON.parse(result);
 
   const showMarkdownModal = (content: string) => {
-    const modalContent = <MarkdownRender raw={content} />;
+    const modalContent = (
+      <MarkdownRender style={{ width: "100%" }} raw={content} />
+    );
     setModalContent(modalContent);
     setVisible(true);
   };
@@ -220,7 +223,6 @@ export const ResultDisplay = ({
         : typeof value === "object"
         ? JSON.stringify(value, null, 2)
         : String(value);
-
     return (
       <ResultKeyValue key={key}>
         <ResultKey>{key}：</ResultKey>
@@ -235,7 +237,7 @@ export const ResultDisplay = ({
               style={{ marginLeft: "8px" }}
               onClick={() => showMarkdownModal(strValue)}
             >
-              预览
+              {t("tools.run.result.preview")}
             </PreviewButton>
           )}
           {validateImageArray(strValue) && (
@@ -247,7 +249,7 @@ export const ResultDisplay = ({
               style={{ marginLeft: "8px" }}
               onClick={() => showImageModal(strValue)}
             >
-              预览图片
+              {t("tools.run.result.previewImage")}
             </PreviewButton>
           )}
         </ResultValue>
@@ -258,7 +260,9 @@ export const ResultDisplay = ({
   return (
     <ResultDisplayContainer>
       <ResultHeader>
-        <ResultTitle>{nodeTitle} - 执行结果</ResultTitle>
+        <ResultTitle>
+          {nodeTitle} - {t("tools.run.result.title")}
+        </ResultTitle>
       </ResultHeader>
 
       {parseResult !== undefined ? (
@@ -279,7 +283,7 @@ export const ResultDisplay = ({
                           color: "#0072F5",
                         }}
                       />
-                      输入结果
+                      {t("tools.run.result.input")}
                     </ResultSectionTitle>
                   }
                   itemKey="inputs"
@@ -304,7 +308,7 @@ export const ResultDisplay = ({
                           color: "#FF9800",
                         }}
                       />
-                      输出结果
+                      {t("tools.run.result.output")}
                     </ResultSectionTitle>
                   }
                   itemKey="outputs"
@@ -321,24 +325,24 @@ export const ResultDisplay = ({
           <Text>{parseResult?.toString()}</Text>
         )
       ) : (
-        <Text type="tertiary">节点未返回结果</Text>
+        <Text type="tertiary">{t("tools.run.result.empty")}</Text>
       )}
 
       <Modal
         title={
           <div style={{ display: "flex", alignItems: "center" }}>
             <IconEyeOpened style={{ marginRight: "8px", color: "#4caf50" }} />
-            <span>预览</span>
+            <span>{t("tools.run.result.preview")}</span>
           </div>
         }
         visible={visible}
         onCancel={() => setVisible(false)}
         footer={null}
-        width={600}
+        style={{ width: "70vw", height: "70vh" }}
+        bodyStyle={{ overflow: "auto", padding: "16px" }}
       >
         <div
           style={{
-            padding: "16px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -679,19 +683,6 @@ export const Run = (props: { disabled: boolean }) => {
   const [chatMessages, setChatMessages] = useState<any[]>([]);
 
   const { t, i18n } = useTranslation();
-
-  // 初始化系统消息
-  useEffect(() => {
-    setChatMessages([
-      {
-        role: "system",
-        direction: "incoming",
-        content: t("tools.run.sideSheet.chat.system.prompt"),
-        createAt: new Date().toLocaleTimeString(),
-      },
-    ]);
-  }, []);
-
   // 存储节点执行结果
   const [nodeResults, setNodeResults] = useState<Map<string, any>>(new Map());
   // 存储当前高亮的线条
@@ -950,12 +941,14 @@ export const Run = (props: { disabled: boolean }) => {
           {
             direction: "incoming",
             role: "assistant",
-            content: `执行任务失败: ${execErr}`,
+            content: ` ${t(
+              "tools.run.sideSheet.chat.assistant.executeError"
+            )}: ${execErr}`,
             status: "error",
             createAt: new Date().toLocaleTimeString(),
           },
         ]);
-        throw new Error(`执行任务失败: ${execErr}`);
+        throw new Error(`${execErr}`);
       }
 
       console.log("执行任务启动成功:", execRes);
@@ -991,7 +984,9 @@ export const Run = (props: { disabled: boolean }) => {
             {
               direction: "incoming",
               role: "assistant",
-              content: `获取结果失败: ${pollErr}`,
+              content: `${t(
+                "tools.run.sideSheet.chat.assistant.getResultError"
+              )}: ${pollErr}`,
               status: "error",
               createAt: new Date().toLocaleTimeString(),
             },
@@ -1030,16 +1025,18 @@ export const Run = (props: { disabled: boolean }) => {
                 processedNodeIds.add(nodeResult.id);
 
                 // 构建消息文本
-                let messageText = `节点: ${
-                  nodeResult.title || nodeResult.id
-                }\n\n`;
+                let messageText = `${t(
+                  "tools.run.sideSheet.chat.assistant.node"
+                )}: ${nodeResult.title || nodeResult.id}\n\n`;
 
                 // 添加输出内容
                 if (
                   nodeResult.output &&
                   Object.keys(nodeResult.output).length > 0
                 ) {
-                  messageText += "输出结果:\n";
+                  messageText += `${t(
+                    "tools.run.sideSheet.chat.assistant.result"
+                  )}:\n`;
                   Object.entries(nodeResult.output).forEach(([key, value]) => {
                     const valueStr =
                       typeof value === "object"
@@ -1048,7 +1045,7 @@ export const Run = (props: { disabled: boolean }) => {
                     messageText += `${key}: ${valueStr}\n`;
                   });
                 } else {
-                  messageText += "无输出结果";
+                  messageText += t("tools.run.sideSheet.chat.assistant.empty");
                 }
 
                 // 添加到聊天
@@ -1128,16 +1125,18 @@ export const Run = (props: { disabled: boolean }) => {
       setNodeResults(new Map(newResults));
       setErrorNodes(newErrorNodes);
       setShowResults(true);
-
       // 添加最终状态消息
       let finalMessage = "";
-
       if (stopPollingRef.current) {
-        finalMessage = "流程执行已被停止，只显示部分结果";
+        finalMessage = t("tools.run.sideSheet.chat.assistant.finalMessageStop");
       } else if (newErrorNodes.length > 0) {
-        finalMessage = `已执行完成，但有 ${newErrorNodes.length} 个节点出现问题`;
+        finalMessage = t(
+          "tools.run.sideSheet.chat.assistant.finalMessageError"
+        );
       } else {
-        finalMessage = "所有节点已成功执行";
+        finalMessage = t(
+          "tools.run.sideSheet.chat.assistant.finalMessageSuccess"
+        );
       }
 
       setChatMessages((prev) => [
@@ -1174,7 +1173,6 @@ export const Run = (props: { disabled: boolean }) => {
       }
     } catch (error) {
       console.error("执行出错:", error);
-
       // 区分是用户取消还是其他错误
       if (stopPollingRef.current) {
         Toast.info({
@@ -1188,19 +1186,18 @@ export const Run = (props: { disabled: boolean }) => {
           {
             direction: "incoming",
             role: "assistant",
-            content: `执行出错: ${
+            content: `${t("tools.run.sideSheet.chat.assistant.error")}: ${
               error instanceof Error ? error.message : String(error)
             }`,
             status: "error",
             time: new Date().toLocaleTimeString(),
           },
         ]);
-
         Notification.error({
-          title: "执行失败",
-          content: `节点执行过程中发生错误: ${
-            error instanceof Error ? error.message : String(error)
-          }`,
+          title: t("tools.run.sideSheet.tip.executeSuccessFail.title"),
+          content: `${t(
+            "tools.run.sideSheet.tip.executeSuccessFail.content"
+          )}: ${error instanceof Error ? error.message : String(error)}`,
           duration: 3,
         });
       }
@@ -1250,12 +1247,20 @@ export const Run = (props: { disabled: boolean }) => {
         selection.selection = [];
         setNodeRender(undefined);
       }
-
       const res = await isValid();
       if (res) {
         setVisible(true);
+        if (chatMessages.length === 0) {
+          setChatMessages([
+            {
+              role: "system",
+              direction: "incoming",
+              content: t("tools.run.sideSheet.chat.system.prompt"),
+              createAt: new Date().toLocaleTimeString(),
+            },
+          ]);
+        }
         const formData = getRunProperties();
-        console.log(formData);
         formData && setForm(formData);
       }
     } catch (err) {
@@ -1266,7 +1271,14 @@ export const Run = (props: { disabled: boolean }) => {
         duration: 3,
       });
     }
-  }, [isValid, getRunProperties, state, selection, setNodeRender]);
+  }, [
+    isValid,
+    chatMessages,
+    getRunProperties,
+    state,
+    selection,
+    setNodeRender,
+  ]);
 
   // 渲染节点结果
   const renderedResults = useMemo(() => {

@@ -4,12 +4,6 @@
         <name>Kedo.Application</name>
     </assembly>
     <members>
-        <member name="M:Kedo.Application.BaseIDatatem.Service.DataItemService.OnionbitOSSConfig">
-            <summary>
-            OSS 配置
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:Kedo.Application.BaseIDatatem.Service.ISql.GetDataItem(System.String)">
             <summary>
             获取基础资料信息

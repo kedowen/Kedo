@@ -148,3 +148,89 @@ CREATE TABLE `onionflow_schemedata_hisversion` (
   `F_CreateUserId` varchar(45) DEFAULT NULL COMMENT '创建人ID',
   PRIMARY KEY (`F_Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='洋葱流方案历史版本表';
+
+
+
+
+DROP TABLE IF EXISTS `bas_dataitem`;
+CREATE TABLE `bas_dataitem`  (
+  `F_ItemId` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `F_ParentId` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_ItemCode` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_ItemName` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_IsTree` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_IsNav` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_SortCode` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_CreateUserId` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_DeleteMark` int NULL DEFAULT NULL,
+  `F_EnabledMark` int NULL DEFAULT NULL,
+  `F_Description` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_ModifyUserId` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_CreateDate` datetime NULL DEFAULT NULL,
+  `F_DeleteUserId` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_DeleteDate` datetime NULL DEFAULT NULL,
+  PRIMARY KEY (`F_ItemId`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+
+
+INSERT INTO `bas_dataitem` VALUES ('08dc3731-a3d3-4c21-8792-08755af7c291', NULL, 'Language', 'Language', NULL, NULL, NULL, NULL, 0, 1, NULL, NULL, '2025-05-15 16:03:42', NULL, NULL);
+INSERT INTO `bas_dataitem` VALUES ('08dc3731-a3d3-4c21-8792-08755af7c297', NULL, 'DataSourceType', 'DataSourceType', NULL, NULL, NULL, NULL, 0, 1, NULL, NULL, '2025-05-15 16:03:53', NULL, NULL);
+INSERT INTO `bas_dataitem` VALUES ('08dc3769-27b5-4dc3-89e2-beec5a4d7d18', NULL, 'KnowledgeType', 'KnowledgeType', NULL, NULL, NULL, NULL, 0, 1, NULL, NULL, '2025-05-15 16:03:56', NULL, NULL);
+INSERT INTO `bas_dataitem` VALUES ('08dc3769-27b5-4dc3-89e2-beec5a4d7d19', NULL, 'GPTModel', 'GPTModel', NULL, NULL, NULL, NULL, 0, 1, NULL, NULL, '2025-05-15 16:03:59', NULL, NULL);
+INSERT INTO `bas_dataitem` VALUES ('08dc3769-27b5-4dc3-89e2-beec5a4d7d20', NULL, 'GPTIMG', 'GPTIMG', NULL, NULL, NULL, NULL, 0, 1, NULL, NULL, '2025-05-15 16:04:05', NULL, NULL);
+
+
+DROP TABLE IF EXISTS `bas_dataitemdetail`;
+CREATE TABLE `bas_dataitemdetail`  (
+  `F_ItemDetailId` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `F_ItemId` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_ParentId` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_ItemCode` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_ItemName` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `F_ItemValue` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_QuickQuery` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_SimpleSpelling` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_IsDefault` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_CreateUserId` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_DeleteMark` int NULL DEFAULT NULL,
+  `F_EnabledMark` int NULL DEFAULT NULL,
+  `F_Description` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_ModifyUserId` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_CreateDate` datetime NULL DEFAULT NULL,
+  `F_DeleteUserId` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `F_DeleteDate` datetime NULL DEFAULT NULL,
+  PRIMARY KEY (`F_ItemDetailId`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+
+
+INSERT INTO `bas_dataitemdetail` VALUES ('08dc3731-a3d3-4c21-8792-08755af7c212', '08dc3769-27b5-4dc3-89e2-beec5a4d7d19', NULL, 'GPTModel', 'GPT', 'gpt-4o', NULL, NULL, NULL, NULL, 0, 1, NULL, NULL, '2025-05-15 16:12:11', NULL, '2025-05-15 16:11:49');
+INSERT INTO `bas_dataitemdetail` VALUES ('08dc3731-a3d3-4c21-8792-08755af7c213', '08dc3769-27b5-4dc3-89e2-beec5a4d7d19', NULL, 'GPTModel', 'GPT', 'gpt-4.1', NULL, NULL, NULL, NULL, 0, 1, NULL, NULL, '2025-05-15 16:12:14', NULL, '2025-05-15 16:11:52');
+INSERT INTO `bas_dataitemdetail` VALUES ('08dc3731-a3d3-4c21-8792-08755af7c215', '08dc3769-27b5-4dc3-89e2-beec5a4d7d19', NULL, 'GPTModel', 'CLAUDE', 'claude-3-7-sonnet-20250219', NULL, NULL, NULL, NULL, 0, 1, NULL, NULL, '2025-05-15 16:12:23', NULL, '2025-05-15 16:11:55');
+INSERT INTO `bas_dataitemdetail` VALUES ('08dc3731-a3d3-4c21-8792-08755af7c216', '08dc3769-27b5-4dc3-89e2-beec5a4d7d19', NULL, 'GPTModel', 'QIANWEN', 'qwen-long', NULL, NULL, NULL, NULL, 0, 1, NULL, NULL, '2025-05-15 16:12:28', NULL, '2025-05-15 16:11:58');
+INSERT INTO `bas_dataitemdetail` VALUES ('08dc3731-a3d3-4c21-8792-08755af7c220', '08dc3769-27b5-4dc3-89e2-beec5a4d7d19', NULL, 'GPTModel', 'DEEPSEEK', 'deepseek-chat', NULL, NULL, NULL, NULL, 0, 1, NULL, NULL, '2025-05-15 16:12:31', NULL, '2025-05-15 16:12:00');
+INSERT INTO `bas_dataitemdetail` VALUES ('08dc3731-a3d3-4c21-8792-08755af7c221', '08dc3769-27b5-4dc3-89e2-beec5a4d7d20', NULL, 'GPTIMG', 'JIMENG', 'JIMENG', NULL, NULL, NULL, NULL, 0, 1, NULL, NULL, '2025-05-15 16:12:34', NULL, '2025-05-15 16:12:03');
+INSERT INTO `bas_dataitemdetail` VALUES ('08dc3731-a3d3-4c21-8792-08755af7c259', '08dc3769-27b5-4dc3-89e2-beec5a4d7d20', NULL, 'GPTIMG', 'gpt-4o-image', 'gpt-4o-image', NULL, NULL, NULL, NULL, 0, 1, NULL, NULL, '2025-05-15 16:12:36', NULL, '2025-05-15 16:12:06');
+INSERT INTO `bas_dataitemdetail` VALUES ('08dc3731-a3d3-4c21-8792-08755af7c299', '08dc3731-a3d3-4c21-8792-08755af7c297', NULL, 'DataSourceType', 'MYSQL', 'MYSQL', NULL, NULL, NULL, NULL, 0, 1, NULL, NULL, '2025-05-15 16:12:39', NULL, '2025-05-15 16:12:08');
+
+DROP TABLE IF EXISTS `bas_datasource`;
+CREATE TABLE `bas_datasource`  (
+  `F_Id` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `F_DataSourceTypeId` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `F_Caption` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `F_Ip` varchar(2000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `F_Port` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `F_DBName` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `F_DataSourceUserId` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `F_Pwd` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `F_Remark` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `F_ConnectionString` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `F_CreateUserId` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `F_CreateDate` datetime NULL DEFAULT NULL,
+  `F_DeleteMark` int NULL DEFAULT NULL,
+  `F_EnabledMark` int NULL DEFAULT NULL,
+  `F_DeleteUserId` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `F_DeleteDate` datetime NULL DEFAULT NULL,
+  PRIMARY KEY (`F_Id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+INSERT INTO `bas_datasource` VALUES ('50db3c78-7462-4203-a1b8-bb8f9c48c754', '08dc3731-a3d3-4c21-8792-08755af7c299', 'dblink', 'Server= **,2433;Database=P*P;User ID=sa;Password=*@#4;', '02344765-54e9-4831-841b-366f1f47bd8e', '2024/3/24 22:37', '0', '1', '02344765-54e9-4831-841b-366f1f47bd8e', '2024/4/21 1:39', '', '2025-05-15 17:38:04', 0, 1, '', '2025-05-15 17:38:18');

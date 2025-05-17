@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useContext } from "react";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import { saveData, awaitWrapper, modifyData, uploadFileToOSS } from "@/api";
 
 import {
@@ -96,109 +96,119 @@ export function useWorkflowSave() {
         return !form.state.invalid; // 返回验证结果，true表示验证通过
       })
     );
-    
+
     // 返回所有节点是否都通过验证
-    return validationResults.every(result => result === true);
+    return validationResults.every((result) => result === true);
   }, [getLinkedNodes]);
 
-  const saveWorkflow = useCallback(async (executeId?: string) => {
-    if (!state.userId) {
-      Toast.error(t('tools.save.errors.noUser'));
-      return { err: { message: t('tools.save.errors.noUser') }, res: null };
-    }
-    // 验证连接的节点
-    const isValid = await validateLinkedNodes();
-    
-    // 如果验证失败，提示用户并中断保存操作
-    if (!isValid) {
-      Toast.error(t('tools.save.errors.validationFailed'));
-      return { err: { message: t('tools.save.errors.validationFailed') }, res: null };
-    }
+  const saveWorkflow = useCallback(
+    async (executeId?: string) => {
+      if (!state.userId) {
+        Toast.error(t("tools.save.errors.noUser"));
+        return { err: { message: t("tools.save.errors.noUser") }, res: null };
+      }
+      // 验证连接的节点
+      const isValid = await validateLinkedNodes();
 
-    // 获取文档数据并编码
-    const data = clientContext.document.toJSON();
-    let variableList = state.variableList;
-    
-    // 如果提供了新的executeId，则更新sys_executeId变量
-    if (executeId) {
-      variableList = variableList.map(item => 
-        item.title === "sys_executeId" ? { ...item, value: executeId } : item
+      // 如果验证失败，提示用户并中断保存操作
+      if (!isValid) {
+        Toast.error(t("tools.save.errors.validationFailed"));
+        return {
+          err: { message: t("tools.save.errors.validationFailed") },
+          res: null,
+        };
+      }
+
+      // 获取文档数据并编码
+      const data = clientContext.document.toJSON();
+      let variableList = state.variableList;
+
+      // 如果提供了新的executeId，则更新sys_executeId变量
+      if (executeId) {
+        variableList = variableList.map((item) =>
+          item.title === "sys_executeId" ? { ...item, value: executeId } : item
+        );
+      }
+
+      console.log(">>>>> variableList: ", variableList);
+      const base64Data = Base64.encode(
+        JSON.stringify({
+          ...data,
+          variableList,
+        })
       );
-    }
-    
-    console.log(">>>>> variableList: ", variableList);
-    const base64Data = Base64.encode(JSON.stringify({
-      ...data,
-      variableList,
-    }));
 
-    // 对当前界面截图并转为base64
-    const screenshotCanvas = await captureScreenshot(".demo-container");
+      // 对当前界面截图并转为base64
+      const screenshotCanvas = await captureScreenshot(".demo-container");
 
-    // 先执行上传图片
-    let uploadUrl = "";
-    if (screenshotCanvas) {
-      try {
-        // Convert canvas to blob with a Promise to make it easier to await
-        const blob = await new Promise<Blob | null>((resolve) => {
-          screenshotCanvas.toBlob((blob) => resolve(blob), "image/png");
-        });
+      // 先执行上传图片
+      let uploadUrl = "";
+      if (screenshotCanvas) {
+        try {
+          // Convert canvas to blob with a Promise to make it easier to await
+          const blob = await new Promise<Blob | null>((resolve) => {
+            screenshotCanvas.toBlob((blob) => resolve(blob), "image/png");
+          });
 
-        if (blob) {
-          const [err, res] = await awaitWrapper(
-            uploadFileToOSS(blob, state.userId, `${state.flowId}.png`)
-          );
-          if (res) {
-            console.log(">>>>> upload file to oss success: ", res);
-            uploadUrl = res.data; // Store the URL returned from the server
+          if (blob) {
+            const [err, res] = await awaitWrapper(
+              uploadFileToOSS(blob, state.userId, `${state.flowId}.png`)
+            );
+            if (res) {
+              console.log(">>>>> upload file to oss success: ", res);
+              uploadUrl = res.data; // Store the URL returned from the server
+            } else {
+              console.error(">>>>> upload file to oss failed: ", err);
+            }
           } else {
-            console.error(">>>>> upload file to oss failed: ", err);
+            console.error("Failed to convert canvas to blob");
           }
-        } else {
-          console.error("Failed to convert canvas to blob");
+        } catch (error) {
+          console.error("Error during file upload: ", error);
         }
-      } catch (error) {
-        console.error("Error during file upload: ", error);
       }
-    }
 
-    // 根据是否有flowId决定创建新流程或更新现有流程
-    if (state.flowId) {
-      // 更新现有流程
-      const [err, res] = await awaitWrapper(
-        modifyData({
-          f_Id: state.flowId,
-          f_Caption: state.flowName,
-          f_Description: state.flowDescription,
-          f_OnionFlowSchemeData: base64Data,
-          f_Type: "0",
-          f_ModifyUserId: state.userId,
-          f_ImgUrl: uploadUrl,
-        })
-      );
-      Toast.success(t('tools.save.success'));
-      return { err, res };
-    } else {
-      // 创建新流程
-      const [err, res] = await awaitWrapper(
-        saveData({
-          f_Caption: state.flowName,
-          f_CreateUserId: state.userId,
-          f_IndustryCategory: "",
-          f_Description: state.flowDescription,
-          f_OnionFlowSchemeData: base64Data,
-          f_Type: "0",
-          f_TeamId: "",
-          f_TeamOnionFlowFileGroup: "",
-        })
-      );
-      if (res && res.data) {
-        dispatch({ type: "setFlowId", payload: res.data });
-        Toast.success(t('tools.save.success'));
+      // 根据是否有flowId决定创建新流程或更新现有流程
+      if (state.flowId) {
+        // 更新现有流程
+        const [err, res] = await awaitWrapper(
+          modifyData({
+            f_Id: state.flowId,
+            f_Caption: state.flowName,
+            f_Description: state.flowDescription,
+            f_OnionFlowSchemeData: base64Data,
+            f_Type: "0",
+            f_ModifyUserId: state.userId,
+            f_ImgUrl: uploadUrl,
+          })
+        );        
+        if (res && res.data) {
+          Toast.success(t("tools.save.success"));
+        }
+        return { err, res };
+      } else {
+        // 创建新流程
+        const [err, res] = await awaitWrapper(
+          saveData({
+            f_Caption: state.flowName,
+            f_CreateUserId: state.userId,
+            f_IndustryCategory: "",
+            f_Description: state.flowDescription,
+            f_OnionFlowSchemeData: base64Data,
+            f_Type: "0",
+            f_TeamId: "",
+            f_TeamOnionFlowFileGroup: "",
+          })
+        );
+        if (res && res.data) {
+          dispatch({ type: "setFlowId", payload: res.data });
+          Toast.success(t("tools.save.success"));
+        }
+        return { err, res };
       }
-      return { err, res };
-    }
-  }, [clientContext, state, dispatch, validateLinkedNodes, t]);
+    },
+    [clientContext, state, dispatch, validateLinkedNodes, t]
+  );
 
   return {
     getLinkedNodes,
@@ -219,8 +229,8 @@ export function useNodeErrorValidation() {
     const allForms = clientContext.document
       .getAllNodes()
       .map((node) => getNodeForm(node))
-      .filter(form => form !== null && form !== undefined); // Filter out null/undefined forms
-    
+      .filter((form) => form !== null && form !== undefined); // Filter out null/undefined forms
+
     const count = allForms.filter((form) => form.state.invalid).length;
     setErrorCount(count);
   }, [clientContext]);
@@ -229,7 +239,7 @@ export function useNodeErrorValidation() {
   useEffect(() => {
     // 立即检查一次当前的验证状态
     updateValidateData();
-    
+
     const listenSingleNodeValidate = (node: FlowNodeEntity) => {
       const form = getNodeForm(node);
       if (form) {
@@ -263,12 +273,12 @@ export function Save(props: { disabled: boolean }) {
   const { saveWorkflow } = useWorkflowSave();
   const { errorCount } = useNodeErrorValidation();
   const { t } = useTranslation();
-  
+
   // 创建一个处理点击事件的函数
   const handleSaveClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     saveWorkflow();
   };
-  
+
   if (errorCount === 0) {
     return (
       <Button
@@ -279,15 +289,15 @@ export function Save(props: { disabled: boolean }) {
           borderRadius: "8px",
         }}
       >
-        {t('tools.save.title')}
+        {t("tools.save.title")}
       </Button>
     );
   }
 
   return (
-    <Badge 
-      count={errorCount} 
-      position="rightTop" 
+    <Badge
+      count={errorCount}
+      position="rightTop"
       type="danger"
       overflowCount={99}
     >
@@ -301,7 +311,7 @@ export function Save(props: { disabled: boolean }) {
         }}
         title={`有 ${errorCount} 个节点存在验证错误，请修复后再保存`}
       >
-        {t('tools.save.title')}
+        {t("tools.save.title")}
       </Button>
     </Badge>
   );

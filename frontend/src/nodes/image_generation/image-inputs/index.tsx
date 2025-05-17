@@ -33,6 +33,7 @@ import { useIsSidebar } from "@/hooks";
 import { awaitWrapper, getImageLLMList } from "@/api";
 import { useTranslation } from "react-i18next";
 import i18n from "i18next";
+import { Feedback } from "@/form-components/feedback";
 
 const { Text } = Typography;
 const { Option } = Select;
@@ -733,9 +734,10 @@ export const ImageInputs = () => {
                     style={{ width: "100%" }}
                   />
                   {fieldState.errors && fieldState.errors.length > 0 && (
-                    <div style={{ color: "#ff4d4f", marginTop: "4px" }}>
-                      {fieldState.errors[0]}
-                    </div>
+                    <Feedback 
+                      errors={fieldState.errors}
+                      invalid={true}
+                    />
                   )}
                 </>
               )}

@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 
 // 用于安全显示可能是对象的值
 const safeRenderValue = (value: any): string => {
-  if (value === null || value === undefined) {
+  if (value === null || value === undefined || value === "") {
     return "--";
   }
 
@@ -248,7 +248,7 @@ export const SimplifiedImageView = () => {
         </Field>
         <Field<
           string | FlowLiteralValueSchema | FlowRefValueSchema
-        > name="inputsValues.modelType.value">
+        > name="inputsValues.modelType.label">
           {({ field: ratioField }) => (
             <Tag
               color="green"
@@ -258,6 +258,9 @@ export const SimplifiedImageView = () => {
                 marginRight: "12px",
               }}
             >
+              {/* <span>
+                {ratioField.value}
+              </span> */}
               {safeRenderValue(ratioField.value)}
             </Tag>
           )}

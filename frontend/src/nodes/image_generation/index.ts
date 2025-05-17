@@ -21,10 +21,12 @@ export const ImageGenerationNodeRegistry: FlowNodeRegistry = {
   type: 'image_generation',
   info: {
     get label() {
-      return  i18n.t('nodes.image_generation.label');
+      return i18n.t('nodes.image_generation.label');
     },
     icon: iconImage,
-    description: i18n.t('nodes.image_generation.description'),
+    get description() {
+      return i18n.t('nodes.image_generation.description');
+    }
   },
   meta: {
     size: {
@@ -37,7 +39,7 @@ export const ImageGenerationNodeRegistry: FlowNodeRegistry = {
   onAdd() {
     const styleOptions = getStyleOptionsEnum();
     const aspectRatios = getAspectRatioOptions();
-    
+
     return {
       id: `image_gen_${nanoid(5)}`,
       type: 'image_generation',
@@ -59,11 +61,8 @@ export const ImageGenerationNodeRegistry: FlowNodeRegistry = {
           negativePrompt: '',
           customParams: [],
           modelType: {
-            type: 'object',
-            content: {
-              label: '',
-              value: ''
-            }
+            label: '',
+            value: ''
           },
         },
         inputs: {

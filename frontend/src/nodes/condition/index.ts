@@ -94,7 +94,9 @@ export const ConditionNodeRegistry: FlowNodeRegistry = {
       return i18n.t('nodes.condition.label');
     },
     icon: iconCondition,
-    description: i18n.t('nodes.condition.description'),
+    get description() {
+      return i18n.t('nodes.condition.description');
+    }
   },
   meta: {
     defaultPorts: [{ type: 'input' }],
@@ -153,9 +155,9 @@ export const ConditionNodeRegistry: FlowNodeRegistry = {
                           description: i18n.t('nodes.condition.inputs.relation'),
                           enum: Object.values(RelationEnum),
                         },
-                        conationLeft: { 
-                          type: 'expression', 
-                          description: i18n.t('nodes.condition.inputs.leftExpression') 
+                        conationLeft: {
+                          type: 'expression',
+                          description: i18n.t('nodes.condition.inputs.leftExpression')
                         },
                         conationRelation: {
                           type: 'string',
