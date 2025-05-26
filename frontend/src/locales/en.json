@@ -942,5 +942,90 @@
       "clearKnowledgeBase": "Error clearing knowledge base",
       "prepareFormSubmit": "Error preparing form submission"
     }
+  },
+  "loginPage": {
+    "title": "Login",
+    "welcomeLogin": "Welcome to login",
+    "welcomeRegister": "Welcome to register",
+    "tabs": {
+      "passwordLogin": "Password Login",
+      "captchaLogin": "Verification Code Login"
+    },
+    "phone": {
+      "label": "Phone Number",
+      "placeholder": "Please enter phone number",
+      "errorRequired": "Phone number cannot be empty",
+      "errorFormat": "Phone number format is incorrect"
+    },
+    "captcha": {
+      "label": "Verification Code",
+      "placeholder": "Please enter verification code",
+      "errorRequired": "Verification code cannot be empty",
+      "getLabel": "Get Verification Code"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Please enter password",
+      "errorRequired": "Password cannot be empty"
+    },
+    "confirmPassword": {
+      "label": "Confirm Password",
+      "placeholder": "Please enter password again",
+      "errorRequired": "Confirm password cannot be empty",
+      "errorNotMatch": "The two passwords entered do not match"
+    },
+    "loginBtn": {
+      "title": "Login"
+    },
+    "registerBtn": {
+      "title": "Register"
+    },
+    "switchLabel": {
+      "login": {
+        "title": "Don't have an account?",
+        "link": "Register now"
+      },
+      "register": {
+        "title": "Already have an account?",
+        "link": "Login now"
+      }
+    },
+    "tip": {
+      "registerSuccess": "Registration successful",
+      "registerFailed": "Registration failed",
+      "loginSuccess": "Login successful",
+      "loginFailed": "Login failed",
+      "getCaptchaSuccess": "Verification code sent",
+      "getCaptchaFailed": "Failed to get verification code"
+    }
+  },
+  "boardPage": {
+    "title": "Kedo Flow Control Panel",
+    "allFlow": "All Flows",
+    "user": "User",
+    "createFlow": "Create Flow",
+    "emptyImageText": "No Image Available",
+    "emptyText": "No Data Available",
+    "editFlow": "Edit Flow",
+    "logout": "Logout",
+    "createModal": {
+      "title": "Create Flow",
+      "flowName": {
+        "label": "Flow Name",
+        "placeholder": "Please enter flow name",
+        "errorRequired": "Flow name cannot be empty"
+      },
+      "flowDescription": {
+        "label": "Flow Description",
+        "placeholder": "Please enter flow description",
+        "errorRequired": "Flow description cannot be empty"
+      },
+      "okText": "Confirm",
+      "cancelText": "Cancel",
+      "tip": {
+        "createSuccess": "Created successfully",
+        "createFailed": "Creation failed"
+      }
+    }
   }
 }
